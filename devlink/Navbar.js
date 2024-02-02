@@ -75,7 +75,7 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                 className="nav-logo-wrapper"
                 id="id-nav-logo"
                 options={{
-                  href: "#",
+                  href: LINK_HOME_PAGE,
                 }}
               >
                 <_Builtin.Block className="div-block-2" tag="div">
@@ -112,7 +112,7 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                       href: `/${lang}/${LINK_HOME_PAGE}`,
                     }}
                   >
-                    {"Home"}
+                    {t('home', {ns: 'navbar'})}
                   </_Builtin.NavbarLink>
                 </_Builtin.ListItem>
                 <_Builtin.ListItem className="nav-link-list-item">
@@ -123,7 +123,7 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                       href: `/${lang}/${LINK_ABOUT_PAGE}`,
                     }}
                   >
-                    {"About us"}
+                    {t('about', {ns: 'navbar'})}
                   </_Builtin.NavbarLink>
                 </_Builtin.ListItem>
                 <_Builtin.ListItem className="nav-link-list-item">
@@ -134,7 +134,7 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                       href: `/${lang}/${LINK_GALLERY_PAGE}`,
                     }}
                   >
-                    {"Gallery 3D"}
+                    {t('gallery', {ns: 'navbar'})}
                   </_Builtin.NavbarLink>
                 </_Builtin.ListItem>
                 <_Builtin.ListItem className="nav-link-list-item">
@@ -145,7 +145,7 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                       href: `/${lang}/${LINK_VR_PAGE}`,
                     }}
                   >
-                    {"VR"}
+                    {t('vr', {ns: 'navbar'})}
                   </_Builtin.NavbarLink>
                 </_Builtin.ListItem>
                 <_Builtin.ListItem className="nav-link-list-item">
@@ -156,7 +156,7 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                       href: `/${lang}/${LINK_DEDALAB_PAGE}`,
                     }}
                   >
-                    {"Dedalab"}
+                    {t('dedalab', {ns: 'navbar'})}
                   </_Builtin.NavbarLink>
                 </_Builtin.ListItem>
               </_Builtin.List>
