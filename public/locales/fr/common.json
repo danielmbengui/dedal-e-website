@@ -1,0 +1,18 @@
+{
+    "langs" : {
+        "langs": "Langues",
+        "fr": "Français",
+        "en": "Anglais",
+        "it": "Italien",
+        "es": "Espagnol",
+        "pt": "Portugais",
+        "zh": "Chinois",
+        "ru": "Russe",
+        "hi": "Indien",
+        "ja": "Japonais",
+        "ar": "Arabe"
+    },
+    "menu" :{
+        "home" : "Accueil"
+    }
+}

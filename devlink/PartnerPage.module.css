@@ -1,0 +1,234 @@
+.page-wrapper {
+  background-color: var(--transparent);
+}
+
+.section-change-log {
+  background-color: var(--white);
+}
+
+.padding-global {
+  padding-right: 4rem;
+  padding-left: 4rem;
+  background-color: var(--transparent);
+}
+
+@media screen and (max-width: 991px) {
+  .padding-global {
+    padding-right: 1.875rem;
+    padding-left: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .padding-global {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .padding-global {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+.padding-global.menu {
+  background-color: var(--transparent);
+}
+
+.padding-global.creation {
+  padding: 3rem 4rem;
+  background-color: var(--transparent);
+}
+
+@media screen and (max-width: 991px) {
+  .padding-global.creation {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .padding-global.creation {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+.padding-global.about {
+  background-color: var(--black);
+}
+
+.container-large {
+  width: 100%;
+  max-width: 76.5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.padding-section-large {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 991px) {
+  .padding-section-large {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .padding-section-large {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .padding-section-large {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+.padding-section-large.is-service {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+@media screen and (max-width: 991px) {
+  .padding-section-large.is-service {
+    padding-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .padding-section-large.is-service {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.padding-section-large.bottom-padding-small {
+  padding-bottom: 1.875rem;
+}
+
+.padding-section-large.gallery-3d {
+  padding-top: 0rem;
+}
+
+.fn-logos-grid-2 {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .fn-logos-grid-2 {
+    margin-bottom: 12px;
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+  }
+}
+
+.fn-logos-card-2 {
+  display: flex;
+  min-height: 170px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50px;
+
+  background-color: #0f1213;
+}
+
+@media screen and (max-width: 991px) {
+  .fn-logos-card-2 {
+    min-height: 120px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fn-logos-card-2 {
+    min-height: 80px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .fn-logos-card-2 {
+    min-height: 60px;
+  }
+}
+
+.link-block-4 {
+  display: flex;
+  width: auto;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.fn-logos-masonary-logo-2 {
+  width: 100%;
+  height: 35px;
+  color: var(--white);
+  cursor: pointer;
+  object-fit: contain;
+}
+
+.fn-logos-masonary-logo-2:hover {
+  color: var(--yellow-dark);
+}
+
+@media screen and (max-width: 991px) {
+  .fn-logos-masonary-logo-2 {
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .fn-logos-masonary-logo-2 {
+    height: 25px;
+  }
+}
+
+.fn-logos-masonary-logo-2.smartchain {
+  height: 50px;
+}
+
+.fn-logos-masonary-logo-2.wiseart {
+  height: 50px;
+}
+
+.fn-logos-masonary-logo-2.exclusible {
+  height: 80px;
+}
+
+.fn-logos-masonary-logo-2.ace {
+  height: 80px;
+}
+
+#w-node-a287eb3f-a0f7-bc6c-1862-e7853efec26f-3efec267 {
+  grid-column-start: 7;
+  grid-column-end: 13;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+@media screen and (max-width: 991px) {
+  #w-node-a287eb3f-a0f7-bc6c-1862-e7853efec26f-3efec267 {
+    grid-column-start: span 4;
+    grid-column-end: span 4;
+    grid-row-start: span 1;
+    grid-row-end: span 1;
+  }
+}
+@media screen and (max-width: 767px) {
+  #w-node-a287eb3f-a0f7-bc6c-1862-e7853efec26f-3efec267 {
+    order: -9999;
+  }
+}

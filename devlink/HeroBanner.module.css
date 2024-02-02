@@ -1,0 +1,103 @@
+.header-banner {
+  padding-top: 10.375rem;
+  padding-bottom: 7.5rem;
+
+  background-image: linear-gradient(to bottom, hsla(0, 0.00%, 0.00%, 0.84),hsla(0, 0.00%, 0.00%, 0.84)), url("https://uploads-ssl.webflow.com/65ae6f1a145b7954f56170cc/65aedc74c71f25839428d640_home-header.webp");
+  background-position: 0px 0px, 50% 50%;
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
+}
+
+@media screen and (max-width: 991px) {
+  .header-banner {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header-banner {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .header-banner {
+    padding-top: 8.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+.padding-global {
+  padding-right: 4rem;
+  padding-left: 4rem;
+  background-color: var(--transparent);
+}
+
+@media screen and (max-width: 991px) {
+  .padding-global {
+    padding-right: 1.875rem;
+    padding-left: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .padding-global {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .padding-global {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+.padding-global.menu {
+  background-color: var(--transparent);
+}
+
+.padding-global.creation {
+  padding: 3rem 4rem;
+  background-color: var(--transparent);
+}
+
+@media screen and (max-width: 991px) {
+  .padding-global.creation {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .padding-global.creation {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+.padding-global.about {
+  background-color: var(--black);
+}
+
+.header-banner-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.heading {
+  font-family: Inter;
+  font-weight: 300;
+  text-transform: none;
+}

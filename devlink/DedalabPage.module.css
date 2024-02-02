@@ -1,0 +1,119 @@
+.page-wrapper {
+  background-color: var(--transparent);
+}
+
+.section-change-log {
+  background-color: var(--white);
+}
+
+.padding-global {
+  padding-right: 4rem;
+  padding-left: 4rem;
+  background-color: var(--transparent);
+}
+
+@media screen and (max-width: 991px) {
+  .padding-global {
+    padding-right: 1.875rem;
+    padding-left: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .padding-global {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .padding-global {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+.padding-global.menu {
+  background-color: var(--transparent);
+}
+
+.padding-global.creation {
+  padding: 3rem 4rem;
+  background-color: var(--transparent);
+}
+
+@media screen and (max-width: 991px) {
+  .padding-global.creation {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .padding-global.creation {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+.padding-global.about {
+  background-color: var(--black);
+}
+
+.container-large {
+  width: 100%;
+  max-width: 76.5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.padding-section-large {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 991px) {
+  .padding-section-large {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .padding-section-large {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .padding-section-large {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+.padding-section-large.is-service {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+@media screen and (max-width: 991px) {
+  .padding-section-large.is-service {
+    padding-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .padding-section-large.is-service {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.padding-section-large.bottom-padding-small {
+  padding-bottom: 1.875rem;
+}
+
+.padding-section-large.gallery-3d {
+  padding-top: 0rem;
+}
