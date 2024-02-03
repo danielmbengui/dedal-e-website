@@ -8,6 +8,9 @@ import { useTranslation } from 'next-i18next';
 //import { useTranslation } from 'react-i18next';
 import { TAB_LANGUAGES, TAB_NAMESPACES } from "@/constants";
 import Head from "next/head";
+import { HomeComponent } from "@/components/home/HomeComponent";
+//import { HomeComponent } from "@/components/home/Home";
+//import {Home} from "@/components/home/Home";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,7 +24,7 @@ export default function Home() {
       <meta name="description" content="Your art authentication platform based on blockchain technology." />
       <title>{`Dedal-E | ${t('menu.home', { ns: 'common' })}`}</title>
     </Head>
-    <HomePage />
+    <HomeComponent />
     </>
   );
 }

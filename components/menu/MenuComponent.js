@@ -1,13 +1,56 @@
-import React from "react";
-import * as _Builtin from "./_Builtin";
-import * as _interactions from "./interactions";
+import React, {useEffect} from "react";
+import * as _Builtin from "@/devlink/_Builtin";
+import * as _interactions from "@/devlink/interactions";
+import {LANGUAGE_ARABIC, LANGUAGE_CHINESE, LANGUAGE_ENGLISH, LANGUAGE_FRENCH, LANGUAGE_GERMAN, LANGUAGE_HINDI, LANGUAGE_JAPANESE, LANGUAGE_PORTUGUESE, LANGUAGE_RUSSIAN, LANGUAGE_SPANISH, LINK_ABOUT_PAGE, LINK_DEDALAB_PAGE, LINK_GALLERY_PAGE, LINK_HOME_PAGE, LINK_VR_PAGE} from "@/constants";
+import { useRouter } from "next/router";
+import { SelectActivePage } from "@/functions/SelectActivePage";
+import { useTranslation } from 'next-i18next';
+import Image from "next/image";
+
+const CHINESE_FLAG = "/images/flags/china.jpeg";
 
 const _interactionsData = JSON.parse(
   '{"events":{"e-19":{"id":"e-19","name":"","animationType":"custom","eventTypeId":"MOUSE_CLICK","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-3","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-20"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"665f320f-61ce-b358-051b-3023e0eeec97","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"665f320f-61ce-b358-051b-3023e0eeec97","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1702184189866},"e-20":{"id":"e-20","name":"","animationType":"custom","eventTypeId":"MOUSE_SECOND_CLICK","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-4","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-19"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"665f320f-61ce-b358-051b-3023e0eeec97","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"665f320f-61ce-b358-051b-3023e0eeec97","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1702184189866},"e-207":{"id":"e-207","name":"","animationType":"preset","eventTypeId":"DROPDOWN_OPEN","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-51","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-208"}},"mediaQueries":["medium","small","tiny"],"target":{"id":"65ae6f1a145b7954f56170fe|0ba8026a-a7cd-4c78-f1ff-96dd6d4a8c94","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"65ae6f1a145b7954f56170fe|0ba8026a-a7cd-4c78-f1ff-96dd6d4a8c94","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1650242269412},"e-208":{"id":"e-208","name":"","animationType":"preset","eventTypeId":"DROPDOWN_CLOSE","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-52","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-207"}},"mediaQueries":["medium","small","tiny"],"target":{"id":"65ae6f1a145b7954f56170fe|0ba8026a-a7cd-4c78-f1ff-96dd6d4a8c94","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"65ae6f1a145b7954f56170fe|0ba8026a-a7cd-4c78-f1ff-96dd6d4a8c94","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1650242269412},"e-209":{"id":"e-209","name":"","animationType":"preset","eventTypeId":"DROPDOWN_OPEN","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-41","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-210"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"65ae6f1a145b7954f56170fe|0ba8026a-a7cd-4c78-f1ff-96dd6d4a8c94","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"65ae6f1a145b7954f56170fe|0ba8026a-a7cd-4c78-f1ff-96dd6d4a8c94","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1650242269412},"e-210":{"id":"e-210","name":"","animationType":"preset","eventTypeId":"DROPDOWN_CLOSE","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-49","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-209"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"65ae6f1a145b7954f56170fe|0ba8026a-a7cd-4c78-f1ff-96dd6d4a8c94","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"65ae6f1a145b7954f56170fe|0ba8026a-a7cd-4c78-f1ff-96dd6d4a8c94","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1650242269412},"e-221":{"id":"e-221","name":"","animationType":"custom","eventTypeId":"MOUSE_CLICK","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-33","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-222"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"087b38d3-bb16-de61-e483-c97c79ade6ae","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"selector":".uui-navbar07_menu-dropdown","originalId":"087b38d3-bb16-de61-e483-c97c79ade6ae","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1706389501519},"e-222":{"id":"e-222","name":"","animationType":"custom","eventTypeId":"MOUSE_SECOND_CLICK","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-34","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-221"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"087b38d3-bb16-de61-e483-c97c79ade6ae","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"selector":".uui-navbar07_menu-dropdown","originalId":"087b38d3-bb16-de61-e483-c97c79ade6ae","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1706389501520}},"actionLists":{"a-3":{"id":"a-3","title":"Menu open","actionItemGroups":[{"actionItems":[{"id":"a-3-n","actionTypeId":"STYLE_SIZE","config":{"delay":0,"easing":"inOutQuint","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.middle","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4ab"]},"widthValue":0,"widthUnit":"px","heightUnit":"px","locked":false}},{"id":"a-3-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuint","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.last","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4a6"]},"yValue":-8,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-3-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuint","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.top","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4a7"]},"yValue":8,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-3-n-4","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inOutQuint","duration":600,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.top","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4a7"]},"zValue":-45,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}},{"id":"a-3-n-5","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inOutQuint","duration":600,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.last","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4a6"]},"zValue":45,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}}]}],"useFirstGroupAsInitialState":false,"createdOn":1678172047049},"a-4":{"id":"a-4","title":"Menu colse","actionItemGroups":[{"actionItems":[{"id":"a-4-n","actionTypeId":"STYLE_SIZE","config":{"delay":0,"easing":"inOutQuint","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.middle","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4ab"]},"widthValue":24,"widthUnit":"px","heightUnit":"px","locked":false}},{"id":"a-4-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuint","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.last","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4a6"]},"yValue":0,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-4-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuint","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.top","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4a7"]},"yValue":0,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-4-n-4","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inOutQuint","duration":600,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.top","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4a7"]},"zValue":0,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}},{"id":"a-4-n-5","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inOutQuint","duration":600,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.last","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4a6"]},"zValue":0,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}}]}],"useFirstGroupAsInitialState":false,"createdOn":1678172047049},"a-51":{"id":"a-51","title":"Navbar07 dropdown (tablet) -> OPEN","actionItemGroups":[{"actionItems":[{"id":"a-51-n","actionTypeId":"STYLE_SIZE","config":{"delay":0,"easing":"ease","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"heightValue":0,"widthUnit":"PX","heightUnit":"px","locked":false}}]},{"actionItems":[{"id":"a-51-n-2","actionTypeId":"STYLE_SIZE","config":{"delay":0,"easing":"ease","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"widthUnit":"PX","heightUnit":"AUTO","locked":false}}]}],"useFirstGroupAsInitialState":true,"createdOn":1626242958157},"a-52":{"id":"a-52","title":"Navbar07 dropdown (tablet) -> CLOSE","actionItemGroups":[{"actionItems":[{"id":"a-52-n","actionTypeId":"STYLE_SIZE","config":{"delay":0,"easing":"ease","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"heightValue":0,"widthUnit":"PX","heightUnit":"px","locked":false}}]}],"useFirstGroupAsInitialState":false,"createdOn":1626242958157},"a-41":{"id":"a-41","title":"Navbar07 -> OPEN","actionItemGroups":[{"actionItems":[{"id":"a-41-n","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"ease","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"value":0,"unit":""}},{"id":"a-41-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"yValue":-2,"xUnit":"PX","yUnit":"rem","zUnit":"PX"}}]},{"actionItems":[{"id":"a-41-n-3","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"ease","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".uui-dropdown-icon","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0b"]},"zValue":180,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}},{"id":"a-41-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"ease","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"value":1,"unit":""}},{"id":"a-41-n-5","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"ease","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"yValue":0,"xUnit":"PX","yUnit":"rem","zUnit":"PX"}}]}],"useFirstGroupAsInitialState":true,"createdOn":1626161550593},"a-49":{"id":"a-49","title":"Navbar07 -> CLOSE","actionItemGroups":[{"actionItems":[{"id":"a-49-n","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"ease","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".uui-dropdown-icon","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0b"]},"zValue":0,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}},{"id":"a-49-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"ease","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-49-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"ease","duration":0,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"yValue":-2,"xUnit":"PX","yUnit":"rem","zUnit":"PX"}}]}],"useFirstGroupAsInitialState":false,"createdOn":1626161607847},"a-33":{"id":"a-33","title":"Navbar menu -> OPEN","actionItemGroups":[{"actionItems":[{"id":"a-33-n","actionTypeId":"STYLE_SIZE","config":{"delay":0,"easing":"inOutQuint","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-middle","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf7"]},"widthValue":0,"widthUnit":"px","heightUnit":"PX","locked":false}},{"id":"a-33-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuint","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-bottom","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf5"]},"yValue":-8,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-33-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuint","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-top","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf8"]},"yValue":8,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-33-n-4","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inOutQuint","duration":600,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-top","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf8"]},"zValue":-45,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}},{"id":"a-33-n-5","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inOutQuint","duration":600,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-bottom","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf5"]},"zValue":45,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}}]}],"useFirstGroupAsInitialState":false,"createdOn":1626168378054},"a-34":{"id":"a-34","title":"Navbar menu -> CLOSE","actionItemGroups":[{"actionItems":[{"id":"a-34-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuint","duration":600,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-bottom","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf5"]},"yValue":0,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-34-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuint","duration":600,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-top","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf8"]},"yValue":0,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-34-n-3","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inOutQuint","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-bottom","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf5"]},"zValue":0,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}},{"id":"a-34-n-4","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inOutQuint","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-top","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf8"]},"zValue":0,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}},{"id":"a-34-n-5","actionTypeId":"STYLE_SIZE","config":{"delay":400,"easing":"inOutQuint","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-middle","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf7"]},"widthValue":24,"widthUnit":"px","heightUnit":"PX","locked":false}}]}],"useFirstGroupAsInitialState":false,"createdOn":1626168766736}},"site":{"mediaQueries":[{"key":"main","min":992,"max":10000},{"key":"medium","min":768,"max":991},{"key":"small","min":480,"max":767},{"key":"tiny","min":0,"max":479}]}}'
 );
 
-export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
+export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper }) {
   _interactions.useInteractions(_interactionsData);
+
+  const router = useRouter();
+  const url = router.asPath;
+  const lang = router.locale;
+  const { t, i18n } = useTranslation();
+
+  const ChangeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    router.push(router.pathname, undefined, { locale: lang });
+  }
+
+
+  useEffect(() => {
+    //console.log("Router ", window.document.getElementById('id-nav-home-page'));
+    //console.log("Router ", window.document.getElementById('id-nav-home-page').className);
+    
+    // Obtenez la référence de l'élément par son ID
+    //var element = document.getElementById('id-nav-home-page');
+
+    // Modifiez l'attribut src de l'élément (par exemple, pour une image)
+    //element.className = `nav-link ${LINK_HOME_PAGE === router.asPath ? 'w--current' : ''}`;
+    //var element = document.getElementById('id-nav-home-page');
+    console.log("Url", url);
+    console.log("Lang", router.locale);
+    console.log("Complete url", router.asPath + router.locale);
+    console.log("Link home", LINK_HOME_PAGE + router.locale);
+
+/*
+    if (LINK_HOME_PAGE === url) {
+      console.log("OOOOOOOOK");
+      document.getElementById('id-nav-home-page').className = `nav-link ${LINK_HOME_PAGE === url ? 'w--current' : ''}`;
+    }
+    */
+    
+    //SelectActivePage(document.getElementById('id-nav-home-page'), url);
+  }, [router.asPath]);
 
   return (
     <_Component
@@ -32,7 +75,7 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                 className="nav-logo-wrapper"
                 id="id-nav-logo"
                 options={{
-                  href: "#",
+                  href: LINK_HOME_PAGE,
                 }}
               >
                 <_Builtin.Block className="div-block-2" tag="div">
@@ -63,57 +106,57 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
               >
                 <_Builtin.ListItem className="nav-link-list-item">
                   <_Builtin.NavbarLink
-                    className="nav-link"
+                    className={`nav-link ${LINK_HOME_PAGE === url ? 'w--current' : ''}`}
                     id="id-nav-home-page"
                     options={{
-                      href: "#",
+                      href: `/${lang}/${LINK_HOME_PAGE}`,
                     }}
                   >
-                    {"Home"}
+                    {t('home', {ns: 'navbar'})}
                   </_Builtin.NavbarLink>
                 </_Builtin.ListItem>
                 <_Builtin.ListItem className="nav-link-list-item">
                   <_Builtin.NavbarLink
-                    className="nav-link"
+                    className={`nav-link ${LINK_ABOUT_PAGE === router.asPath ? 'w--current' : ''}`}
                     id="id-nav-about-us-page"
                     options={{
-                      href: "#",
+                      href: `/${lang}/${LINK_ABOUT_PAGE}`,
                     }}
                   >
-                    {"About us"}
+                    {t('about', {ns: 'navbar'})}
                   </_Builtin.NavbarLink>
                 </_Builtin.ListItem>
                 <_Builtin.ListItem className="nav-link-list-item">
                   <_Builtin.NavbarLink
-                    className="nav-link"
+                    className={`nav-link ${LINK_GALLERY_PAGE === router.asPath ? 'w--current' : ''}`}
                     id="id-nav-gallery-3d-page"
                     options={{
-                      href: "#",
+                      href: `/${lang}/${LINK_GALLERY_PAGE}`,
                     }}
                   >
-                    {"Gallery 3D"}
+                    {t('gallery', {ns: 'navbar'})}
                   </_Builtin.NavbarLink>
                 </_Builtin.ListItem>
                 <_Builtin.ListItem className="nav-link-list-item">
                   <_Builtin.NavbarLink
-                    className="nav-link"
+                    className={`nav-link ${LINK_VR_PAGE === router.asPath ? 'w--current' : ''}`}
                     id="id-nav-vr-page"
                     options={{
-                      href: "#",
+                      href: `/${lang}/${LINK_VR_PAGE}`,
                     }}
                   >
-                    {"VR"}
+                    {t('vr', {ns: 'navbar'})}
                   </_Builtin.NavbarLink>
                 </_Builtin.ListItem>
                 <_Builtin.ListItem className="nav-link-list-item">
                   <_Builtin.NavbarLink
-                    className="nav-link"
+                    className={`nav-link ${LINK_DEDALAB_PAGE === router.asPath ? 'w--current' : ''}`}
                     id="id-nav-dedalab-page"
                     options={{
-                      href: "#",
+                      href: `/${lang}/${LINK_DEDALAB_PAGE}`,
                     }}
                   >
-                    {"Dedalab"}
+                    {t('dedalab', {ns: 'navbar'})}
                   </_Builtin.NavbarLink>
                 </_Builtin.ListItem>
               </_Builtin.List>
@@ -147,23 +190,28 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                 tag="div"
                 delay={0}
                 hover={false}
-              >
+              >     
                 <_Builtin.DropdownToggle
                   className="dropdown-lang-toogle"
                   tag="div"
                 >
-                  <_Builtin.HtmlEmbed
+                  {
+<_Builtin.HtmlEmbed
                     className="html-embed-2"
                     value="%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%2020010904%2F%2FEN%22%0A%20%22http%3A%2F%2Fwww.w3.org%2FTR%2F2001%2FREC-SVG-20010904%2FDTD%2Fsvg10.dtd%22%3E%0A%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%20499.000000%20500.000000%22%0A%20preserveAspectRatio%3D%22xMidYMid%20meet%22%3E%0A%0A%3Cg%20transform%3D%22translate(0.000000%2C500.000000)%20scale(0.100000%2C-0.100000)%22%0Afill%3D%22currentColor%22%20stroke%3D%22none%22%3E%0A%3Cpath%20d%3D%22M2345%204989%20c-347%20-18%20-645%20-99%20-979%20-266%20-183%20-92%20-360%20-212%20-522%0A-354%20-111%20-98%20-262%20-260%20-329%20-353%20-11%20-16%20-34%20-47%20-52%20-70%20-35%20-48%20-139%20-220%0A-188%20-312%20-105%20-198%20-191%20-458%20-241%20-729%20-25%20-138%20-31%20-562%20-10%20-725%2026%20-195%0A98%20-473%20159%20-610%20159%20-361%20304%20-578%20547%20-820%2080%20-80%20163%20-159%20184%20-175%2022%20-17%0A53%20-41%2070%20-56%20234%20-193%20607%20-367%20961%20-448%20209%20-48%20289%20-56%20555%20-56%20269%201%20378%0A13%20592%2066%20333%2082%20693%20255%20914%20438%2017%2015%2048%2039%2070%2055%2052%2040%20336%20324%20360%20361%2010%0A16%2046%2066%2079%20111%2090%20123%20212%20328%20245%20414%207%2019%2026%2062%2040%2095%2036%2080%2095%20262%20114%0A355%209%2041%2020%2091%2025%20110%2025%2088%2042%20294%2042%20485%200%20291%20-33%20507%20-118%20770%20-35%20110%0A-110%20296%20-137%20338%20-7%2012%20-30%2054%20-51%2092%20-63%20116%20-96%20170%20-149%20241%20-17%2023%20-40%0A55%20-51%2070%20-62%2087%20-258%20294%20-365%20385%20-36%2031%20-114%2090%20-175%20132%20-60%2042%20-114%2080%0A-120%2085%20-33%2025%20-147%2086%20-255%20136%20-309%20144%20-592%20219%20-875%20231%20-66%203%20-138%207%0A-160%209%20-22%201%20-103%20-1%20-180%20-5z%20m46%20-216%20c2%20-10%203%20-296%201%20-636%20l-2%20-619%20-98%206%0Ac-293%2019%20-772%20100%20-868%20147%20l-21%2011%2024%2066%20c130%20362%20314%20652%20527%20830%20121%20101%0A165%20128%20286%20172%2068%2025%20101%2034%20136%2039%207%200%2013%20-7%2015%20-16z%20m286%201%20c15%20-3%2052%20-16%0A81%20-30%2029%20-13%2055%20-24%2058%20-24%2030%200%20233%20-153%20299%20-224%2079%20-86%20149%20-176%20189%20-242%0A17%20-27%2045%20-73%2063%20-102%2031%20-52%20113%20-214%20113%20-225%200%20-3%2013%20-34%2029%20-69%2043%20-93%2066%0A-179%2051%20-188%20-7%20-4%20-78%20-24%20-159%20-44%20-186%20-45%20-499%20-89%20-718%20-100%20l-83%20-5%20-1%0A117%20c-4%20353%20-4%201129%20-1%201139%202%208%2014%2011%2028%208%2013%20-3%2036%20-8%2051%20-11z%20m698%20-152%0Ac11%20-6%2067%20-34%20125%20-61%20116%20-57%20264%20-144%20324%20-192%206%20-5%2047%20-37%2091%20-71%2079%20-61%0A342%20-315%20334%20-322%20-8%20-7%20-210%20-126%20-214%20-126%20-3%200%20-38%20-16%20-79%20-35%20-85%20-40%0A-186%20-79%20-191%20-73%20-1%201%20-24%2057%20-49%20123%20-119%20305%20-278%20569%20-459%20762%20l-49%2052%2073%0A-23%20c41%20-12%2083%20-27%2094%20-34z%20m-1656%201%20c-125%20-131%20-226%20-278%20-333%20-486%20-41%20-78%0A-77%20-153%20-81%20-167%20-4%20-14%20-17%20-47%20-30%20-75%20-12%20-27%20-28%20-68%20-35%20-90%20-20%20-64%0A-25%20-67%20-83%20-44%20-48%2019%20-103%2044%20-197%2088%20-20%209%20-77%2041%20-128%2070%20-75%2044%20-90%2056%0A-82%2070%2016%2030%20254%20256%20330%20314%2041%2031%2080%2061%2085%2065%20141%20110%20507%20297%20590%20301%205%201%0A-11%20-20%20-36%20-46z%20m-1049%20-828%20c65%20-51%20317%20-179%20438%20-221%2045%20-16%2052%20-22%2047%20-39%0A-15%20-52%20-67%20-289%20-80%20-365%20-19%20-112%20-45%20-385%20-45%20-474%200%20-39%20-3%20-95%20-6%20-123%0Al-7%20-53%20-408%200%20-409%200%205%2048%20c2%2026%207%2092%2010%20147%208%20125%2049%20344%2089%20465%2024%2075%2065%0A184%2076%20203%206%2010%2019%2040%2030%2067%2023%2059%20154%20296%20175%20317%209%208%2020%2023%2025%2033%2011%2020%2031%0A18%2060%20-5z%20m3742%20-42%20c59%20-89%20144%20-242%20169%20-306%2012%20-29%2024%20-56%2028%20-62%2012%20-16%0A89%20-243%20107%20-315%2032%20-126%2053%20-266%2059%20-380%203%20-63%208%20-127%2010%20-142%20l5%20-28%20-420%200%0A-420%200%200%20108%20c0%20240%20-51%20621%20-111%20841%20-12%2040%20-17%2077%20-12%2081%204%204%2026%2013%2048%2020%0A73%2023%20285%20125%20367%20177%2021%2013%2041%2023%2045%2023%205%200%2022%2011%2038%2025%2017%2013%2033%2024%2036%2025%204%0A0%2027%20-30%2051%20-67z%20m-2867%20-318%20c77%20-19%20199%20-43%20270%20-54%2072%20-12%20159%20-25%20195%20-31%0A49%20-8%20310%20-29%20373%20-30%204%200%207%20-180%207%20-400%20l0%20-400%20-585%200%20-585%200%205%2043%20c2%2023%207%0A110%2010%20192%208%20217%2066%20607%20106%20707%2010%2024%2014%2026%2037%2017%2015%20-6%2090%20-26%20167%20-44z%0Am2101%20-5%20c19%20-62%2071%20-345%2084%20-455%206%20-49%2013%20-172%2017%20-272%20l6%20-183%20-576%200%20-577%0A0%200%20399%200%20399%2063%206%20c34%203%20107%208%20162%2011%2055%203%20125%2010%20155%2016%2030%205%20116%2018%20191%2029%0A74%2012%20202%2038%20285%2059%2082%2022%20155%2038%20163%2038%208%20-1%2020%20-22%2027%20-47z%20m-2612%20-1212%0Ac10%20-156%2034%20-365%2051%20-443%2041%20-190%2064%20-292%2070%20-307%205%20-13%20-6%20-21%20-50%20-37%20-138%0A-52%20-356%20-164%20-461%20-237%20-20%20-14%20-23%20-13%20-45%2022%20-109%20171%20-211%20371%20-263%20520%0A-60%20167%20-102%20354%20-120%20527%20l-6%2057%20408%200%20409%200%207%20-102z%20m1356%20-216%20l0%20-319%0A-181%20-12%20c-100%20-6%20-202%20-16%20-228%20-21%20-25%20-4%20-95%20-16%20-156%20-25%20-96%20-15%20-420%0A-86%20-460%20-101%20-20%20-8%20-30%2020%20-61%20166%20-32%20156%20-60%20366%20-70%20515%20l-7%20115%20582%200%0A581%200%200%20-318z%20m1360%20290%20c0%20-80%20-34%20-366%20-60%20-510%20-34%20-185%20-50%20-242%20-67%20-249%0A-7%20-3%20-76%2011%20-155%2030%20-79%2020%20-201%2045%20-273%2057%20-71%2011%20-155%2025%20-185%2030%20-30%205%0A-135%2015%20-232%2021%20l-178%2013%200%20318%200%20318%20575%200%20575%200%200%20-28z%20m1030%2016%20c0%20-7%20-9%0A-71%20-19%20-143%20-36%20-239%20-97%20-435%20-207%20-660%20-70%20-144%20-117%20-230%20-144%20-260%20-10%0A-11%20-23%20-30%20-29%20-43%20-12%20-22%20-14%20-22%20-34%20-8%20-104%2073%20-336%20192%20-472%20241%20-27%2010%0A-51%2019%20-53%2021%20-2%201%206%2037%2018%2080%2018%2070%2043%20194%2071%20349%209%2049%2039%20368%2039%20413%20l0%2022%0A415%200%20c325%200%20415%20-3%20415%20-12z%20m-2390%20-1459%20l0%20-632%20-45%206%20c-88%2012%20-253%2091%0A-349%20167%20-96%2075%20-237%20232%20-316%20350%20-84%20128%20-210%20382%20-245%20494%20-9%2028%20-20%2059%0A-26%2068%20-13%2025%20-14%2025%2039%2042%20116%2037%20262%2066%20497%20101%20186%2027%20227%2031%20358%2033%20l87%202%0A0%20-631z%20m655%20596%20c93%20-14%20204%20-31%20245%20-39%2082%20-16%20272%20-65%20278%20-71%209%20-9%20-20%0A-101%20-64%20-204%20-113%20-266%20-243%20-470%20-399%20-626%20-103%20-103%20-116%20-114%20-205%20-172%0A-82%20-53%20-232%20-113%20-282%20-113%20-17%200%20-18%2037%20-18%20632%20l0%20631%20137%20-7%20c76%20-4%20214%0A-18%20308%20-31z%20m965%20-281%20c116%20-57%20230%20-124%20230%20-135%200%20-19%20-157%20-182%20-270%20-279%0A-156%20-134%20-353%20-256%20-590%20-364%20-34%20-15%20-148%20-56%20-158%20-56%20-4%200%2082%20106%20102%20125%0A19%2018%2090%20109%20118%20150%20120%20181%20242%20426%20302%20612%20l17%2051%2077%20-28%20c42%20-16%20120%20-50%0A172%20-76z%20m-2782%2069%20c6%20-16%2018%20-50%2028%20-78%2010%20-27%2021%20-54%2024%20-60%204%20-5%2017%20-36%2029%0A-68%2022%20-60%20127%20-267%20159%20-315%2011%20-15%2040%20-58%2065%20-97%2049%20-75%2076%20-110%20147%20-190%0A24%20-27%2053%20-60%2064%20-73%20l20%20-22%20-60%2020%20c-66%2023%20-91%2034%20-214%2093%20-87%2042%20-105%2052%0A-225%20128%20-170%20107%20-364%20272%20-482%20412%20-38%2044%20-40%2055%20-15%2064%209%204%2040%2021%2067%2038%2082%0A52%20336%20171%20371%20174%206%201%2016%20-11%2022%20-26z%22%2F%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E"
                   />
+              }
+                  
                 </_Builtin.DropdownToggle>
+                
                 <_Builtin.DropdownList className="dropdown-lang-list" tag="nav">
                   <_Builtin.Link
                     className="link-block-lang first"
-                    button={false}
+                    button={true}
                     block="inline"
+                    onClick={() => ChangeLanguage('en')}
                     options={{
-                      href: "#",
+                      //href: "#",
                     }}
                   >
                     <_Builtin.Block className="div-flag" tag="div">
@@ -177,17 +225,18 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className="text-block-6" tag="div">
-                        {"Anglais"}
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_ENGLISH ? 'active-text-block-6' : ''}`} tag="div">
+                        {t('en', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
                   </_Builtin.Link>
                   <_Builtin.Link
                     className="link-block-lang"
-                    button={false}
+                    button={true}
                     block="inline"
+                    onClick={() => ChangeLanguage('fr')}
                     options={{
-                      href: "#",
+                      //href: "#",
                     }}
                   >
                     <_Builtin.Block className="div-flag" tag="div">
@@ -201,8 +250,8 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className="text-block-6" tag="div">
-                        {"Français"}
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_FRENCH ? 'active-text-block-6' : ''}`} tag="div">
+                        {t('fr', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
                   </_Builtin.Link>
@@ -210,8 +259,9 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                     className="link-block-lang"
                     button={false}
                     block="inline"
+                    onClick={() => ChangeLanguage('zh')}
                     options={{
-                      href: "#",
+                      //href: "#",
                     }}
                   >
                     <_Builtin.Block className="div-flag" tag="div">
@@ -225,8 +275,8 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className="text-block-6" tag="div">
-                        {"Chinois"}
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_CHINESE ? 'active-text-block-6' : ''}`} tag="div">
+                      {t('zh', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
                   </_Builtin.Link>
@@ -234,8 +284,9 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                     className="link-block-lang"
                     button={false}
                     block="inline"
+                    onClick={() => ChangeLanguage('es')}
                     options={{
-                      href: "#",
+                      //href: "#",
                     }}
                   >
                     <_Builtin.Block className="div-flag" tag="div">
@@ -249,8 +300,8 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className="text-block-6" tag="div">
-                        {"Espagnol"}
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_SPANISH ? 'active-text-block-6' : ''}`} tag="div">
+                      {t('es', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
                   </_Builtin.Link>
@@ -258,8 +309,9 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                     className="link-block-lang"
                     button={false}
                     block="inline"
+                    onClick={() => ChangeLanguage('hi')}
                     options={{
-                      href: "#",
+                      //href: "#",
                     }}
                   >
                     <_Builtin.Block className="div-flag" tag="div">
@@ -273,8 +325,8 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className="text-block-6" tag="div">
-                        {"Indien"}
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_HINDI ? 'active-text-block-6' : ''}`} tag="div">
+                      {t('hi', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
                   </_Builtin.Link>
@@ -282,8 +334,9 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                     className="link-block-lang"
                     button={false}
                     block="inline"
+                    onClick={() => ChangeLanguage('ar')}
                     options={{
-                      href: "#",
+                      //href: "#",
                     }}
                   >
                     <_Builtin.Block className="div-flag" tag="div">
@@ -297,8 +350,8 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className="text-block-6" tag="div">
-                        {"Arabe"}
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_ARABIC ? 'active-text-block-6' : ''}`} tag="div">
+                      {t('ar', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
                   </_Builtin.Link>
@@ -306,8 +359,9 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                     className="link-block-lang"
                     button={false}
                     block="inline"
+                    onClick={() => ChangeLanguage('pt')}
                     options={{
-                      href: "#",
+                      //href: "#",
                     }}
                   >
                     <_Builtin.Block className="div-flag" tag="div">
@@ -321,8 +375,8 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className="text-block-6" tag="div">
-                        {"Portugais"}
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_PORTUGUESE ? 'active-text-block-6' : ''}`} tag="div">
+                      {t('pt', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
                   </_Builtin.Link>
@@ -330,8 +384,9 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                     className="link-block-lang"
                     button={false}
                     block="inline"
+                    onClick={() => ChangeLanguage('ru')}
                     options={{
-                      href: "#",
+                      //href: "#",
                     }}
                   >
                     <_Builtin.Block className="div-flag" tag="div">
@@ -345,8 +400,8 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className="text-block-6" tag="div">
-                        {"Russe"}
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_RUSSIAN ? 'active-text-block-6' : ''}`} tag="div">
+                      {t('ru', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
                   </_Builtin.Link>
@@ -354,8 +409,9 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                     className="link-block-lang"
                     button={false}
                     block="inline"
+                    onClick={() => ChangeLanguage('ja')}
                     options={{
-                      href: "#",
+                      //href: "#",
                     }}
                   >
                     <_Builtin.Block className="div-flag" tag="div">
@@ -369,8 +425,8 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className="text-block-6" tag="div">
-                        {"Japonais"}
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_JAPANESE ? 'active-text-block-6' : ''}`} tag="div">
+                      <span color="red">{t('ja', {ns: 'langs'})}</span>
                       </_Builtin.Block>
                     </_Builtin.Block>
                   </_Builtin.Link>
@@ -378,8 +434,9 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                     className="link-block-lang last"
                     button={false}
                     block="inline"
+                    onClick={() => ChangeLanguage('de')}
                     options={{
-                      href: "#",
+                      //href: "#",
                     }}
                   >
                     <_Builtin.Block className="div-flag" tag="div">
@@ -393,8 +450,8 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className="text-block-6" tag="div">
-                        {"Allemand"}
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_GERMAN ? 'active-text-block-6' : ''}`} tag="div">
+                      {t('de', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
                   </_Builtin.Link>

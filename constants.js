@@ -17,4 +17,4 @@ export const LANGUAGE_JAPANESE = 'ja';
 export const LANGUAGE_ARABIC = 'ar';
 export const LANGUAGE_GERMAN = 'de';
 export const TAB_LANGUAGES = ['en', 'fr', 'it', 'es', 'pt', 'zh', 'ru', 'hi', 'ja', 'ar', 'de'];
-export const TAB_NAMESPACES = ['common', 'langs', 'navbar'];
+export const TAB_NAMESPACES = ['common', 'langs', 'navbar', 'home'];

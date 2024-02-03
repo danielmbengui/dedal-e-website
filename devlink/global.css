@@ -9676,8 +9676,6 @@ ul {
 
 .text-block-6 {
   display: flex;
-  writing-mode: horizontal-tb !important;
-  white-space: nowrap !important;
   padding: 5px;
   align-items: center;
 
@@ -9687,10 +9685,6 @@ ul {
 }
 
 .text-block-6:hover {
-  color: var(--yellow-dark);
-}
-
-.active-text-block-6 {
   color: var(--yellow-dark);
 }
 
