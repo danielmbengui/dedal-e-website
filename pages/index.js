@@ -24,7 +24,8 @@ export default function Home() {
       <meta name="description" content="Your art authentication platform based on blockchain technology." />
       <title>{`Dedal-E | ${t('menu.home', { ns: 'common' })}`}</title>
     </Head>
-    <HomeComponent />
+    
+    <HomePage />
     </>
   );
 }

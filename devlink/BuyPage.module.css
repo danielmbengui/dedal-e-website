@@ -1,5 +1,5 @@
 .page-wrapper {
-  background-color: var(--transparent);
+  display: block;
 }
 
 .section-change-log {

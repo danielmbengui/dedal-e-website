@@ -1,5 +1,5 @@
 .page-wrapper {
-  background-color: var(--transparent);
+  display: block;
 }
 
 .section-header {
@@ -11,10 +11,8 @@
   justify-content: center;
   align-items: center;
 
-  background-image: linear-gradient(to bottom, hsla(0, 0.00%, 0.00%, 0.60),hsla(0, 0.00%, 0.00%, 0.60));
+  background-image: none;
   background-position: 0px 0px;
-  background-size: auto;
-  background-repeat: repeat;
 
   pointer-events: auto;
 
@@ -38,6 +36,11 @@
     padding-right: 1rem;
     padding-left: 1rem;
   }
+}
+
+.section-header.home {
+  background-image: linear-gradient(to bottom, hsla(0, 0.00%, 0.00%, 0.60),hsla(0, 0.00%, 0.00%, 0.60));
+  background-position: 0px 0px;
 }
 
 .header-content-left {
