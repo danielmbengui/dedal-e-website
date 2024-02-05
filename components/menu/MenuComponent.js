@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import * as _Builtin from "@/devlink/_Builtin";
 import * as _interactions from "@/devlink/interactions";
-import {LINK_ABOUT_PAGE, LINK_DEDALAB_PAGE, LINK_GALLERY_PAGE, LINK_HOME_PAGE, LINK_VR_PAGE} from "@/constants/pages";
+import {LINK_ABOUT_PAGE, LINK_BUY_PAGE, LINK_DEDALAB_PAGE, LINK_GALLERY_PAGE, LINK_HOME_PAGE, LINK_VR_PAGE} from "@/constants/pages";
 import {LANGUAGE_ARABIC, LANGUAGE_CHINESE, LANGUAGE_ENGLISH, LANGUAGE_FRENCH, LANGUAGE_GERMAN, LANGUAGE_HINDI, LANGUAGE_JAPANESE, LANGUAGE_PORTUGUESE, LANGUAGE_RUSSIAN, LANGUAGE_SPANISH} from "@/constants/languages";
 import { useRouter } from "next/router";
 import { useTranslation } from 'next-i18next';
@@ -101,16 +101,16 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper,
                 </_Builtin.ListItem>
                 <_Builtin.ListItem className="nav-link-list-item">
                   <_Builtin.NavbarLink
-                    className={`nav-link ${LINK_GALLERY_PAGE === router.asPath ? 'w--current' : ''}`}
+                    className={`nav-link ${LINK_BUY_PAGE === router.asPath ? 'w--current' : ''}`}
                     id="id-nav-gallery-3d-page"
                     options={{
-                      href: `/${lang}/${LINK_GALLERY_PAGE}`,
+                      href: `/${lang}/${LINK_BUY_PAGE}`,
                     }}
                   >
-                    {t('gallery', {ns: 'navbar'})}
+                    {t('buy', {ns: 'navbar'})}
                   </_Builtin.NavbarLink>
                 </_Builtin.ListItem>
-                <_Builtin.ListItem className="nav-link-list-item">
+                <_Builtin.ListItem className="nav-link-list-item" style={{display:'none'}}>
                   <_Builtin.NavbarLink
                     className={`nav-link ${LINK_VR_PAGE === router.asPath ? 'w--current' : ''}`}
                     id="id-nav-vr-page"
@@ -163,6 +163,7 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper,
                 tag="div"
                 delay={0}
                 hover={false}
+                //style={{zIndex:10000}}
               >     
                 <_Builtin.DropdownToggle
                   className="dropdown-lang-toogle"

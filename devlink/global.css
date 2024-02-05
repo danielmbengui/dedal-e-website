@@ -2731,12 +2731,11 @@ ul {
 
 .navbar-gallery {
   position: fixed;
-  left: 240px;
+  left: 0px;
   top: 0px;
   right: 0px;
-  z-index: 1000;
 
-  background-color: var(--black-menu);
+  background-color: var(--black);
 
   color: var(--yellow-dark);
 }
@@ -4336,6 +4335,7 @@ ul {
   position: absolute;
   left: 0px;
   right: 0px;
+  bottom:0px;
 
   padding-top: 20px;
 
@@ -4347,14 +4347,25 @@ ul {
   cursor: default;
 }
 
-.section-footer-gallery {
-  /*
-  position:absolute;
-  left:0px;
-  bottom: 0px;
+.section-footer {
+  position: absolute;
+  left: 0px;
   right: 0px;
-  */
-  
+
+  padding-top: 20px;
+
+  background-color: var(--grey-dedal);
+
+  font-family: Inter;
+  font-weight: 300;
+
+  cursor: default;
+}
+
+.section-footer {
+  position: absolute;
+  left: 0px;
+  right: 0px;
 
   padding-top: 20px;
 
@@ -8632,8 +8643,8 @@ ul {
 .paragraph-normal {
   font-family: Inter;
   color: var(--white);
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: 300;
   text-align: justify;
 }
@@ -8727,9 +8738,9 @@ ul {
   bottom: 0%;
 
   width: 70%;
-  height: 50%;
+  height: 55%;
 
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .uui-team02_image-wrapper {
@@ -9836,6 +9847,7 @@ ul {
   color: var(--white);
   background-clip: border-box;
   -webkit-text-fill-color: inherit;
+  z-index: 10000000000;
 }
 
 .dropdown-lang-toogle {
@@ -12043,6 +12055,21 @@ ul {
   justify-content: center;
   grid-column-gap: 5%;
   font-family: Inter;
+  font-weight: 300;
+}
+
+.text-block-16 {
+  font-family: Inter;
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 300;
+}
+
+.text-block-17 {
+  font-family: Inter;
+  color: var(--white);
+  font-size: 1rem;
   font-weight: 300;
 }
 

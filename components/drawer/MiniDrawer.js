@@ -25,7 +25,15 @@ import { HeroBanner } from '@/devlink';
 import { Button, ButtonGroup, Chip } from "@nextui-org/react";
 import { Card, CardContent, Stack } from '@mui/material';
 
+import Accordion from '@mui/material/Accordion';
+import AccordionActions from '@mui/material/AccordionActions';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Paper from '@mui/material/Paper';
+
+import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+
 
 //import AppBar from '@mui/material/AppBar';
 
@@ -104,6 +112,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
+  const [selectedValue, setSelectedValue] = React.useState('');
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -125,8 +134,8 @@ export default function MiniDrawer() {
     }}>
       <CssBaseline />
 
-      <MenuComponent zIndex={theme.zIndex.drawer + 1} />
-      <div style={{ zIndex:theme.zIndex.drawer + 1, position:'fixed', left:0,right:0, marginTop:62, marginLeft: open ? drawerWidth : drawerWidthClosed,
+      <MenuComponent zIndex={theme.zIndex.drawer + 1} isGallery={true} />
+      <div style={{ zIndex:10, position:'fixed', left:0,right:0, marginTop:62, marginLeft: open ? drawerWidth : drawerWidthClosed,
     display: 'flex', }}>
        <Card sx={{ width:'100%',borderRadius:0, }}>
         <CardContent>
@@ -148,7 +157,22 @@ export default function MiniDrawer() {
           px: 2.5,
           //minWidth: 40
         }}>
+          <Stack
+                direction="row"
+                justifyContent="flex-start"
+                alignItems="center"
+                sx={{width:'100%'}}
+                //spacing={8}
+              >
+                <Chip 
+                color="warning"
+                variant="bordered"
+                size='lg'
+                startContent={<TuneIcon fontSize='small' />}
+                >Filtrer</Chip>
+              </Stack>
           {
+            /*
             open ?
               <Stack
                 direction="row"
@@ -172,13 +196,68 @@ export default function MiniDrawer() {
 <ChevronRightIcon sx={{ color: 'var(--white)' }} />
                 </IconButton>
               
-
+*/
           }
         </DrawerHeader>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+        <FormControl sx={{color:'var(--white)', width:'100%', backgroundColor:'red'}}>
+  <InputLabel id="dropdown-label" sx={{color:'var(--white)', width:'100%', backgroundColor:'red'}}>Sélectionnez une option</InputLabel>
+  <Select
+    labelId="dropdown-label"
+    id="dropdown"
+    value={selectedValue}
+    onChange={(event) => setSelectedValue(event.target.value)}
+  >
+    <MenuItem value="option1" sx={{color:'var(--white)'}} >Option 1</MenuItem>
+    <MenuItem value="option2" sx={{color:'var(--white)'}}>Option 2</MenuItem>
+    <MenuItem value="option3" sx={{color:'var(--white)'}}>Option 3</MenuItem>
+  </Select>
+</FormControl>
+
+        <Accordion sx={{color:'var(--white)', width:'100%', backgroundColor:'red'}}>
+        <AccordionSummary
+        sx={{color:'var(--white)', width:'100%', backgroundColor:'var(--grey-dedal)'}}
+          expandIcon={<ExpandMoreIcon sx={{ color: 'var(--white)' }} />}
+          aria-controls="panel1-content"
+          id="panel1-header"
+        >
+          <Stack
+          direction="row"
+          justifyContent="flex-start"
+          alignItems="center"
+          sx={{width:'100%',}}
+          spacing={2}
+          >
+          {<InboxIcon sx={{ color: 'var(--white)' }} />}
+          <Typography sx={{ color: 'var(--white)' }}>Arts graphiques</Typography>
+          </Stack>
+        </AccordionSummary>
+        <AccordionDetails sx={{color:'var(--white)', px:5, width:'100%', overflow: "clip",}}>
+        <Stack
+        direction="row"
+        justifyContent="flex-start"
+        alignItems="center"
+        sx={{width:'100%',}}
+        spacing={2}
+        >
+        <InboxIcon sx={{ color: 'var(--white)' }} /><Typography sx={{width:'100%'}}>Images</Typography>
+        </Stack>
+        </AccordionDetails>
+        <AccordionDetails sx={{color:'var(--white)', width:'100%', overflow: "clip",}}>
+        <Typography sx={{width:'100%'}}>Photos</Typography>
+        </AccordionDetails>
+        <AccordionDetails sx={{color:'var(--white)', width:'100%', overflow: "clip",}}>
+        <Typography sx={{width:'100%'}}>Dessins</Typography>
+        </AccordionDetails>
+        <AccordionDetails sx={{color:'var(--white)', width:'100%', overflow: "clip",}}>
+        <Typography sx={{width:'100%'}}>Sculpture</Typography>
+        </AccordionDetails>
+        <AccordionDetails sx={{color:'var(--white)', width:'100%', overflow: "clip",}}>
+        <Typography sx={{width:'100%'}}>Peintures</Typography>
+        </AccordionDetails>
+      </Accordion>
+        <ListItem key={'graphics'} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -193,12 +272,94 @@ export default function MiniDrawer() {
                     justifyContent: 'center',
                   }}
                 >
-                  {index % 2 === 0 ? <InboxIcon sx={{ color: 'var(--white)' }} /> : <MailIcon sx={{ color: 'var(--white)' }} />}
+                  {<InboxIcon sx={{ color: 'var(--white)' }} />}
                 </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0, color: 'var(--white)' }} />
+                <ListItemText primary={"Arts graphiques"} sx={{ opacity: open ? 1 : 0, color: 'var(--white)' }} />
               </ListItemButton>
             </ListItem>
-          ))}
+            <ListItem key={'musics'} disablePadding sx={{ display: 'block' }}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : 'auto',
+                    justifyContent: 'center',
+                  }}
+                >
+                  {<InboxIcon sx={{ color: 'var(--white)' }} />}
+                </ListItemIcon>
+                <ListItemText primary={"Musiques"} sx={{ opacity: open ? 1 : 0, color: 'var(--white)' }} />
+              </ListItemButton>
+            </ListItem>
+            <ListItem key={'animations'} disablePadding sx={{ display: 'block' }}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : 'auto',
+                    justifyContent: 'center',
+                  }}
+                >
+                  {<InboxIcon sx={{ color: 'var(--white)' }} />}
+                </ListItemIcon>
+                <ListItemText primary={"Animations"} sx={{ opacity: open ? 1 : 0, color: 'var(--white)' }} />
+              </ListItemButton>
+            </ListItem>
+            <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1-content"
+          id="panel1-header"
+        >
+          Accordion 1
+        </AccordionSummary>
+        <AccordionDetails>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          malesuada lacus ex, sit amet blandit leo lobortis eget.
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2-content"
+          id="panel2-header"
+        >
+          Accordion 2
+        </AccordionSummary>
+        <AccordionDetails>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          malesuada lacus ex, sit amet blandit leo lobortis eget.
+        </AccordionDetails>
+      </Accordion>
+      <Accordion defaultExpanded>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel3-content"
+          id="panel3-header"
+        >
+          Accordion Actions
+        </AccordionSummary>
+        <AccordionDetails>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          malesuada lacus ex, sit amet blandit leo lobortis eget.
+        </AccordionDetails>
+        <AccordionActions>
+          <Button>Cancel</Button>
+          <Button>Agree</Button>
+        </AccordionActions>
+      </Accordion>
         </List>
         <Divider />
         <List>

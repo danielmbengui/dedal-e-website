@@ -1,20 +1,18 @@
 import * as React from "react";
-//import Image from "next/image";
+import Image from "next/image";
 import { Inter } from "next/font/google";
-//import {Button} from "@nextui-org/button";
-import { HomePage } from "@/devlink";
+import {Button} from "@nextui-org/button";
+import { AboutPage, GalleryPage, HomePage } from "@/devlink";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next';
 //import { useTranslation } from 'react-i18next';
 import { TAB_LANGUAGES, TAB_NAMESPACES } from "@/constants/languages";
 import Head from "next/head";
-import { HomeComponent } from "@/components/home/HomeComponent";
-//import { HomeComponent } from "@/components/home/Home";
-//import {Home} from "@/components/home/Home";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Buy() {
   const { t } = useTranslation();
 
   return (
@@ -23,8 +21,7 @@ export default function Home() {
       <meta name="description" content="Your art authentication platform based on blockchain technology." />
       <title>{`Dedal-E | ${t('menu.home', { ns: 'common' })}`}</title>
     </Head>
-    
-    <HomeComponent />
+    <GalleryPage />
     </>
   );
 }
