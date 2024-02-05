@@ -352,10 +352,7 @@
   align-items: center;
   flex: 0 0 auto;
 
-  border: 0.1px solid var(--combine-library--grey-800);
   border-radius: 0.5rem;
-
-  box-shadow: 0 1px 1px 0 hsla(219.99999999999997, 42.86%, 10.98%, 0.06), 0 1px 2px 0 hsla(219.99999999999997, 42.86%, 10.98%, 0.10);
 }
 
 .uui-styleguide_logomark-bg {
@@ -719,7 +716,9 @@
   margin-bottom: 0.5rem;
   padding-top: 0rem;
   padding-bottom: 0rem;
+
   color: var(--yellow-dark);
+  font-weight: 500;
 }
 
 @media screen and (max-width: 767px) {

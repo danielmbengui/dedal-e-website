@@ -1,0 +1,26 @@
+{
+    "resources": {
+        "title": "स्रोत",
+        "partners": "साथी",
+        "contact": "संपर्क",
+        "support": "समर्थन"
+    },
+    "products": {
+        "title": "उत्पाद",
+        "home": "मुख्यपृष्ठ",
+        "about": "हमारे बारे में",
+        "gallery": "3D गैलरी",
+        "vr": "वर्चुअल रियलिटी",
+        "dedalab": "डेडालैब"
+    },
+    "socials": {
+        "title": "सोशल मीडिया",
+        "instagram": "इंस्टाग्राम",
+        "facebook": "फेसबुक",
+        "tiktok": "टिकटॉक",
+        "twitter": "ट्विटर",
+        "linkedin": "लिंक्डइन",
+        "youtube": "यूट्यूब"
+    },
+    "all_rights_reserved": "© 2024 Dedal-E। सभी अधिकार सुरक्षित हैं।"
+}

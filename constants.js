@@ -3,7 +3,9 @@ export const LINK_ABOUT_PAGE = "/about-us";
 export const LINK_GALLERY_PAGE = "/gallery";
 export const LINK_VR_PAGE = "/vr";
 export const LINK_DEDALAB_PAGE = "/dedalab";
+export const LINK_PARTNER_PAGE = "/partner";
 export const LINK_LOGIN_PAGE = "/login";
+/********************************************************/
 export const DEFAULT_LANGAGE = 'en';
 export const LANGUAGE_ENGLISH = 'en';
 export const LANGUAGE_FRENCH = 'fr';
@@ -17,4 +19,4 @@ export const LANGUAGE_JAPANESE = 'ja';
 export const LANGUAGE_ARABIC = 'ar';
 export const LANGUAGE_GERMAN = 'de';
 export const TAB_LANGUAGES = ['en', 'fr', 'it', 'es', 'pt', 'zh', 'ru', 'hi', 'ja', 'ar', 'de'];
-export const TAB_NAMESPACES = ['common', 'langs', 'navbar', 'home'];
+export const TAB_NAMESPACES = ['common', 'langs', 'navbar', 'footer', 'home'];

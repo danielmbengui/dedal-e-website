@@ -1,0 +1,26 @@
+{
+    "resources": {
+        "title": "资源",
+        "partners": "合作伙伴",
+        "contact": "联系",
+        "support": "支持"
+    },
+    "products": {
+        "title": "产品",
+        "home": "主页",
+        "about": "关于我们",
+        "gallery": "3D画廊",
+        "vr": "虚拟现实",
+        "dedalab": "德达实验室"
+    },
+    "socials": {
+        "title": "社交媒体",
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "tiktok": "Tiktok",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn",
+        "youtube": "Youtube"
+    },
+    "all_rights_reserved": "所有权保留 © 2024 Dedal-E. 保留所有权利."
+}

@@ -3,11 +3,7 @@ import * as _Builtin from "@/devlink/_Builtin";
 import * as _interactions from "@/devlink/interactions";
 import {LANGUAGE_ARABIC, LANGUAGE_CHINESE, LANGUAGE_ENGLISH, LANGUAGE_FRENCH, LANGUAGE_GERMAN, LANGUAGE_HINDI, LANGUAGE_JAPANESE, LANGUAGE_PORTUGUESE, LANGUAGE_RUSSIAN, LANGUAGE_SPANISH, LINK_ABOUT_PAGE, LINK_DEDALAB_PAGE, LINK_GALLERY_PAGE, LINK_HOME_PAGE, LINK_VR_PAGE} from "@/constants";
 import { useRouter } from "next/router";
-import { SelectActivePage } from "@/functions/SelectActivePage";
 import { useTranslation } from 'next-i18next';
-import Image from "next/image";
-
-const CHINESE_FLAG = "/images/flags/china.jpeg";
 
 const _interactionsData = JSON.parse(
   '{"events":{"e-19":{"id":"e-19","name":"","animationType":"custom","eventTypeId":"MOUSE_CLICK","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-3","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-20"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"665f320f-61ce-b358-051b-3023e0eeec97","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"665f320f-61ce-b358-051b-3023e0eeec97","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1702184189866},"e-20":{"id":"e-20","name":"","animationType":"custom","eventTypeId":"MOUSE_SECOND_CLICK","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-4","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-19"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"665f320f-61ce-b358-051b-3023e0eeec97","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"665f320f-61ce-b358-051b-3023e0eeec97","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1702184189866},"e-207":{"id":"e-207","name":"","animationType":"preset","eventTypeId":"DROPDOWN_OPEN","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-51","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-208"}},"mediaQueries":["medium","small","tiny"],"target":{"id":"65ae6f1a145b7954f56170fe|0ba8026a-a7cd-4c78-f1ff-96dd6d4a8c94","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"65ae6f1a145b7954f56170fe|0ba8026a-a7cd-4c78-f1ff-96dd6d4a8c94","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1650242269412},"e-208":{"id":"e-208","name":"","animationType":"preset","eventTypeId":"DROPDOWN_CLOSE","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-52","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-207"}},"mediaQueries":["medium","small","tiny"],"target":{"id":"65ae6f1a145b7954f56170fe|0ba8026a-a7cd-4c78-f1ff-96dd6d4a8c94","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"65ae6f1a145b7954f56170fe|0ba8026a-a7cd-4c78-f1ff-96dd6d4a8c94","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1650242269412},"e-209":{"id":"e-209","name":"","animationType":"preset","eventTypeId":"DROPDOWN_OPEN","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-41","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-210"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"65ae6f1a145b7954f56170fe|0ba8026a-a7cd-4c78-f1ff-96dd6d4a8c94","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"65ae6f1a145b7954f56170fe|0ba8026a-a7cd-4c78-f1ff-96dd6d4a8c94","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1650242269412},"e-210":{"id":"e-210","name":"","animationType":"preset","eventTypeId":"DROPDOWN_CLOSE","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-49","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-209"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"65ae6f1a145b7954f56170fe|0ba8026a-a7cd-4c78-f1ff-96dd6d4a8c94","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"65ae6f1a145b7954f56170fe|0ba8026a-a7cd-4c78-f1ff-96dd6d4a8c94","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1650242269412},"e-221":{"id":"e-221","name":"","animationType":"custom","eventTypeId":"MOUSE_CLICK","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-33","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-222"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"087b38d3-bb16-de61-e483-c97c79ade6ae","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"selector":".uui-navbar07_menu-dropdown","originalId":"087b38d3-bb16-de61-e483-c97c79ade6ae","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1706389501519},"e-222":{"id":"e-222","name":"","animationType":"custom","eventTypeId":"MOUSE_SECOND_CLICK","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-34","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-221"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"087b38d3-bb16-de61-e483-c97c79ade6ae","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"selector":".uui-navbar07_menu-dropdown","originalId":"087b38d3-bb16-de61-e483-c97c79ade6ae","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1706389501520}},"actionLists":{"a-3":{"id":"a-3","title":"Menu open","actionItemGroups":[{"actionItems":[{"id":"a-3-n","actionTypeId":"STYLE_SIZE","config":{"delay":0,"easing":"inOutQuint","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.middle","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4ab"]},"widthValue":0,"widthUnit":"px","heightUnit":"px","locked":false}},{"id":"a-3-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuint","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.last","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4a6"]},"yValue":-8,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-3-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuint","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.top","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4a7"]},"yValue":8,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-3-n-4","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inOutQuint","duration":600,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.top","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4a7"]},"zValue":-45,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}},{"id":"a-3-n-5","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inOutQuint","duration":600,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.last","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4a6"]},"zValue":45,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}}]}],"useFirstGroupAsInitialState":false,"createdOn":1678172047049},"a-4":{"id":"a-4","title":"Menu colse","actionItemGroups":[{"actionItems":[{"id":"a-4-n","actionTypeId":"STYLE_SIZE","config":{"delay":0,"easing":"inOutQuint","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.middle","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4ab"]},"widthValue":24,"widthUnit":"px","heightUnit":"px","locked":false}},{"id":"a-4-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuint","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.last","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4a6"]},"yValue":0,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-4-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuint","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.top","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4a7"]},"yValue":0,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-4-n-4","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inOutQuint","duration":600,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.top","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4a7"]},"zValue":0,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}},{"id":"a-4-n-5","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inOutQuint","duration":600,"target":{"useEventTarget":"CHILDREN","selector":".menu-line.last","selectorGuids":["6000625a-90ba-e1db-4249-edf2b278f4a0","6000625a-90ba-e1db-4249-edf2b278f4a6"]},"zValue":0,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}}]}],"useFirstGroupAsInitialState":false,"createdOn":1678172047049},"a-51":{"id":"a-51","title":"Navbar07 dropdown (tablet) -> OPEN","actionItemGroups":[{"actionItems":[{"id":"a-51-n","actionTypeId":"STYLE_SIZE","config":{"delay":0,"easing":"ease","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"heightValue":0,"widthUnit":"PX","heightUnit":"px","locked":false}}]},{"actionItems":[{"id":"a-51-n-2","actionTypeId":"STYLE_SIZE","config":{"delay":0,"easing":"ease","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"widthUnit":"PX","heightUnit":"AUTO","locked":false}}]}],"useFirstGroupAsInitialState":true,"createdOn":1626242958157},"a-52":{"id":"a-52","title":"Navbar07 dropdown (tablet) -> CLOSE","actionItemGroups":[{"actionItems":[{"id":"a-52-n","actionTypeId":"STYLE_SIZE","config":{"delay":0,"easing":"ease","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"heightValue":0,"widthUnit":"PX","heightUnit":"px","locked":false}}]}],"useFirstGroupAsInitialState":false,"createdOn":1626242958157},"a-41":{"id":"a-41","title":"Navbar07 -> OPEN","actionItemGroups":[{"actionItems":[{"id":"a-41-n","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"ease","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"value":0,"unit":""}},{"id":"a-41-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"yValue":-2,"xUnit":"PX","yUnit":"rem","zUnit":"PX"}}]},{"actionItems":[{"id":"a-41-n-3","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"ease","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".uui-dropdown-icon","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0b"]},"zValue":180,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}},{"id":"a-41-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"ease","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"value":1,"unit":""}},{"id":"a-41-n-5","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"ease","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"yValue":0,"xUnit":"PX","yUnit":"rem","zUnit":"PX"}}]}],"useFirstGroupAsInitialState":true,"createdOn":1626161550593},"a-49":{"id":"a-49","title":"Navbar07 -> CLOSE","actionItemGroups":[{"actionItems":[{"id":"a-49-n","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"ease","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".uui-dropdown-icon","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0b"]},"zValue":0,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}},{"id":"a-49-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"ease","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-49-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"ease","duration":0,"target":{"useEventTarget":"CHILDREN","selector":".uui-navbar07_dropdown-list","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0c0a"]},"yValue":-2,"xUnit":"PX","yUnit":"rem","zUnit":"PX"}}]}],"useFirstGroupAsInitialState":false,"createdOn":1626161607847},"a-33":{"id":"a-33","title":"Navbar menu -> OPEN","actionItemGroups":[{"actionItems":[{"id":"a-33-n","actionTypeId":"STYLE_SIZE","config":{"delay":0,"easing":"inOutQuint","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-middle","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf7"]},"widthValue":0,"widthUnit":"px","heightUnit":"PX","locked":false}},{"id":"a-33-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuint","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-bottom","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf5"]},"yValue":-8,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-33-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuint","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-top","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf8"]},"yValue":8,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-33-n-4","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inOutQuint","duration":600,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-top","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf8"]},"zValue":-45,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}},{"id":"a-33-n-5","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inOutQuint","duration":600,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-bottom","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf5"]},"zValue":45,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}}]}],"useFirstGroupAsInitialState":false,"createdOn":1626168378054},"a-34":{"id":"a-34","title":"Navbar menu -> CLOSE","actionItemGroups":[{"actionItems":[{"id":"a-34-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuint","duration":600,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-bottom","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf5"]},"yValue":0,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-34-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuint","duration":600,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-top","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf8"]},"yValue":0,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-34-n-3","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inOutQuint","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-bottom","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf5"]},"zValue":0,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}},{"id":"a-34-n-4","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inOutQuint","duration":400,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-top","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf8"]},"zValue":0,"xUnit":"DEG","yUnit":"DEG","zUnit":"deg"}},{"id":"a-34-n-5","actionTypeId":"STYLE_SIZE","config":{"delay":400,"easing":"inOutQuint","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".menu-icon_line-middle","selectorGuids":["fb080817-588a-1e46-5e1e-311fdcbc0bf7"]},"widthValue":24,"widthUnit":"px","heightUnit":"PX","locked":false}}]}],"useFirstGroupAsInitialState":false,"createdOn":1626168766736}},"site":{"mediaQueries":[{"key":"main","min":992,"max":10000},{"key":"medium","min":768,"max":991},{"key":"small","min":480,"max":767},{"key":"tiny","min":0,"max":479}]}}'
@@ -25,32 +21,6 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper 
     i18n.changeLanguage(lang);
     router.push(router.pathname, undefined, { locale: lang });
   }
-
-
-  useEffect(() => {
-    //console.log("Router ", window.document.getElementById('id-nav-home-page'));
-    //console.log("Router ", window.document.getElementById('id-nav-home-page').className);
-    
-    // Obtenez la référence de l'élément par son ID
-    //var element = document.getElementById('id-nav-home-page');
-
-    // Modifiez l'attribut src de l'élément (par exemple, pour une image)
-    //element.className = `nav-link ${LINK_HOME_PAGE === router.asPath ? 'w--current' : ''}`;
-    //var element = document.getElementById('id-nav-home-page');
-    console.log("Url", url);
-    console.log("Lang", router.locale);
-    console.log("Complete url", router.asPath + router.locale);
-    console.log("Link home", LINK_HOME_PAGE + router.locale);
-
-/*
-    if (LINK_HOME_PAGE === url) {
-      console.log("OOOOOOOOK");
-      document.getElementById('id-nav-home-page').className = `nav-link ${LINK_HOME_PAGE === url ? 'w--current' : ''}`;
-    }
-    */
-    
-    //SelectActivePage(document.getElementById('id-nav-home-page'), url);
-  }, [router.asPath]);
 
   return (
     <_Component
@@ -225,7 +195,7 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper 
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_ENGLISH ? 'active-text-block-6' : ''}`} tag="div">
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_ENGLISH ? 'w--current' : ''}`} tag="div">
                         {t('en', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
@@ -250,7 +220,7 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper 
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_FRENCH ? 'active-text-block-6' : ''}`} tag="div">
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_FRENCH ? 'w--current' : ''}`} tag="div">
                         {t('fr', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
@@ -275,7 +245,7 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper 
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_CHINESE ? 'active-text-block-6' : ''}`} tag="div">
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_CHINESE ? 'w--current' : ''}`} tag="div">
                       {t('zh', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
@@ -300,7 +270,7 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper 
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_SPANISH ? 'active-text-block-6' : ''}`} tag="div">
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_SPANISH ? 'w--current' : ''}`} tag="div">
                       {t('es', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
@@ -325,7 +295,7 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper 
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_HINDI ? 'active-text-block-6' : ''}`} tag="div">
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_HINDI ? 'w--current' : ''}`} tag="div">
                       {t('hi', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
@@ -350,7 +320,7 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper 
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_ARABIC ? 'active-text-block-6' : ''}`} tag="div">
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_ARABIC ? 'w--current' : ''}`} tag="div">
                       {t('ar', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
@@ -375,7 +345,7 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper 
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_PORTUGUESE ? 'active-text-block-6' : ''}`} tag="div">
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_PORTUGUESE ? 'w--current' : ''}`} tag="div">
                       {t('pt', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
@@ -400,7 +370,7 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper 
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_RUSSIAN ? 'active-text-block-6' : ''}`} tag="div">
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_RUSSIAN ? 'w--current' : ''}`} tag="div">
                       {t('ru', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>
@@ -425,7 +395,7 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper 
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_JAPANESE ? 'active-text-block-6' : ''}`} tag="div">
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_JAPANESE ? 'w--current' : ''}`} tag="div">
                       <span color="red">{t('ja', {ns: 'langs'})}</span>
                       </_Builtin.Block>
                     </_Builtin.Block>
@@ -450,7 +420,7 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper 
                       />
                     </_Builtin.Block>
                     <_Builtin.Block className="div-text-flag" tag="div">
-                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_GERMAN ? 'active-text-block-6' : ''}`} tag="div">
+                      <_Builtin.Block className={`text-block-6 ${lang === LANGUAGE_GERMAN ? 'w--current' : ''}`} tag="div">
                       {t('de', {ns: 'langs'})}
                       </_Builtin.Block>
                     </_Builtin.Block>

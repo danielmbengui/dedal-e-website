@@ -1,0 +1,26 @@
+{
+    "resources": {
+        "title": "Ресурсы",
+        "partners": "Партнеры",
+        "contact": "Контакт",
+        "support": "Поддержка"
+    },
+    "products": {
+        "title": "Продукты",
+        "home": "Главная",
+        "about": "О нас",
+        "gallery": "Галерея 3D",
+        "vr": "Виртуальная реальность",
+        "dedalab": "Дедалаб"
+    },
+    "socials": {
+        "title": "Социальные сети",
+        "instagram": "Инстаграм",
+        "facebook": "Фейсбук",
+        "tiktok": "Тикток",
+        "twitter": "Твиттер",
+        "linkedin": "Линкедин",
+        "youtube": "Ютуб"
+    },
+    "all_rights_reserved": "© 2024 Dedal-E. Bce права защищены."
+}

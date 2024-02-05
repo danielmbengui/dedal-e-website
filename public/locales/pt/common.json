@@ -1,18 +1,3 @@
 {
-    "langs": {
-        "langs": "Idiomas",
-        "fr": "Francês",
-        "en": "Inglês",
-        "it": "Italiano",
-        "es": "Espanhol",
-        "pt": "Português",
-        "zh": "Chinês",
-        "ru": "Russo",
-        "hi": "Hindi",
-        "ja": "Japonês",
-        "ar": "Árabe"
-    },
-    "menu": {
-        "home": "Início"
-    }
+
 }

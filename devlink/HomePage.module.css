@@ -11,8 +11,7 @@
   justify-content: center;
   align-items: center;
 
-  background-image: none;
-  background-position: 0px 0px;
+  background-color: hsla(0, 0.00%, 0.00%, 0.60);
 
   pointer-events: auto;
 
@@ -39,8 +38,7 @@
 }
 
 .section-header.home {
-  background-image: linear-gradient(to bottom, hsla(0, 0.00%, 0.00%, 0.60),hsla(0, 0.00%, 0.00%, 0.60));
-  background-position: 0px 0px;
+  background-color: hsla(0, 0.00%, 0.00%, 0.60);
 }
 
 .header-content-left {

@@ -1,0 +1,26 @@
+{
+    "resources": {
+        "title": "الموارد",
+        "partners": "الشركاء",
+        "contact": "اتصل",
+        "support": "الدعم"
+    },
+    "products": {
+        "title": "المنتجات",
+        "home": "الصفحة الرئيسية",
+        "about": "معلومات عنا",
+        "gallery": "معرض 3D",
+        "vr": "واقع افتراضي",
+        "dedalab": "ديدالاب"
+    },
+    "socials": {
+        "title": "وسائل التواصل الاجتماعي",
+        "instagram": "إنستجرام",
+        "facebook": "فيسبوك",
+        "tiktok": "تيك توك",
+        "twitter": "تويتر",
+        "linkedin": "لينكد إن",
+        "youtube": "يوتيوب"
+    },
+    "all_rights_reserved": "© 2024 Dedal-E. جميع الحقوق محفوظة."
+}

@@ -1,18 +1,2 @@
 {
-    "langs": {
-        "langs": "Languages",
-        "fr": "French",
-        "en": "English",
-        "it": "Italian",
-        "es": "Spanish",
-        "pt": "Portuguese",
-        "zh": "Chinese",
-        "ru": "Russian",
-        "hi": "Hindi",
-        "ja": "Japanese",
-        "ar": "Arabic"
-    },
-    "menu": {
-        "home": "Home"
-    }
 }

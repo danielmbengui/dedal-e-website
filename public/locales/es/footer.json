@@ -1,0 +1,26 @@
+{
+    "resources": {
+        "title": "Recursos",
+        "partners": "Socios",
+        "contact": "Contacto",
+        "support": "Soporte"
+    },
+    "products": {
+        "title": "Productos",
+        "home": "Inicio",
+        "about": "Acerca de nosotros",
+        "gallery": "Galería 3D",
+        "vr": "Realidad Virtual",
+        "dedalab": "Dedalab"
+    },
+    "socials": {
+        "title": "Redes Sociales",
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "tiktok": "Tiktok",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn",
+        "youtube": "Youtube"
+    },
+    "all_rights_reserved": "© 2024 Dedal-E. Todos los derechos reservados."
+}

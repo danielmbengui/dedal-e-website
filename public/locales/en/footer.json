@@ -1,0 +1,36 @@
+{
+    "resources": {
+        "title": "Resources",
+        "partners" : "Partners",
+        "contact" : "Contact",
+        "support" : "Support"
+    },
+    "products": {
+        "title": "Products",
+        "home": "Home",
+        "about": "About us",
+        "gallery": "Gallery 3D",
+        "vr": "VR",
+        "dedalab": "Dedalab"
+    },
+    "socials": {
+        "title": "Socials",
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "tiktok": "Tiktok",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn",
+        "youtube": "Youtube"
+    },
+    "legal": {
+        "title": "legal",
+        "terms": "Terms",
+        "privacy": "Privacy"
+    },
+    "all_rights_reserved": "© 2024 Dedal-E. All rights reserved.",
+    "slogan_website": "Your art authentication platform based on blockchain technology.",
+    "subscribe": "Subscribe",
+    "please_wait": "Please wait...",
+    "enter_your_email": "Enter your email",
+    "submission_received": "Thank you! Your submission has been received!"
+}

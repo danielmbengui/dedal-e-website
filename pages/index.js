@@ -1,7 +1,7 @@
 import * as React from "react";
-import Image from "next/image";
+//import Image from "next/image";
 import { Inter } from "next/font/google";
-import {Button} from "@nextui-org/button";
+//import {Button} from "@nextui-org/button";
 import { HomePage } from "@/devlink";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next';
@@ -25,7 +25,7 @@ export default function Home() {
       <title>{`Dedal-E | ${t('menu.home', { ns: 'common' })}`}</title>
     </Head>
     
-    <HomePage />
+    <HomeComponent />
     </>
   );
 }

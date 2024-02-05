@@ -1,0 +1,26 @@
+{
+    "resources": {
+        "title": "リソース",
+        "partners": "パートナー",
+        "contact": "お問い合わせ",
+        "support": "サポート"
+    },
+    "products": {
+        "title": "製品",
+        "home": "ホーム",
+        "about": "会社情報",
+        "gallery": "3Dギャラリー",
+        "vr": "バーチャルリアル",
+        "dedalab": "デダラブ"
+    },
+    "socials": {
+        "title": "ソーシャルメディア",
+        "instagram": "インスタグラム",
+        "facebook": "フェイスブック",
+        "tiktok": "ティックトック",
+        "twitter": "ツイッター",
+        "linkedin": "リンクトイン",
+        "youtube": "ユーチューブ"
+    },
+    "all_rights_reserved": "© 2024 Dedal-E. 全著作権所有."
+}
