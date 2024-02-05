@@ -22,5 +22,16 @@
         "linkedin": "لينكد إن",
         "youtube": "يوتيوب"
     },
-    "all_rights_reserved": "© 2024 Dedal-E. جميع الحقوق محفوظة."
+    "legal": {
+        "title": "قانوني",
+        "terms": "الشروط",
+        "privacy": "الخصوصية"
+    },
+    "all_rights_reserved": "© 2024 Dedal-E. جميع الحقوق محفوظة.",
+    "slogan_website": "منصتك لمصادقة الفن بناءً على تقنية البلوكشين.",
+    "subscribe": "اشترك",
+    "please_wait": "الرجاء الانتظار...",
+    "enter_your_email": "أدخل بريدك الإلكتروني",
+    "submission_received": "شكرًا! تم استلام تقديمك!",
+    "something_went_wrong": "عذرًا! حدث خطأ ما أثناء تقديم النموذج."
 }

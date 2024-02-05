@@ -22,5 +22,16 @@
         "linkedin": "LinkedIn",
         "youtube": "Youtube"
     },
-    "all_rights_reserved": "所有权保留 © 2024 Dedal-E. 保留所有权利."
+    "legal": {
+        "title": "法律",
+        "terms": "条款",
+        "privacy": "隐私"
+    },
+    "all_rights_reserved": "所有权保留 © 2024 Dedal-E. 保留所有权利.",
+    "slogan_website": "基于区块链技术的艺术认证平台.",
+    "subscribe": "订阅",
+    "please_wait": "请稍候...",
+    "enter_your_email": "输入您的电子邮件",
+    "submission_received": "谢谢！我们已收到您的提交!",
+    "something_went_wrong": "哎呀！提交表单时出了问题."
 }

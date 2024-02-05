@@ -22,5 +22,16 @@
         "linkedin": "リンクトイン",
         "youtube": "ユーチューブ"
     },
-    "all_rights_reserved": "© 2024 Dedal-E. 全著作権所有."
+    "legal": {
+        "title": "法的",
+        "terms": "利用規約",
+        "privacy": "プライバシー"
+    },
+    "all_rights_reserved": "© 2024 Dedal-E. 全著作権所有.",
+    "slogan_website": "ブロックチェーン技術を基にしたあなたのアート認証プラットフォーム.",
+    "subscribe": "購読",
+    "please_wait": "お待ちください...",
+    "enter_your_email": "メールアドレスを入力してください",
+    "submission_received": "ありがとうございます！ ご提出いただきました.",
+    "something_went_wrong": "おっと！ フォームの送信中に問題が発生しました."
 }

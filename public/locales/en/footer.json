@@ -23,7 +23,7 @@
         "youtube": "Youtube"
     },
     "legal": {
-        "title": "legal",
+        "title": "Legal",
         "terms": "Terms",
         "privacy": "Privacy"
     },
@@ -32,5 +32,6 @@
     "subscribe": "Subscribe",
     "please_wait": "Please wait...",
     "enter_your_email": "Enter your email",
-    "submission_received": "Thank you! Your submission has been received!"
+    "submission_received": "Thank you! Your submission has been received!",
+    "something_went_wrong": "Oops! Something went wrong while submitting the form."
 }

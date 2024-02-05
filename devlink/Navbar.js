@@ -797,10 +797,6 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
             </_Builtin.NavbarButton>
           </_Builtin.Block>
         </_Builtin.Block>
-        <_Builtin.HtmlEmbed
-          className="uui-logos-loop-css-embed"
-          value="%3Cscript%3E%0A%2F*%0Aif%20(window.innerWidth%20%3E%3D%20768)%20%7B%0A%20%20%2F%2F%20S%C3%A9lectionnez%20votre%20menu%20par%20son%20ID%0A%20%20var%20menu%20%3D%20document.getElementById(%22menu%22)%3B%0A%20%20menu.style.display%20%3D%20%22block%22%3B%0A%20%20%2F%2F%20Initialisez%20une%20variable%20pour%20suivre%20la%20position%20du%20d%C3%A9filement%20pr%C3%A9c%C3%A9dent%0A%20%20var%20lastScrollTop%20%3D%200%3B%0A%0A%20%20%2F%2F%20Ajoutez%20un%20gestionnaire%20d'%C3%A9v%C3%A9nement%20de%20d%C3%A9filement%20%C3%A0%20la%20fen%C3%AAtre%0A%20%20window.addEventListener(%22scroll%22%2C%20function()%20%7B%0A%20%20%20%20%2F%2F%20Obtenez%20la%20position%20actuelle%20du%20d%C3%A9filement%0A%20%20%20%20var%20scrollTop%20%3D%20window.pageYOffset%20%7C%7C%20document.documentElement.scrollTop%3B%0A%0A%20%20%20%20%2F%2F%20V%C3%A9rifiez%20si%20le%20d%C3%A9filement%20se%20fait%20vers%20le%20haut%20et%20que%20la%20position%20actuelle%20du%20d%C3%A9filement%20est%20sup%C3%A9rieure%20%C3%A0%20la%20pr%C3%A9c%C3%A9dente%0A%20%20%20%20if%20(scrollTop%20%3C%20lastScrollTop)%20%7B%0A%20%20%20%20%20%20%2F%2F%20Affichez%20le%20menu%0A%20%20%20%20%20%20menu.style.display%20%3D%20%22block%22%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%2F%2F%20Cachez%20le%20menu%0A%20%20%20%20%20%20menu.style.display%20%3D%20%22none%22%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20Mettez%20%C3%A0%20jour%20la%20position%20du%20d%C3%A9filement%20pr%C3%A9c%C3%A9dent%0A%20%20%20%20lastScrollTop%20%3D%20scrollTop%3B%0A%20%20%7D)%3B%0A%7D%0A*%2F%0A%3C%2Fscript%3E"
-        />
       </_Builtin.Block>
     </_Component>
   );

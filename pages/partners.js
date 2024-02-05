@@ -1,8 +1,6 @@
 import * as React from "react";
-import Image from "next/image";
 import { Inter } from "next/font/google";
-import {Button} from "@nextui-org/button";
-import { AboutPage, CartPage, HomePage } from "@/devlink";
+import { PartnerPage } from "@/devlink";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next';
 //import { useTranslation } from 'react-i18next';
@@ -21,7 +19,7 @@ export default function Cart() {
       <meta name="description" content="Your art authentication platform based on blockchain technology." />
       <title>{`Dedal-E | ${t('menu.home', { ns: 'common' })}`}</title>
     </Head>
-    <CartPage />
+    <PartnerPage />
     </>
   );
 }

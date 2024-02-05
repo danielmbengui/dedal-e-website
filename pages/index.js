@@ -6,7 +6,7 @@ import { HomePage } from "@/devlink";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next';
 //import { useTranslation } from 'react-i18next';
-import { TAB_LANGUAGES, TAB_NAMESPACES } from "@/constants";
+import { TAB_LANGUAGES, TAB_NAMESPACES } from "@/constants/languages";
 import Head from "next/head";
 import { HomeComponent } from "@/components/home/HomeComponent";
 //import { HomeComponent } from "@/components/home/Home";

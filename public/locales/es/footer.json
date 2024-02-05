@@ -22,5 +22,16 @@
         "linkedin": "LinkedIn",
         "youtube": "Youtube"
     },
-    "all_rights_reserved": "© 2024 Dedal-E. Todos los derechos reservados."
+    "legal": {
+        "title": "Legal",
+        "terms": "Términos",
+        "privacy": "Privacidad"
+    },
+    "all_rights_reserved": "© 2024 Dedal-E. Todos los derechos reservados.",
+    "slogan_website": "Tu plataforma de autenticación de arte basada en tecnología blockchain.",
+    "subscribe": "Suscribirse",
+    "please_wait": "Espere por favor...",
+    "enter_your_email": "Ingrese su correo electrónico",
+    "submission_received": "¡Gracias! Hemos recibido su envío.",
+    "something_went_wrong": "¡Ups! Algo salió mal al enviar el formulario."
 }

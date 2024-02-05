@@ -1,7 +1,8 @@
 import React, {useEffect} from "react";
 import * as _Builtin from "@/devlink/_Builtin";
 import * as _interactions from "@/devlink/interactions";
-import {LANGUAGE_ARABIC, LANGUAGE_CHINESE, LANGUAGE_ENGLISH, LANGUAGE_FRENCH, LANGUAGE_GERMAN, LANGUAGE_HINDI, LANGUAGE_JAPANESE, LANGUAGE_PORTUGUESE, LANGUAGE_RUSSIAN, LANGUAGE_SPANISH, LINK_ABOUT_PAGE, LINK_DEDALAB_PAGE, LINK_GALLERY_PAGE, LINK_HOME_PAGE, LINK_VR_PAGE} from "@/constants";
+import {LINK_ABOUT_PAGE, LINK_DEDALAB_PAGE, LINK_GALLERY_PAGE, LINK_HOME_PAGE, LINK_VR_PAGE} from "@/constants/pages";
+import {LANGUAGE_ARABIC, LANGUAGE_CHINESE, LANGUAGE_ENGLISH, LANGUAGE_FRENCH, LANGUAGE_GERMAN, LANGUAGE_HINDI, LANGUAGE_JAPANESE, LANGUAGE_PORTUGUESE, LANGUAGE_RUSSIAN, LANGUAGE_SPANISH} from "@/constants/languages";
 import { useRouter } from "next/router";
 import { useTranslation } from 'next-i18next';
 

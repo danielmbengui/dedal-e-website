@@ -3,10 +3,11 @@ import * as _Builtin from "@/devlink/_Builtin";
 import { PaddingSmall } from "@/devlink/PaddingSmall";
 import { useRouter } from "next/router";
 import { useTranslation } from 'next-i18next';
-import { LINK_ABOUT_PAGE, LINK_DEDALAB_PAGE, LINK_GALLERY_PAGE, LINK_HOME_PAGE, LINK_PARTNER_PAGE, LINK_VR_PAGE } from "@/constants";
+import { LINK_ABOUT_PAGE, LINK_DEDALAB_PAGE, LINK_GALLERY_PAGE, LINK_HOME_PAGE, LINK_PARTNERS_PAGE, LINK_VR_PAGE } from "@/constants/pages";
+import { LINK_FACEBOOK, LINK_INSTAGRAM, LINK_LINKEDIN, LINK_TIKTOK, LINK_TWITTER, LINK_YOUTUBE } from "@/constants/links";
 
 export function FooterComponent({ as: _Component = _Builtin.Block }) {
-    const router = useRouter();
+  const router = useRouter();
   const url = router.asPath;
   const lang = router.locale;
   const { t, i18n } = useTranslation();
@@ -128,11 +129,11 @@ export function FooterComponent({ as: _Component = _Builtin.Block }) {
                       </_Builtin.Block>
                       <_Builtin.Link
                         //className="uui-footer01_link"
-                        className={`uui-footer01_link ${LINK_PARTNER_PAGE === url ? 'w--current' : ''}`}
+                        className={`uui-footer01_link ${LINK_PARTNERS_PAGE === url ? 'w--current' : ''}`}
                         button={false}
                         block="inline"
                         options={{
-                          href: `/${lang}/${LINK_PARTNER_PAGE}`,
+                          href: `/${lang}/${LINK_PARTNERS_PAGE}`,
                         }}
                       >
                         <_Builtin.Block className="text-block-12" tag="div">
@@ -250,7 +251,8 @@ export function FooterComponent({ as: _Component = _Builtin.Block }) {
                         button={false}
                         block="inline"
                         options={{
-                          href: "https://www.instagram.com/",
+                          href: LINK_INSTAGRAM,
+                          target: "_blank",
                         }}
                       >
                         <_Builtin.HtmlEmbed
@@ -266,7 +268,8 @@ export function FooterComponent({ as: _Component = _Builtin.Block }) {
                         button={false}
                         block="inline"
                         options={{
-                          href: "https://www.facebook.com/",
+                          href: LINK_FACEBOOK,
+                          target: "_blank",
                         }}
                       >
                         <_Builtin.HtmlEmbed
@@ -282,7 +285,8 @@ export function FooterComponent({ as: _Component = _Builtin.Block }) {
                         button={false}
                         block="inline"
                         options={{
-                          href: "https://www.tiktok.com/",
+                          href: LINK_TIKTOK,
+                          target: "_blank",
                         }}
                       >
                         <_Builtin.HtmlEmbed
@@ -298,7 +302,8 @@ export function FooterComponent({ as: _Component = _Builtin.Block }) {
                         button={false}
                         block="inline"
                         options={{
-                          href: "https://www.twitter.com/",
+                          href: LINK_TWITTER,
+                          target: "_blank",
                         }}
                       >
                         <_Builtin.HtmlEmbed
@@ -314,7 +319,8 @@ export function FooterComponent({ as: _Component = _Builtin.Block }) {
                         button={false}
                         block="inline"
                         options={{
-                          href: "https://www.linkedin.com/",
+                          href: LINK_LINKEDIN,
+                          target: "_blank",
                         }}
                       >
                         <_Builtin.HtmlEmbed
@@ -330,7 +336,8 @@ export function FooterComponent({ as: _Component = _Builtin.Block }) {
                         button={false}
                         block="inline"
                         options={{
-                          href: "https://www.youtube.com/",
+                          href: LINK_YOUTUBE,
+                          target: "_blank",
                         }}
                       >
                         <_Builtin.HtmlEmbed
