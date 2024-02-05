@@ -8,6 +8,7 @@ export * from "./devlink";
 export * from "./AboutPage";
 export * from "./BuyPage";
 export * from "./CartPage";
+export * from "./ContactPage";
 export * from "./ContainerLarge";
 export * from "./CreateAccountPage";
 export * from "./DedalabPage";

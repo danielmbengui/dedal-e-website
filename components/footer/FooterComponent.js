@@ -3,17 +3,32 @@ import * as _Builtin from "@/devlink/_Builtin";
 import { PaddingSmall } from "@/devlink/PaddingSmall";
 import { useRouter } from "next/router";
 import { useTranslation } from 'next-i18next';
-import { LINK_ABOUT_PAGE, LINK_DEDALAB_PAGE, LINK_GALLERY_PAGE, LINK_HOME_PAGE, LINK_PARTNERS_PAGE, LINK_VR_PAGE } from "@/constants/pages";
+import { LINK_ABOUT_PAGE, LINK_CONTACT_PAGE, LINK_DEDALAB_PAGE, LINK_GALLERY_PAGE, LINK_HOME_PAGE, LINK_PARTNERS_PAGE, LINK_VR_PAGE } from "@/constants/pages";
 import { LINK_FACEBOOK, LINK_INSTAGRAM, LINK_LINKEDIN, LINK_TIKTOK, LINK_TWITTER, LINK_YOUTUBE } from "@/constants/links";
 
-export function FooterComponent({ as: _Component = _Builtin.Block }) {
+export function FooterComponent({ as: _Component = _Builtin.Block, isGallery=false }) {
   const router = useRouter();
   const url = router.asPath;
   const lang = router.locale;
   const { t, i18n } = useTranslation();
 
   return (
-    <_Component className="section-footer" tag="div">
+    <_Component
+    //className={`${isGallery ? 'section-footer-gallery' : 'section-footer'}`}
+    className='section-footer'
+    
+    style={{
+      //width: isGallery ? `calc(100% - ${240}px)` : '100%',
+      //ml: { sm: `${drawerWidth}px` },
+      //ml: isGallery ? `${240}px` : '0px',
+      //position:'absolute',
+      //left:240,
+      //bottom:0,
+      //right:0
+    }}
+    
+    tag="div"
+    >
       <_Builtin.Block className="padding-global" tag="div">
         <PaddingSmall />
         <_Builtin.Block className="uui-footer01_component" tag="footer">
@@ -128,7 +143,6 @@ export function FooterComponent({ as: _Component = _Builtin.Block }) {
                         {t('resources.title', {ns: 'footer'})}
                       </_Builtin.Block>
                       <_Builtin.Link
-                        //className="uui-footer01_link"
                         className={`uui-footer01_link ${LINK_PARTNERS_PAGE === url ? 'w--current' : ''}`}
                         button={false}
                         block="inline"
@@ -141,11 +155,11 @@ export function FooterComponent({ as: _Component = _Builtin.Block }) {
                         </_Builtin.Block>
                       </_Builtin.Link>
                       <_Builtin.Link
-                        className="uui-footer01_link"
+                        className={`uui-footer01_link ${LINK_CONTACT_PAGE === url ? 'w--current' : ''}`}
                         button={false}
                         block="inline"
                         options={{
-                          href: "#",
+                          href: `/${lang}/${LINK_CONTACT_PAGE}`,
                         }}
                       >
                         <_Builtin.Block className="" tag="div">

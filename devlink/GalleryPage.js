@@ -5,13 +5,23 @@ import { HeroBanner } from "./HeroBanner";
 import { Footer } from "./Footer";
 import MenuComponent from "@/components/menu/MenuComponent";
 import { FooterComponent } from "@/components/footer/FooterComponent";
+import ResponsiveDrawer from "@/components/drawer/ResponsiveDrawer";
+import MiniDrawer from "@/components/drawer/MiniDrawer";
+
 
 export function GalleryPage({ as: _Component = _Builtin.Block }) {
   return (
     <_Component className="page-wrapper" tag="div">
       <MenuComponent />
-      <_Builtin.Block className="main-wrapper" tag="div">
-        <HeroBanner heading2Text="Gallery 3D" textSizeRegluarText="Creation" />
+      <MiniDrawer />
+      {/*
+      <ResponsiveDrawer 
+      menu={<MenuComponent isGallery={true} />}
+      footer={<FooterComponent isGallery={true} />}
+      header={<HeroBanner heading2Text="Gallery 3D" textSizeRegluarText="Creation" />}
+      component={
+<_Builtin.Block className="main-wrapper" tag="div">
+        
         <_Builtin.Block className="section-change-log" tag="div">
           <_Builtin.Block className="padding-global" tag="div">
             <_Builtin.Block className="container-large" tag="div">
@@ -52,7 +62,13 @@ export function GalleryPage({ as: _Component = _Builtin.Block }) {
           </_Builtin.Block>
         </_Builtin.Block>
       </_Builtin.Block>
-      <FooterComponent />
+      }
+      />
+      */}
+      
+      
+      
+      
     </_Component>
   );
 }
