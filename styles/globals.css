@@ -93,6 +93,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  font-family: Inter;
   background: linear-gradient(
       to bottom,
       transparent,

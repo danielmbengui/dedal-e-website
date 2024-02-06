@@ -16,8 +16,8 @@ export default function Cart() {
   return (
     <>
     <Head>
-      <meta name="description" content="Your art authentication platform based on blockchain technology." />
-      <title>{`Dedal-E | ${t('menu.home', { ns: 'common' })}`}</title>
+      <meta name="description" content={`${t('slogan_website', { ns: 'common' })}`} />
+      <title>{`Dedal-E | ${t('resources.contact', { ns: 'footer' })}`}</title>
     </Head>
     <ContactPage />
     </>

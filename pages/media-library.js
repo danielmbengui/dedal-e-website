@@ -18,8 +18,8 @@ export default function MediaLibrary() {
   return (
     <>
     <Head>
-      <meta name="description" content="Your art authentication platform based on blockchain technology." />
-      <title>{`Dedal-E | ${t('menu.home', { ns: 'common' })}`}</title>
+      <meta name="description" content={`${t('slogan_website', { ns: 'common' })}`} />
+      <title>{`Dedal-E | ${t('home', { ns: 'navbar' })}`}</title>
     </Head>
     <DedalabPage />
     </>
