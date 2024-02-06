@@ -183,7 +183,7 @@ export function ContactPage({ as: _Component = _Builtin.Block }) {
                                     maxLength={256}
                                     name="Contact-04-phone-2"
                                     data-name="Contact 04 Phone 2"
-                                    placeholder="+41 (0) 000-0000"
+                                    placeholder="+41 (76) 000 00 00"
                                     type="tel"
                                     disabled={false}
                                     required={true}
@@ -210,19 +210,19 @@ export function ContactPage({ as: _Component = _Builtin.Block }) {
                                   id="Contact-04-select-2"
                                   options={[
                                     {
-                                      t: "Select one...",
+                                      t: "Select",
                                       v: "",
                                     },
                                     {
-                                      t: "First Choice",
+                                      t: "Contact",
                                       v: "First",
                                     },
                                     {
-                                      t: "Second Choice",
+                                      t: "Partnership",
                                       v: "Second",
                                     },
                                     {
-                                      t: "Third Choice",
+                                      t: "Marketing",
                                       v: "Third",
                                     },
                                   ]}
@@ -242,144 +242,162 @@ export function ContactPage({ as: _Component = _Builtin.Block }) {
                                   className="form-radio-2col"
                                   tag="div"
                                 >
-                                  <_Builtin.FormRadioWrapper className="uui-form-radio">
-                                    <_Builtin.FormRadioInput
-                                      className="uui-form-radio-icon tick-icon"
-                                      type="radio"
-                                      name="Contact-04-radio"
-                                      value="Contact 04 radio 01"
-                                      data-name="Contact 04 Radio 7"
-                                      required={false}
-                                      id="contact-website"
+                                  <_Builtin.FormCheckboxWrapper
+                                    className="uui-form-checkbox"
+                                    id="contact-website"
+                                  >
+                                    <_Builtin.FormCheckboxInput
+                                      className="uui-form-checkbox-icon"
+                                      type="checkbox"
+                                      name="Contact-04-checkbox-2"
+                                      data-name="Contact 04 Checkbox 2"
+                                      required={true}
+                                      checked={false}
+                                      id="check-website"
                                       form={{
-                                        type: "radio-input",
-                                        name: "Contact 04 Radio 7",
+                                        type: "checkbox-input",
+                                        name: "Contact 04 Checkbox 2",
                                       }}
                                       inputType="custom"
-                                      customClassName="w-form-formradioinput--inputType-custom"
+                                      customClassName="w-checkbox-input--inputType-custom"
                                     />
                                     <_Builtin.FormInlineLabel
                                       className="uui-form-radio-label"
-                                      htmlFor="Contact 2 Radio "
+                                      htmlFor="Contact 2 Checkbox-2"
                                     >
                                       {"Website design"}
                                     </_Builtin.FormInlineLabel>
-                                  </_Builtin.FormRadioWrapper>
-                                  <_Builtin.FormRadioWrapper className="uui-form-radio">
-                                    <_Builtin.FormRadioInput
-                                      className="uui-form-radio-icon tick-icon"
-                                      type="radio"
-                                      name="Contact-04-radio"
-                                      value="Contact 04 radio 02"
-                                      data-name="Contact 04 Radio 7"
-                                      required={false}
-                                      id="contact-content-creation"
+                                  </_Builtin.FormCheckboxWrapper>
+                                  <_Builtin.FormCheckboxWrapper
+                                    className="uui-form-checkbox"
+                                    id="contact-content-creations"
+                                  >
+                                    <_Builtin.FormCheckboxInput
+                                      className="uui-form-checkbox-icon"
+                                      type="checkbox"
+                                      name="Contact-04-checkbox-2"
+                                      data-name="Contact 04 Checkbox 2"
+                                      required={true}
+                                      checked={false}
+                                      id="check-content-creations"
                                       form={{
-                                        type: "radio-input",
-                                        name: "Contact 04 Radio 7",
+                                        type: "checkbox-input",
+                                        name: "Contact 04 Checkbox 2",
                                       }}
                                       inputType="custom"
-                                      customClassName="w-form-formradioinput--inputType-custom"
+                                      customClassName="w-checkbox-input--inputType-custom"
                                     />
                                     <_Builtin.FormInlineLabel
                                       className="uui-form-radio-label"
-                                      htmlFor="Contact 2 Radio "
+                                      htmlFor="Contact 2 Checkbox-2"
                                     >
                                       {"Content creations"}
                                     </_Builtin.FormInlineLabel>
-                                  </_Builtin.FormRadioWrapper>
-                                  <_Builtin.FormRadioWrapper className="uui-form-radio">
-                                    <_Builtin.FormRadioInput
-                                      className="uui-form-radio-icon tick-icon"
-                                      type="radio"
-                                      name="Contact-04-radio"
-                                      value="Contact 04 radio 03"
-                                      data-name="Contact 04 Radio 7"
-                                      required={false}
-                                      id="contact-ux"
+                                  </_Builtin.FormCheckboxWrapper>
+                                  <_Builtin.FormCheckboxWrapper
+                                    className="uui-form-checkbox"
+                                    id="contact-ux-design"
+                                  >
+                                    <_Builtin.FormCheckboxInput
+                                      className="uui-form-checkbox-icon"
+                                      type="checkbox"
+                                      name="Contact-04-checkbox-2"
+                                      data-name="Contact 04 Checkbox 2"
+                                      required={true}
+                                      checked={false}
+                                      id="check-ux-design"
                                       form={{
-                                        type: "radio-input",
-                                        name: "Contact 04 Radio 7",
+                                        type: "checkbox-input",
+                                        name: "Contact 04 Checkbox 2",
                                       }}
                                       inputType="custom"
-                                      customClassName="w-form-formradioinput--inputType-custom"
+                                      customClassName="w-checkbox-input--inputType-custom"
                                     />
                                     <_Builtin.FormInlineLabel
                                       className="uui-form-radio-label"
-                                      htmlFor="Contact 2 Radio "
+                                      htmlFor="Contact 2 Checkbox-2"
                                     >
                                       {"UX design"}
                                     </_Builtin.FormInlineLabel>
-                                  </_Builtin.FormRadioWrapper>
-                                  <_Builtin.FormRadioWrapper className="uui-form-radio">
-                                    <_Builtin.FormRadioInput
-                                      className="uui-form-radio-icon tick-icon"
-                                      type="radio"
-                                      name="Contact-04-radio"
-                                      value="Contact 04 radio 04"
-                                      data-name="Contact 04 Radio 7"
-                                      required={false}
-                                      id="contact-strategy"
+                                  </_Builtin.FormCheckboxWrapper>
+                                  <_Builtin.FormCheckboxWrapper
+                                    className="uui-form-checkbox"
+                                    id="contact-strategy"
+                                  >
+                                    <_Builtin.FormCheckboxInput
+                                      className="uui-form-checkbox-icon"
+                                      type="checkbox"
+                                      name="Contact-04-checkbox-2"
+                                      data-name="Contact 04 Checkbox 2"
+                                      required={true}
+                                      checked={false}
+                                      id="check-strategy"
                                       form={{
-                                        type: "radio-input",
-                                        name: "Contact 04 Radio 7",
+                                        type: "checkbox-input",
+                                        name: "Contact 04 Checkbox 2",
                                       }}
                                       inputType="custom"
-                                      customClassName="w-form-formradioinput--inputType-custom"
+                                      customClassName="w-checkbox-input--inputType-custom"
                                     />
                                     <_Builtin.FormInlineLabel
                                       className="uui-form-radio-label"
-                                      htmlFor="Contact 2 Radio "
+                                      htmlFor="Contact 2 Checkbox-2"
                                     >
                                       {"Strategy & consulting"}
                                     </_Builtin.FormInlineLabel>
-                                  </_Builtin.FormRadioWrapper>
-                                  <_Builtin.FormRadioWrapper className="uui-form-radio">
-                                    <_Builtin.FormRadioInput
-                                      className="uui-form-radio-icon tick-icon"
-                                      type="radio"
-                                      name="Contact-04-radio"
-                                      value="Contact 04 radio 05"
-                                      data-name="Contact 04 Radio 7"
-                                      required={false}
-                                      id="contact-user-research"
+                                  </_Builtin.FormCheckboxWrapper>
+                                  <_Builtin.FormCheckboxWrapper
+                                    className="uui-form-checkbox"
+                                    id="contact-user-research"
+                                  >
+                                    <_Builtin.FormCheckboxInput
+                                      className="uui-form-checkbox-icon"
+                                      type="checkbox"
+                                      name="Contact-04-checkbox-2"
+                                      data-name="Contact 04 Checkbox 2"
+                                      required={true}
+                                      checked={false}
+                                      id="check-user-research"
                                       form={{
-                                        type: "radio-input",
-                                        name: "Contact 04 Radio 7",
+                                        type: "checkbox-input",
+                                        name: "Contact 04 Checkbox 2",
                                       }}
                                       inputType="custom"
-                                      customClassName="w-form-formradioinput--inputType-custom"
+                                      customClassName="w-checkbox-input--inputType-custom"
                                     />
                                     <_Builtin.FormInlineLabel
                                       className="uui-form-radio-label"
-                                      htmlFor="Contact 2 Radio "
+                                      htmlFor="Contact 2 Checkbox-2"
                                     >
                                       {"User research"}
                                     </_Builtin.FormInlineLabel>
-                                  </_Builtin.FormRadioWrapper>
-                                  <_Builtin.FormRadioWrapper className="uui-form-radio">
-                                    <_Builtin.FormRadioInput
-                                      className="uui-form-radio-icon tick-icon"
-                                      type="radio"
-                                      name="Contact-04-radio"
-                                      value="Contact 04 radio 06"
-                                      data-name="Contact 04 Radio 7"
-                                      required={false}
-                                      id="contact-other"
+                                  </_Builtin.FormCheckboxWrapper>
+                                  <_Builtin.FormCheckboxWrapper
+                                    className="uui-form-checkbox"
+                                    id="contact-other"
+                                  >
+                                    <_Builtin.FormCheckboxInput
+                                      className="uui-form-checkbox-icon"
+                                      type="checkbox"
+                                      name="Contact-04-checkbox-2"
+                                      data-name="Contact 04 Checkbox 2"
+                                      required={true}
+                                      checked={false}
+                                      id="check-other"
                                       form={{
-                                        type: "radio-input",
-                                        name: "Contact 04 Radio 7",
+                                        type: "checkbox-input",
+                                        name: "Contact 04 Checkbox 2",
                                       }}
                                       inputType="custom"
-                                      customClassName="w-form-formradioinput--inputType-custom"
+                                      customClassName="w-checkbox-input--inputType-custom"
                                     />
                                     <_Builtin.FormInlineLabel
                                       className="uui-form-radio-label"
-                                      htmlFor="Contact 2 Radio "
+                                      htmlFor="Contact 2 Checkbox-2"
                                     >
                                       {"Other"}
                                     </_Builtin.FormInlineLabel>
-                                  </_Builtin.FormRadioWrapper>
+                                  </_Builtin.FormCheckboxWrapper>
                                 </_Builtin.Grid>
                               </_Builtin.Block>
                               <_Builtin.Block

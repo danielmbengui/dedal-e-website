@@ -2618,41 +2618,6 @@ ul {
   grid-row-gap: 16px;
   grid-column-gap: 16px;
 }
-.w-form-formradioinput {
-}
-.w-form-formradioinput--inputType-custom {
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 1px;
-  border-top-color: rgba(204, 204, 204, 1);
-  border-bottom-color: rgba(204, 204, 204, 1);
-  border-left-color: rgba(204, 204, 204, 1);
-  border-right-color: rgba(204, 204, 204, 1);
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-left-style: solid;
-  border-right-style: solid;
-  width: 12px;
-  height: 12px;
-  border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-}
-.w-form-formradioinput--inputType-custom.w--redirected-focus {
-  box-shadow: 0px 0px 3px 1px rgba(56, 152, 236, 1);
-}
-.w-form-formradioinput--inputType-custom.w--redirected-checked {
-  border-top-width: 4px;
-  border-bottom-width: 4px;
-  border-left-width: 4px;
-  border-right-width: 4px;
-  border-top-color: rgba(56, 152, 236, 1);
-  border-bottom-color: rgba(56, 152, 236, 1);
-  border-left-color: rgba(56, 152, 236, 1);
-  border-right-color: rgba(56, 152, 236, 1);
-}
 .w-checkbox {
   display: block;
   margin-bottom: 5px;
@@ -9991,7 +9956,7 @@ ul {
   grid-auto-columns: 1fr;
   grid-column-gap: 24px;
   grid-row-gap: 24px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
 }
 
@@ -12037,6 +12002,159 @@ ul {
   cursor: pointer;
 }
 
+.combine-text-size-regular-3 {
+  margin-bottom: 0rem;
+
+  font-family: Inter;
+  color: var(--grey-dedal);
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.combine-text-size-regular-3.paragraph {
+  color: var(--white);
+  text-align: justify;
+}
+
+.combine-space-small {
+  width: 100%;
+  height: 1rem;
+}
+
+.combine-faq3_title {
+  font-family: Inter;
+  color: var(--yellow-dark);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.combine-icon_small {
+  display: flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+.combine-icon_color1-2 {
+  color: var(--combineLibraryPrimary600-d08fbb46);
+}
+
+.combine-faq3_question {
+  display: flex;
+  align-items: center;
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
+}
+
+.combine-icon_color3-2 {
+  color: var(--combineLibraryWarning400-69759a07);
+}
+
+.combine-icon_color2-2 {
+  color: var(--combineLibrarySecondary600-7a0cb4d3);
+}
+
+.combine-faq3_wrapper {
+  display: flex;
+  flex-direction: column;
+  grid-column-gap: 2.25rem;
+  grid-row-gap: 2.25rem;
+}
+
+.combine-faq3_component {
+  display: grid;
+  align-items: start;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 3rem;
+  grid-row-gap: 3rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+@media screen and (max-width: 479px) {
+  .combine-faq3_component {
+    grid-template-columns: 1fr;
+  }
+}
+
+.combine-container-large-3 {
+  width: 100%;
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.combine-space-large-2 {
+  height: 4rem;
+}
+
+.combine-space-medium-2 {
+  width: 100%;
+  height: 1.5rem;
+}
+
+.combine-heading-style-h2-2 {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+
+  font-family: Inter;
+  color: var(--yellow-dark);
+  font-size: 3rem;
+  line-height: 1.35;
+  font-weight: 300;
+  text-transform: none;
+}
+
+@media screen and (max-width: 991px) {
+  .combine-heading-style-h2-2 {
+    font-size: 2.5rem;
+  }
+}
+
+.combine-text-align-center-2 {
+  text-align: center;
+}
+
+.combine-container-small-2 {
+  width: 100%;
+  max-width: 48rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.combine-padding-section-medium-3 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.combine-padding-global-3 {
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
+}
+
+@media screen and (max-width: 991px) {
+  .combine-padding-global-3 {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .combine-padding-global-3 {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .combine-padding-global-3 {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
 
  #w-node-_087b38d3-bb16-de61-e483-c97c79ade6b5-e0eeec7b {
   align-self: center;
@@ -12184,6 +12302,36 @@ ul {
     order: -9999;
   }
 }
+ #w-node-c462667b-3cf4-7ec8-a015-8018c8b8df62-0fe3a9b9 {
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+  grid-row-start: span 1;
+  grid-row-end: span 1;
+}
+#w-node-c462667b-3cf4-7ec8-a015-8018c8b8df64-0fe3a9b9 {
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+  grid-row-start: span 1;
+  grid-row-end: span 1;
+}
+#w-node-c462667b-3cf4-7ec8-a015-8018c8b8df66-0fe3a9b9 {
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+  grid-row-start: span 1;
+  grid-row-end: span 1;
+}
+#w-node-c462667b-3cf4-7ec8-a015-8018c8b8df68-0fe3a9b9 {
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+  grid-row-start: span 1;
+  grid-row-end: span 1;
+}
+#w-node-c462667b-3cf4-7ec8-a015-8018c8b8df6a-0fe3a9b9 {
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+  grid-row-start: span 1;
+  grid-row-end: span 1;
+}
  #w-node-a7d8b4f1-32fa-4cc6-94f6-a36f19ba627f-19ba6271 {
   grid-column-start: span 1;
   grid-column-end: span 1;
@@ -12252,4 +12400,28 @@ ul {
 }
 #w-node-_580bdb5f-9c7d-c739-269f-46166334fd77-6334fd1e {
   justify-self: center;
+}
+ #w-node-_504b8616-63fc-499f-2e5f-868419bdd266-eb7dc734 {
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+  grid-row-start: span 1;
+  grid-row-end: span 1;
+}
+#w-node-_504b8616-63fc-499f-2e5f-868419bdd267-eb7dc734 {
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+  grid-row-start: span 1;
+  grid-row-end: span 1;
+}
+#w-node-_504b8616-63fc-499f-2e5f-868419bdd282-eb7dc734 {
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+  grid-row-start: span 1;
+  grid-row-end: span 1;
+}
+#w-node-_504b8616-63fc-499f-2e5f-868419bdd283-eb7dc734 {
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+  grid-row-start: span 1;
+  grid-row-end: span 1;
 }

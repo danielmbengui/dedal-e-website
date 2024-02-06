@@ -27,4 +27,5 @@ export * from "./PaddingXSmall";
 export * from "./PaddingXxSmall";
 export * from "./PartnerPage";
 export * from "./SectionMain";
+export * from "./SupportPage";
 export * from "./VrPage";
