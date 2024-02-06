@@ -24,7 +24,7 @@ export default function Home() {
       <title>{`Dedal-E | ${t('menu.home', { ns: 'common' })}`}</title>
     </Head>
     
-    <HomeComponent />
+    <HomePage />
     </>
   );
 }

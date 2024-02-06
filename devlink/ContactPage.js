@@ -3,8 +3,8 @@ import * as _Builtin from "./_Builtin";
 import { Navbar } from "./Navbar";
 import { HeroBanner } from "./HeroBanner";
 import { Footer } from "./Footer";
-import MenuComponent from "@/components/menu/MenuComponent";
 import { FooterComponent } from "@/components/footer/FooterComponent";
+import MenuComponent from "@/components/menu/MenuComponent";
 
 export function ContactPage({ as: _Component = _Builtin.Block }) {
   return (
@@ -48,31 +48,37 @@ export function ContactPage({ as: _Component = _Builtin.Block }) {
                               className="uui-contact04_contact-list"
                               tag="div"
                             >
-                              <_Builtin.Block
-                                className="uui-contact04_item"
-                                id="w-node-_580bdb5f-9c7d-c739-269f-46166334fd32-6334fd1e"
-                                tag="div"
+                              <_Builtin.Link
+                                className="link-block-5 w-node-b505d92e-9b2d-9273-9876-7a6b651c7512-6334fd1e"
+                                id="link-block-contact-mail"
+                                button={false}
+                                block="inline"
+                                options={{
+                                  href: "mailto:info@dedal-e.ch?subject=Contact",
+                                }}
                               >
                                 <_Builtin.Block
-                                  className="uui-contact04_icon-wrapper"
+                                  className="uui-contact04_item"
+                                  id="w-node-_580bdb5f-9c7d-c739-269f-46166334fd32-6334fd1e"
                                   tag="div"
                                 >
-                                  <_Builtin.HtmlEmbed
-                                    className="uui-icon-1x1-xsmall-2"
-                                    value="%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M2%207L10.1649%2012.7154C10.8261%2013.1783%2011.1567%2013.4097%2011.5163%2013.4993C11.8339%2013.5785%2012.1661%2013.5785%2012.4837%2013.4993C12.8433%2013.4097%2013.1739%2013.1783%2013.8351%2012.7154L22%207M6.8%2020H17.2C18.8802%2020%2019.7202%2020%2020.362%2019.673C20.9265%2019.3854%2021.3854%2018.9265%2021.673%2018.362C22%2017.7202%2022%2016.8802%2022%2015.2V8.8C22%207.11984%2022%206.27976%2021.673%205.63803C21.3854%205.07354%2020.9265%204.6146%2020.362%204.32698C19.7202%204%2018.8802%204%2017.2%204H6.8C5.11984%204%204.27976%204%203.63803%204.32698C3.07354%204.6146%202.6146%205.07354%202.32698%205.63803C2%206.27976%202%207.11984%202%208.8V15.2C2%2016.8802%202%2017.7202%202.32698%2018.362C2.6146%2018.9265%203.07354%2019.3854%203.63803%2019.673C4.27976%2020%205.11984%2020%206.8%2020Z%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E"
-                                  />
+                                  <_Builtin.Block
+                                    className="uui-contact04_icon-wrapper"
+                                    tag="div"
+                                  >
+                                    <_Builtin.HtmlEmbed
+                                      className="uui-icon-1x1-xsmall-2"
+                                      value="%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M2%207L10.1649%2012.7154C10.8261%2013.1783%2011.1567%2013.4097%2011.5163%2013.4993C11.8339%2013.5785%2012.1661%2013.5785%2012.4837%2013.4993C12.8433%2013.4097%2013.1739%2013.1783%2013.8351%2012.7154L22%207M6.8%2020H17.2C18.8802%2020%2019.7202%2020%2020.362%2019.673C20.9265%2019.3854%2021.3854%2018.9265%2021.673%2018.362C22%2017.7202%2022%2016.8802%2022%2015.2V8.8C22%207.11984%2022%206.27976%2021.673%205.63803C21.3854%205.07354%2020.9265%204.6146%2020.362%204.32698C19.7202%204%2018.8802%204%2017.2%204H6.8C5.11984%204%204.27976%204%203.63803%204.32698C3.07354%204.6146%202.6146%205.07354%202.32698%205.63803C2%206.27976%202%207.11984%202%208.8V15.2C2%2016.8802%202%2017.7202%202.32698%2018.362C2.6146%2018.9265%203.07354%2019.3854%203.63803%2019.673C4.27976%2020%205.11984%2020%206.8%2020Z%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E"
+                                    />
+                                  </_Builtin.Block>
+                                  <_Builtin.Block
+                                    className="uui-text-style-link-02"
+                                    tag="div"
+                                  >
+                                    {"This is some text inside of a div block."}
+                                  </_Builtin.Block>
                                 </_Builtin.Block>
-                                <_Builtin.Link
-                                  className="uui-text-style-link-02"
-                                  button={false}
-                                  block=""
-                                  options={{
-                                    href: "#",
-                                  }}
-                                >
-                                  {"info@dedal-e.ch"}
-                                </_Builtin.Link>
-                              </_Builtin.Block>
+                              </_Builtin.Link>
                             </_Builtin.Block>
                           </_Builtin.Block>
                           <_Builtin.FormWrapper className="uui-contact04_form-wrapper">
@@ -244,7 +250,7 @@ export function ContactPage({ as: _Component = _Builtin.Block }) {
                                       value="Contact 04 radio 01"
                                       data-name="Contact 04 Radio 7"
                                       required={false}
-                                      id="Contact-04-radio-7"
+                                      id="contact-website"
                                       form={{
                                         type: "radio-input",
                                         name: "Contact 04 Radio 7",
@@ -261,13 +267,13 @@ export function ContactPage({ as: _Component = _Builtin.Block }) {
                                   </_Builtin.FormRadioWrapper>
                                   <_Builtin.FormRadioWrapper className="uui-form-radio">
                                     <_Builtin.FormRadioInput
-                                      className="uui-form-radio-icon"
+                                      className="uui-form-radio-icon tick-icon"
                                       type="radio"
                                       name="Contact-04-radio"
                                       value="Contact 04 radio 02"
                                       data-name="Contact 04 Radio 7"
                                       required={false}
-                                      id="Contact-04-radio-7"
+                                      id="contact-content-creation"
                                       form={{
                                         type: "radio-input",
                                         name: "Contact 04 Radio 7",
@@ -284,13 +290,13 @@ export function ContactPage({ as: _Component = _Builtin.Block }) {
                                   </_Builtin.FormRadioWrapper>
                                   <_Builtin.FormRadioWrapper className="uui-form-radio">
                                     <_Builtin.FormRadioInput
-                                      className="uui-form-radio-icon"
+                                      className="uui-form-radio-icon tick-icon"
                                       type="radio"
                                       name="Contact-04-radio"
                                       value="Contact 04 radio 03"
                                       data-name="Contact 04 Radio 7"
                                       required={false}
-                                      id="Contact-04-radio-7"
+                                      id="contact-ux"
                                       form={{
                                         type: "radio-input",
                                         name: "Contact 04 Radio 7",
@@ -307,13 +313,13 @@ export function ContactPage({ as: _Component = _Builtin.Block }) {
                                   </_Builtin.FormRadioWrapper>
                                   <_Builtin.FormRadioWrapper className="uui-form-radio">
                                     <_Builtin.FormRadioInput
-                                      className="uui-form-radio-icon"
+                                      className="uui-form-radio-icon tick-icon"
                                       type="radio"
                                       name="Contact-04-radio"
                                       value="Contact 04 radio 04"
                                       data-name="Contact 04 Radio 7"
                                       required={false}
-                                      id="Contact-04-radio-7"
+                                      id="contact-strategy"
                                       form={{
                                         type: "radio-input",
                                         name: "Contact 04 Radio 7",
@@ -330,13 +336,13 @@ export function ContactPage({ as: _Component = _Builtin.Block }) {
                                   </_Builtin.FormRadioWrapper>
                                   <_Builtin.FormRadioWrapper className="uui-form-radio">
                                     <_Builtin.FormRadioInput
-                                      className="uui-form-radio-icon"
+                                      className="uui-form-radio-icon tick-icon"
                                       type="radio"
                                       name="Contact-04-radio"
                                       value="Contact 04 radio 05"
                                       data-name="Contact 04 Radio 7"
                                       required={false}
-                                      id="Contact-04-radio-7"
+                                      id="contact-user-research"
                                       form={{
                                         type: "radio-input",
                                         name: "Contact 04 Radio 7",
@@ -353,13 +359,13 @@ export function ContactPage({ as: _Component = _Builtin.Block }) {
                                   </_Builtin.FormRadioWrapper>
                                   <_Builtin.FormRadioWrapper className="uui-form-radio">
                                     <_Builtin.FormRadioInput
-                                      className="uui-form-radio-icon"
+                                      className="uui-form-radio-icon tick-icon"
                                       type="radio"
                                       name="Contact-04-radio"
                                       value="Contact 04 radio 06"
                                       data-name="Contact 04 Radio 7"
                                       required={false}
-                                      id="Contact-04-radio-7"
+                                      id="contact-other"
                                       form={{
                                         type: "radio-input",
                                         name: "Contact 04 Radio 7",

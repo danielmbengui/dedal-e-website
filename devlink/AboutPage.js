@@ -325,7 +325,7 @@ export function AboutPage({ as: _Component = _Builtin.Block }) {
                             id="linkedin-ines"
                             block="inline"
                             options={{
-                              href: "https://www.linkedin.com/in/floriane-roeslin-6b3933164/",
+                              href: "https://www.linkedin.com/in/ines-lu/",
                               target: "_blank",
                             }}
                           >
@@ -382,7 +382,7 @@ export function AboutPage({ as: _Component = _Builtin.Block }) {
                             id="linkedin-daniel"
                             block="inline"
                             options={{
-                              href: "https://www.linkedin.com/in/floriane-roeslin-6b3933164/",
+                              href: "https://www.linkedin.com/in/daniel-mbengui/",
                               target: "_blank",
                             }}
                           >

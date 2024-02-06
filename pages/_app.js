@@ -1,6 +1,8 @@
 import * as React from "react";
-import "@/styles/globals.css";
 import "@/devlink/global.css";
+import "@/styles/globals.css";
+
+
 import { DevLinkProvider } from "@/devlink";
 //import { NextUIProvider } from "@nextui-org/system";
 import {NextUIProvider} from "@nextui-org/system";

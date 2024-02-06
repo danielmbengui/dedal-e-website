@@ -132,24 +132,12 @@ export default function MiniDrawer() {
       position: 'absolute',
       //top:25
     }}>
-      <CssBaseline />
+      {/* <CssBaseline /> */}
 
       <MenuComponent zIndex={theme.zIndex.drawer + 1} isGallery={true} />
-      <div style={{ zIndex:10, position:'fixed', left:0,right:0, marginTop:62, marginLeft: open ? drawerWidth : drawerWidthClosed,
-    display: 'flex', }}>
-       <Card sx={{ width:'100%',borderRadius:0, }}>
-        <CardContent>
-          {
-            !open && <Button onPress={handleDrawerOpen} size="md" color="danger" startContent={<TuneIcon/>}>
-            Filtrer
-          </Button>
-          }
-        
-        </CardContent>
-       </Card>
-      </div>
 
-      <div style={{ marginLeft: open ? drawerWidth : drawerWidthClosed, display:'none' }}>
+
+      <div style={{ marginLeft: open ? drawerWidth : drawerWidthClosed, display: 'none' }}>
         <HeroBanner heading2Text="Gallery 3D" textSizeRegluarText="Creation" />
       </div>
       <Drawer variant="permanent" open={open} >
@@ -158,208 +146,180 @@ export default function MiniDrawer() {
           //minWidth: 40
         }}>
           <Stack
-                direction="row"
-                justifyContent="flex-start"
-                alignItems="center"
-                sx={{width:'100%'}}
-                //spacing={8}
-              >
-                <Chip 
-                color="warning"
-                variant="bordered"
-                size='lg'
-                startContent={<TuneIcon fontSize='small' />}
-                >Filtrer</Chip>
-              </Stack>
-          {
-            /*
-            open ?
-              <Stack
-                direction="row"
-                justifyContent="space-around"
-                alignItems="center"
-                spacing={8}
-              >
-                <Chip 
-                color="warning"
-                variant="bordered"
-                size='lg'
-                startContent={<TuneIcon fontSize='small' />}
-                >Filtrer</Chip>
-                <IconButton sx={{ color: 'var(--white)' }} onClick={handleDrawerClose}>
-                  {theme.direction === 'rtl' ? <ChevronRightIcon sx={{ color: 'var(--white)' }} /> : <ChevronLeftIcon sx={{ color: 'var(--white)' }} />}
-                </IconButton>
-              </Stack>
+            direction="row"
+            justifyContent="flex-start"
+            alignItems="center"
+            sx={{ width: '100%' }}
+          //spacing={8}
+          >
+            <Chip
+              color="warning"
+              variant="bordered"
+              size='lg'
+              startContent={<TuneIcon fontSize='small' />}
+            >Filtrer</Chip>
+          </Stack>
 
-              :
-              <IconButton sx={{ color: 'var(--white)' }} onClick={handleDrawerOpen}>
-<ChevronRightIcon sx={{ color: 'var(--white)' }} />
-                </IconButton>
-              
-*/
-          }
         </DrawerHeader>
         <Divider />
         <List>
-        <FormControl sx={{color:'var(--white)', width:'100%', backgroundColor:'red'}}>
-  <InputLabel id="dropdown-label" sx={{color:'var(--white)', width:'100%', backgroundColor:'red'}}>Sélectionnez une option</InputLabel>
-  <Select
-    labelId="dropdown-label"
-    id="dropdown"
-    value={selectedValue}
-    onChange={(event) => setSelectedValue(event.target.value)}
-  >
-    <MenuItem value="option1" sx={{color:'var(--white)'}} >Option 1</MenuItem>
-    <MenuItem value="option2" sx={{color:'var(--white)'}}>Option 2</MenuItem>
-    <MenuItem value="option3" sx={{color:'var(--white)'}}>Option 3</MenuItem>
-  </Select>
-</FormControl>
-
-        <Accordion sx={{color:'var(--white)', width:'100%', backgroundColor:'red'}}>
-        <AccordionSummary
-        sx={{color:'var(--white)', width:'100%', backgroundColor:'var(--grey-dedal)'}}
-          expandIcon={<ExpandMoreIcon sx={{ color: 'var(--white)' }} />}
-          aria-controls="panel1-content"
-          id="panel1-header"
-        >
-          <Stack
-          direction="row"
-          justifyContent="flex-start"
-          alignItems="center"
-          sx={{width:'100%',}}
-          spacing={2}
-          >
-          {<InboxIcon sx={{ color: 'var(--white)' }} />}
-          <Typography sx={{ color: 'var(--white)' }}>Arts graphiques</Typography>
-          </Stack>
-        </AccordionSummary>
-        <AccordionDetails sx={{color:'var(--white)', px:5, width:'100%', overflow: "clip",}}>
-        <Stack
-        direction="row"
-        justifyContent="flex-start"
-        alignItems="center"
-        sx={{width:'100%',}}
-        spacing={2}
-        >
-        <InboxIcon sx={{ color: 'var(--white)' }} /><Typography sx={{width:'100%'}}>Images</Typography>
-        </Stack>
-        </AccordionDetails>
-        <AccordionDetails sx={{color:'var(--white)', width:'100%', overflow: "clip",}}>
-        <Typography sx={{width:'100%'}}>Photos</Typography>
-        </AccordionDetails>
-        <AccordionDetails sx={{color:'var(--white)', width:'100%', overflow: "clip",}}>
-        <Typography sx={{width:'100%'}}>Dessins</Typography>
-        </AccordionDetails>
-        <AccordionDetails sx={{color:'var(--white)', width:'100%', overflow: "clip",}}>
-        <Typography sx={{width:'100%'}}>Sculpture</Typography>
-        </AccordionDetails>
-        <AccordionDetails sx={{color:'var(--white)', width:'100%', overflow: "clip",}}>
-        <Typography sx={{width:'100%'}}>Peintures</Typography>
-        </AccordionDetails>
-      </Accordion>
-        <ListItem key={'graphics'} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
+          <Accordion sx={{ color: 'var(--white)', width: '100%', backgroundColor: 'var(--grey-dedal)' }}>
+            <AccordionSummary
+              sx={{ color: 'var(--white)', width: '100%', backgroundColor: 'var(--black)' }}
+              expandIcon={<ExpandMoreIcon sx={{ color: 'var(--white)' }} />}
+              aria-controls="panel1-content"
+              id="panel1-header"
+            >
+              <Stack
+                direction="row"
+                justifyContent="flex-start"
+                alignItems="center"
+                sx={{ width: '100%', }}
+                spacing={2}
+              >
+                {<InboxIcon sx={{ color: 'var(--white)' }} />}
+                <Typography sx={{ color: 'var(--white)' }}>Arts graphiques</Typography>
+              </Stack>
+            </AccordionSummary>
+            <AccordionDetails sx={{
+              color: 'var(--black)', width: '100%', overflow: "clip", verticalAlign: 'middle', cursor: 'pointer', ":hover": {
+                backgroundColor: 'var(--yellow-dark)'
+              }
+            }}>
+              <Typography sx={{ width: '100%', color: 'var(--black)' }}>Images</Typography>
+            </AccordionDetails>
+            <AccordionDetails sx={{
+              color: 'var(--black)', width: '100%', overflow: "clip", cursor: 'pointer', ":hover": {
+                backgroundColor: 'var(--yellow-dark)'
+              }
+            }}>
+              <Typography sx={{ width: '100%', color: 'var(--black)' }}>Photos</Typography>
+            </AccordionDetails>
+            <AccordionDetails sx={{
+              color: 'var(--black)', width: '100%', overflow: "clip", cursor: 'pointer', ":hover": {
+                backgroundColor: 'var(--yellow-dark)'
+              }
+            }}>
+              <Typography sx={{ width: '100%', color: 'var(--black)' }}>Dessins</Typography>
+            </AccordionDetails>
+            <AccordionDetails sx={{
+              color: 'var(--black)', width: '100%', overflow: "clip", cursor: 'pointer', ":hover": {
+                backgroundColor: 'var(--yellow-dark)'
+              },
+            }}>
+              <Typography sx={{ width: '100%', color: 'var(--black)' }}>Sculpture</Typography>
+            </AccordionDetails>
+            <AccordionDetails sx={{
+              color: 'var(--black)', width: '100%', overflow: "clip", cursor: 'pointer', ":hover": {
+                backgroundColor: 'var(--yellow-dark)'
+              }
+            }}>
+              <Typography sx={{ width: '100%', color: 'var(--black)' }}>Peintures</Typography>
+            </AccordionDetails>
+          </Accordion>
+          <ListItem key={'graphics'} disablePadding sx={{ display: 'block' }}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? 'initial' : 'center',
+                px: 2.5,
+              }}
+            >
+              <ListItemIcon
                 sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
+                  minWidth: 0,
+                  mr: open ? 3 : 'auto',
+                  justifyContent: 'center',
                 }}
               >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  {<InboxIcon sx={{ color: 'var(--white)' }} />}
-                </ListItemIcon>
-                <ListItemText primary={"Arts graphiques"} sx={{ opacity: open ? 1 : 0, color: 'var(--white)' }} />
-              </ListItemButton>
-            </ListItem>
-            <ListItem key={'musics'} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
+                {<InboxIcon sx={{ color: 'var(--white)' }} />}
+              </ListItemIcon>
+              <ListItemText primary={"Arts graphiques"} sx={{ opacity: open ? 1 : 0, color: 'var(--white)' }} />
+            </ListItemButton>
+          </ListItem>
+          <ListItem key={'musics'} disablePadding sx={{ display: 'block' }}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? 'initial' : 'center',
+                px: 2.5,
+              }}
+            >
+              <ListItemIcon
                 sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
+                  minWidth: 0,
+                  mr: open ? 3 : 'auto',
+                  justifyContent: 'center',
                 }}
               >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  {<InboxIcon sx={{ color: 'var(--white)' }} />}
-                </ListItemIcon>
-                <ListItemText primary={"Musiques"} sx={{ opacity: open ? 1 : 0, color: 'var(--white)' }} />
-              </ListItemButton>
-            </ListItem>
-            <ListItem key={'animations'} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
+                {<InboxIcon sx={{ color: 'var(--white)' }} />}
+              </ListItemIcon>
+              <ListItemText primary={"Musiques"} sx={{ opacity: open ? 1 : 0, color: 'var(--white)' }} />
+            </ListItemButton>
+          </ListItem>
+          <ListItem key={'animations'} disablePadding sx={{ display: 'block' }}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? 'initial' : 'center',
+                px: 2.5,
+              }}
+            >
+              <ListItemIcon
                 sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
+                  minWidth: 0,
+                  mr: open ? 3 : 'auto',
+                  justifyContent: 'center',
                 }}
               >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  {<InboxIcon sx={{ color: 'var(--white)' }} />}
-                </ListItemIcon>
-                <ListItemText primary={"Animations"} sx={{ opacity: open ? 1 : 0, color: 'var(--white)' }} />
-              </ListItemButton>
-            </ListItem>
-            <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1-content"
-          id="panel1-header"
-        >
-          Accordion 1
-        </AccordionSummary>
-        <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2-content"
-          id="panel2-header"
-        >
-          Accordion 2
-        </AccordionSummary>
-        <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
-        </AccordionDetails>
-      </Accordion>
-      <Accordion defaultExpanded>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3-content"
-          id="panel3-header"
-        >
-          Accordion Actions
-        </AccordionSummary>
-        <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
-        </AccordionDetails>
-        <AccordionActions>
-          <Button>Cancel</Button>
-          <Button>Agree</Button>
-        </AccordionActions>
-      </Accordion>
+                {<InboxIcon sx={{ color: 'var(--white)' }} />}
+              </ListItemIcon>
+              <ListItemText primary={"Animations"} sx={{ opacity: open ? 1 : 0, color: 'var(--white)' }} />
+            </ListItemButton>
+          </ListItem>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1-content"
+              id="panel1-header"
+            >
+              Accordion 1
+            </AccordionSummary>
+            <AccordionDetails>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              malesuada lacus ex, sit amet blandit leo lobortis eget.
+            </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2-content"
+              id="panel2-header"
+            >
+              Accordion 2
+            </AccordionSummary>
+            <AccordionDetails>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              malesuada lacus ex, sit amet blandit leo lobortis eget.
+            </AccordionDetails>
+          </Accordion>
+          <Accordion defaultExpanded>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel3-content"
+              id="panel3-header"
+            >
+              Accordion Actions
+            </AccordionSummary>
+            <AccordionDetails>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              malesuada lacus ex, sit amet blandit leo lobortis eget.
+            </AccordionDetails>
+            <AccordionActions>
+              <Button>Cancel</Button>
+              <Button>Agree</Button>
+            </AccordionActions>
+          </Accordion>
         </List>
         <Divider />
         <List>
@@ -387,9 +347,9 @@ export default function MiniDrawer() {
           ))}
         </List>
       </Drawer>
-      <div style={{ marginTop:'7rem', marginLeft: open ? drawerWidth : drawerWidthClosed, paddingLeft: 30, paddingRight: 30, flex: 1, position: 'relative', border: '5px solid red', }}>
+      <div style={{ marginTop: '4rem', marginLeft: open ? drawerWidth : drawerWidthClosed, paddingLeft: 30, paddingRight: 30, flex: 1, position: 'relative', border: '5px solid red', }}>
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          
+
           <Typography paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
