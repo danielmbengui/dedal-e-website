@@ -35,6 +35,7 @@ import Paper from '@mui/material/Paper';
 import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 
 import Masonry from '@mui/lab/Masonry';
+import BuyMasonry from './BuyMasonry';
 
 
 //import AppBar from '@mui/material/AppBar';
@@ -111,7 +112,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function MiniDrawer() {
+export default function BuyDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
   const [selectedValue, setSelectedValue] = React.useState('');
@@ -349,9 +350,23 @@ export default function MiniDrawer() {
           ))}
         </List>
       </Drawer>
-      <div style={{ marginTop: '4rem', marginLeft: open ? drawerWidth : drawerWidthClosed, paddingLeft: 30, paddingRight: 30, flex: 1, position: 'relative', border: '5px solid red', }}>
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <div style={{ 
+        marginTop: '4rem', 
+        marginLeft: open ? drawerWidth : drawerWidthClosed, 
+        paddingLeft: 30, paddingRight: 30, flex: 1, position: 'relative', 
+        border: '5px solid red',
+        backgroundColor:'var(--grey-dark-dedal)'
+        }}>
 
+        <Stack
+        sx={{py:3}}
+        alignItems={'center'}
+        justifyContent={'center'}
+        >
+<BuyMasonry />
+        </Stack>
+        
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Typography paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non

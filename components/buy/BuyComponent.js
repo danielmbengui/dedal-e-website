@@ -1,15 +1,23 @@
 import React from "react";
-import * as _Builtin from "./_Builtin";
-import { Navbar } from "./Navbar";
-import { HeroBanner } from "./HeroBanner";
-import { Footer } from "./Footer";
+import * as _Builtin from "@/devlink/_Builtin";
+import MenuComponent from "@/components/menu/MenuComponent";
+import MiniDrawer from "@/components/drawer/MiniDrawer";
+import BuyDrawer from "@/components/buy/BuyDrawer";
 
-export function GalleryPage({ as: _Component = _Builtin.Block }) {
+
+export function BuyComponent({ as: _Component = _Builtin.Block }) {
   return (
-    <_Component className="page-wrapper" tag="div">
-      <Navbar />
-      <_Builtin.Block className="main-wrapper" tag="div">
-        <HeroBanner heading2Text="Gallery 3D" textSizeRegluarText="Creation" />
+    <_Component className="page-wrapper" tag="div" style={{backgroundColor:'var(--grey-dark-dedal)'}}>
+      <MenuComponent />
+      <BuyDrawer />
+      {/*
+      <ResponsiveDrawer 
+      menu={<MenuComponent isGallery={true} />}
+      footer={<FooterComponent isGallery={true} />}
+      header={<HeroBanner heading2Text="Gallery 3D" textSizeRegluarText="Creation" />}
+      component={
+<_Builtin.Block className="main-wrapper" tag="div">
+        
         <_Builtin.Block className="section-change-log" tag="div">
           <_Builtin.Block className="padding-global" tag="div">
             <_Builtin.Block className="container-large" tag="div">
@@ -50,7 +58,13 @@ export function GalleryPage({ as: _Component = _Builtin.Block }) {
           </_Builtin.Block>
         </_Builtin.Block>
       </_Builtin.Block>
-      <Footer />
+      }
+      />
+      */}
+      
+      
+      
+      
     </_Component>
   );
 }
