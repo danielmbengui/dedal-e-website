@@ -9,3 +9,4 @@ export const LINK_PARTNERS_PAGE = "/partners";
 export const LINK_CONTACT_PAGE = "/contact";
 export const LINK_SUPPORT_PAGE = "/support";
 export const LINK_LOGIN_PAGE = "/login";
+export const LINK_ACCOUNT_PAGE = "/account";

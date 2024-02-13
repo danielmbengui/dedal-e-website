@@ -641,6 +641,9 @@ html[data-w-dynpage] [data-w-cloak] {
 .w-code-block {
   margin: unset;
 }
+pre.w-code-block code {
+  all: inherit;
+}
 .w-webflow-badge,
 .w-webflow-badge * {
   position: static;
@@ -4465,7 +4468,7 @@ ul {
   padding-top: 10.375rem;
   padding-bottom: 7.5rem;
 
-  background-image: linear-gradient(to bottom, hsla(0, 0.00%, 0.00%, 0.84),hsla(0, 0.00%, 0.00%, 0.84)), url("https://uploads-ssl.webflow.com/65ae6f1a145b7954f56170cc/65aedc74c71f25839428d640_home-header.webp");
+  background-image: linear-gradient(to bottom, hsla(0, 0.00%, 0.00%, 0.53),hsla(0, 0.00%, 0.00%, 0.53)), url("https://uploads-ssl.webflow.com/65ae6f1a145b7954f56170cc/65aedc74c71f25839428d640_home-header.webp");
   background-position: 0px 0px, 50% 50%;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;

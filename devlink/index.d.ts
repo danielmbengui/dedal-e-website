@@ -6,6 +6,7 @@ export * from "./interactions";
 export * from "./utils";
 export * from "./devlink";
 export * from "./AboutPage";
+export * from "./AccountPage";
 export * from "./BuyPage";
 export * from "./CartPage";
 export * from "./ContactPage";

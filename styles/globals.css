@@ -142,4 +142,8 @@ div, p, a {
   color: var(--yellow-dark);
 }
 
+.html-embed-3.active {
+  color: var(--yellow-dark);
+}
+
 /*-------------------- DEV LINK --------------------*/

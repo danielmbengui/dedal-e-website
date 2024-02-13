@@ -9,7 +9,7 @@ import { PaddingSmall } from "@/devlink/PaddingSmall";
 //import { PaddingXxSmall } from "./PaddingXxSmall";
 import { Footer } from "@/devlink/Footer";
 import MenuComponent from "@/components/menu/MenuComponent";
-import { FooterComponent } from "../footer/FooterComponent";
+import { FooterComponent } from "@/components/footer/FooterComponent";
 import { useRouter } from "next/router";
 import { useTranslation } from 'next-i18next';
 import { LINK_BUY_PAGE } from "@/constants/pages";

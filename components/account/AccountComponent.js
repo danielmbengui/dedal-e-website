@@ -1,23 +1,22 @@
-// Next JS related
-import React, { useEffect, useState } from 'react';
-import Head from 'next/head';
-import { Button, Card } from '@nextui-org/react';
-//import { useSession, signIn, signOut } from "next-auth/react"
-//import firebase from 'firebase/compat/app';
-//import firebaseui from 'firebaseui';
-//import 'firebaseui/dist/firebaseui.css';
-import { getAuth, onAuthStateChanged, linkWithCredential, linkWithPopup, fetchSignInMethodsForEmail, signOut, signInWithPopup, TwitterAuthProvider, GoogleAuthProvider , unlink, linkWithRedirect, reauthenticateWithRedirect, reauthenticateWithPopup, getRedirectResult, signInWithRedirect } from "firebase/auth";
-import MenuComponent from "@/components/menu/MenuComponent";
-import { FooterComponent } from "@/components/footer/FooterComponent";
+import React, {useEffect, useState} from "react";
 import * as _Builtin from "@/devlink/_Builtin";
-import * as _interactions from "@/devlink/interactions";
-import { AccountPage, LoginPage } from '@/devlink';
+import { Navbar } from "@/devlink/Navbar";
+import { HeroBanner } from "@/devlink/HeroBanner";
+import { Footer } from "@/devlink/Footer";
+import MenuComponent from "../menu/MenuComponent";
+import { FooterComponent } from "../footer/FooterComponent";
+import { Stack } from "@mui/material";
+import { Button } from "@nextui-org/react";
+import { GoogleIcon } from "../icons/GoogleIcon";
+import { getAuth, onAuthStateChanged, linkWithCredential, linkWithPopup, fetchSignInMethodsForEmail, signOut, signInWithPopup, TwitterAuthProvider, GoogleAuthProvider , unlink, linkWithRedirect, reauthenticateWithRedirect, reauthenticateWithPopup, getRedirectResult, signInWithRedirect } from "firebase/auth";
 
-export default function Login() {
+
+
+export function AccountComponent({ as: _Component = _Builtin.Block }) {
     const twitterProvider = new TwitterAuthProvider();
     //const googleProvider = new GoogleAuthProvider();
     const googleProvider = new GoogleAuthProvider();
-    const [player, setPlayer] = useState(null);
+    const [connectedUser, setConnectedUser] = useState(null);
     const [pendingCred, setPendingCred] = useState(null);
     //console.log('twitterProvider', twitterProvider)
     const auth = getAuth();
@@ -32,7 +31,7 @@ export default function Login() {
                 //const uid = user.uid;
                 //const displayName = user.displayName;
                 //const photoURL = user.photoURL;               
-                console.log('playerJSON ORIGINAL', user);
+                console.log('connectedUserJSON ORIGINAL', user);
             }).catch(async (error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
@@ -59,7 +58,7 @@ export default function Login() {
     const signOutTwitter = () => {
         signOut(auth).then(() => {
             console.log('state', 'ooooooooook disconnected TWITTER');
-            setPlayer(null);
+            setConnectedUser(null);
         }).catch((error) => {
             // An error happened.
             console.log('state', 'error', error)
@@ -76,7 +75,7 @@ export default function Login() {
                 //const uid = user.uid;
                 //const displayName = user.displayName;
                 //const photoURL = user.photoURL;               
-                console.log('playerJSON ORIGINAL', user);
+                console.log('connectedUserJSON ORIGINAL', user);
             }).catch(async (error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
@@ -102,7 +101,16 @@ export default function Login() {
     const signOutGoogle = () => {
         signOut(auth).then(() => {
             console.log('state', 'ooooooooook disconnected GOOGLE');
-            setPlayer(null);
+            setConnectedUser(null);
+        }).catch((error) => {
+            // An error happened.
+            console.log('state', 'error', error)
+        });
+    }
+    const signOutAccount = () => {
+        signOut(auth).then(() => {
+            console.log('state', 'ooooooooook disconnected GOOGLE');
+            setConnectedUser(null);
         }).catch((error) => {
             // An error happened.
             console.log('state', 'error', error)
@@ -117,86 +125,41 @@ export default function Login() {
             name = user.displayName;
             photo = user.photoURL;
             console.log('exist onAuthStateChanged User', user.displayName);
-            setPlayer(user);
+            setConnectedUser(user);
         } else {
             console.log('user twitter', 'not connected');
             console.log('user google', 'not connected');
-            //setPlayer(null);
+            //setConnectedUser(null);
         }
     });
-    useEffect(() => {
-        
-    }, []);
+  return (
+    <_Component className="main-wrapper" tag="div">
+      <MenuComponent />
+      <HeroBanner heading2Text="Account" textSizeRegluarText="Creation" />
+      <_Builtin.Block className="section-change-log" tag="div">
+        <_Builtin.Block className="padding-global" tag="div">
+          <_Builtin.Block className="container-large" tag="div">
+            <_Builtin.Block className="padding-section-large" tag="div" />
+            {
+                !connectedUser && <Stack>
+                <Button color="danger" startContent={<GoogleIcon />} onPress={signInGoogle}>
+                    Sign In with google
+                </Button>
+                </Stack>
+            }
 
-    return (
-        <AccountPage />
-        /*
-        <>
-        <MenuComponent />
-        <_Builtin.Block className="main-wrapper" tag="div">
-        <_Builtin.Block className="section-header" tag="div">
-          <_Builtin.Block className="header-content-left" tag="div">
-          {
-            player !== null ? <Button onPress={signOutTwitter}>Logout Twitter</Button> : <Button onPress={signInTwitter}>Login Twitter</Button>
-        }
-        {
-            player !== null ? <Button onPress={signOutGoogle}>Logout Google</Button> : <Button onPress={signInGoogle}>Login Google</Button>
-        }
+            {
+                connectedUser && <Stack justifyContent={'center'} alignItems={'center'}>
+                    <Button color="danger" onPress={signOutAccount}>
+                    Logout
+                </Button>
+                </Stack>
+            }
+            
           </_Builtin.Block>
-          </_Builtin.Block>
-          </_Builtin.Block>
-        <FooterComponent />
-        </>
-        <>
-            <Head>
-                <title>CodeBlog | LogIn</title>
-            </Head>
-            <div>
-                <Card>
-                    {
-
-                        session ? <>
-                            Signed in as {session.user.email} <br />
-                            <button onClick={() => signOut('google')}>Sign out Google</button>
-                        </>
-                            : <>
-                                Not signed in <br />
-                                <button onClick={() => signIn('google')}>Sign in Google</button>
-                            </>
-                    }
-                </Card>
-            </div>
-            <div>
-                <Card>
-                    {
-
-                        session ? <>
-                            Signed in as {session.user.email} <br />
-                            <button onClick={() => signOut('facebook')}>Sign out Facebook</button>
-                        </>
-                            : <>
-                                Not signed in <br />
-                                <button onClick={() => signIn('facebook')}>Sign in Facebook</button>
-                            </>
-                    }
-                </Card>
-            </div>
-            <div>
-                <Card>
-                    {
-
-                        session ? <>
-                            Signed in as {session.user.email} <br />
-                            <button onClick={() => signOut('twitter')}>Sign out Twitter</button>
-                        </>
-                            : <>
-                                Not signed in <br />
-                                <button onClick={() => signIn('twitter')}>Sign in Twitter</button>
-                            </>
-                    }
-                </Card>
-            </div>
-        </>
-        */
-    )
+        </_Builtin.Block>
+      </_Builtin.Block>
+      <FooterComponent />
+    </_Component>
+  );
 }
