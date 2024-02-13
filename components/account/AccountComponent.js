@@ -6,13 +6,17 @@ import { Footer } from "@/devlink/Footer";
 import MenuComponent from "../menu/MenuComponent";
 import { FooterComponent } from "../footer/FooterComponent";
 import { Stack } from "@mui/material";
-import { Button } from "@nextui-org/react";
 import { GoogleIcon } from "../icons/GoogleIcon";
 import { getAuth, onAuthStateChanged, linkWithCredential, linkWithPopup, fetchSignInMethodsForEmail, signOut, signInWithPopup, TwitterAuthProvider, GoogleAuthProvider , unlink, linkWithRedirect, reauthenticateWithRedirect, reauthenticateWithPopup, getRedirectResult, signInWithRedirect } from "firebase/auth";
 
+import {Button, ButtonGroup, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem} from "@nextui-org/react";
+import {ChevronDownIcon} from '@/components/icons/ChevronDownIcon';
+import { useRouter } from 'next/router';
 
 
 export function AccountComponent({ as: _Component = _Builtin.Block }) {
+    const router = useRouter();
+    const { section } = router.query;
     const twitterProvider = new TwitterAuthProvider();
     //const googleProvider = new GoogleAuthProvider();
     const googleProvider = new GoogleAuthProvider();
@@ -36,11 +40,9 @@ export function AccountComponent({ as: _Component = _Builtin.Block }) {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 //const credential = TwitterAuthProvider.credentialFromError(error);
-                //console.log('ERROR', errorCode, errorMessage);
                 if (error.code === 'auth/account-exists-with-different-credential') {
                     //setPendingCred(error.credential);
                     let result = await signInWithPopup(getAuth(), googleProvider);
-
                     // Step 6: Link to the Twitter credential.
                     // TODO: implement `retrievePendingCred` for your app.
                     let pendingCred = error.credential;
@@ -145,14 +147,15 @@ export function AccountComponent({ as: _Component = _Builtin.Block }) {
                 <Button color="danger" startContent={<GoogleIcon />} onPress={signInGoogle}>
                     Sign In with google
                 </Button>
+                {section}
                 </Stack>
             }
-
             {
                 connectedUser && <Stack justifyContent={'center'} alignItems={'center'}>
                     <Button color="danger" onPress={signOutAccount}>
                     Logout
                 </Button>
+                {section}
                 </Stack>
             }
             
