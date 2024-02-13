@@ -14,13 +14,13 @@ import {ChevronDownIcon} from '@/components/icons/ChevronDownIcon';
 import { useRouter } from 'next/router';
 
 
-export function AccountComponent({ as: _Component = _Builtin.Block }) {
+export function AccountComponent({ as: _Component = _Builtin.Block, connectedUser, setConnectedUser }) {
     const router = useRouter();
     const { section } = router.query;
     const twitterProvider = new TwitterAuthProvider();
     //const googleProvider = new GoogleAuthProvider();
     const googleProvider = new GoogleAuthProvider();
-    const [connectedUser, setConnectedUser] = useState(null);
+    //const [connectedUser, setConnectedUser] = useState(null);
     const [pendingCred, setPendingCred] = useState(null);
     //console.log('twitterProvider', twitterProvider)
     const auth = getAuth();
@@ -118,25 +118,10 @@ export function AccountComponent({ as: _Component = _Builtin.Block }) {
             console.log('state', 'error', error)
         });
     }
-    onAuthStateChanged(auth, async (user) => {
-        let uid = '';
-        let name = '';
-        let photo = '';
-        if (user) {
-            uid = user.uid;
-            name = user.displayName;
-            photo = user.photoURL;
-            console.log('exist onAuthStateChanged User', user.displayName);
-            setConnectedUser(user);
-        } else {
-            console.log('user twitter', 'not connected');
-            console.log('user google', 'not connected');
-            //setConnectedUser(null);
-        }
-    });
+ 
   return (
     <_Component className="main-wrapper" tag="div">
-      <MenuComponent />
+      <MenuComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
       <HeroBanner heading2Text="Account" textSizeRegluarText="Creation" />
       <_Builtin.Block className="section-change-log" tag="div">
         <_Builtin.Block className="padding-global" tag="div">
@@ -150,6 +135,7 @@ export function AccountComponent({ as: _Component = _Builtin.Block }) {
                 {section}
                 </Stack>
             }
+
             {
                 connectedUser && <Stack justifyContent={'center'} alignItems={'center'}>
                     <Button color="danger" onPress={signOutAccount}>

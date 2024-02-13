@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, {useState, useEffect} from "react";
 import "@/devlink/global.css";
 import "@/styles/globals.css";
 import { SessionProvider } from "next-auth/react"
@@ -11,6 +11,7 @@ import { NextUIProvider } from "@nextui-org/system";
 import { appWithTranslation } from 'next-i18next';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getAuth, onAuthStateChanged, linkWithCredential, linkWithPopup, fetchSignInMethodsForEmail, signOut, signInWithPopup, TwitterAuthProvider, GoogleAuthProvider , unlink, linkWithRedirect, reauthenticateWithRedirect, reauthenticateWithPopup, getRedirectResult, signInWithRedirect } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD8PLiUF_jgNtt5fS-4Zc8GDMzbxcyapgw",
@@ -25,11 +26,34 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const App = ({ Component, pageProps: { session, ...pageProps } }) => {
+  const [connectedUser, setConnectedUser] = useState(null);
+  const auth = getAuth();
+  onAuthStateChanged(auth, async (user) => {
+    let uid = '';
+    let name = '';
+    let photo = '';
+    if (user) {
+        uid = user.uid;
+        name = user.displayName;
+        photo = user.photoURL;
+        const myUser = {
+          uid: user.uid,
+          name: user.displayName,
+          photo: user.photoURL,
+        }
+        console.log('exist onAuthStateChanged User', user.displayName);
+        setConnectedUser(myUser);
+    } else {
+        console.log('user twitter', 'not connected');
+        console.log('user google', 'not connected');
+        setConnectedUser(null);
+    }
+});
   return (
     <SessionProvider session={session}>
       <DevLinkProvider>
         <NextUIProvider>
-          <Component {...pageProps} />
+          <Component {...pageProps} connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
         </NextUIProvider>
       </DevLinkProvider>
     </SessionProvider>

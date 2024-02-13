@@ -10,7 +10,7 @@ import { TAB_LANGUAGES, TAB_NAMESPACES } from "@/constants/languages";
 import Head from "next/head";
 import { AccountComponent } from "@/components/account/AccountComponent";
 
-export default function Account() {
+export default function Account({connectedUser, setConnectedUser}) {
     const { t } = useTranslation();
   
     return (
@@ -19,7 +19,7 @@ export default function Account() {
         <meta name="description" content={`${t('slogan_website', { ns: 'common' })}`} />
         <title>{`Dedal-E | ${t('buy', { ns: 'navbar' })}`}</title>
       </Head>
-      <AccountComponent />
+      <AccountComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
       </>
     );
   }
