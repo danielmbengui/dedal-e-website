@@ -863,6 +863,12 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper,
       </DropdownMenu>
     </Dropdown>
   </ButtonGroup>}
+
+  {
+    !connectedUser && <Button onPress={() => router.push(`/${lang}/${LINK_ACCOUNT_PAGE}`)} color="warning">
+    Login
+  </Button>
+  }
             </_Builtin.Block>
             <_Builtin.NavbarButton
               className="menu-button"
