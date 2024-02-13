@@ -17,6 +17,7 @@ export function Footer({ as: _Component = _Builtin.Block }) {
                 <_Builtin.Grid className="uui-footer01_top-wrapper" tag="div">
                   <_Builtin.Block
                     className="uui-footer01_left-wrapper"
+                    id="w-node-baa4159d-08e2-e209-cf31-09a1e220fcc5-bbe58542"
                     tag="div"
                   >
                     <_Builtin.Block className="div-block-6" tag="div">

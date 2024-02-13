@@ -44,7 +44,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export function HomeComponent({ as: _Component = _Builtin.Block }) {
+export function HomeComponent({ as: _Component = _Builtin.Block, connectedUser, setConnectedUser }) {
   _interactions.useInteractions(_interactionsData);
   const router = useRouter();
   const url = router.asPath;
@@ -61,7 +61,7 @@ export function HomeComponent({ as: _Component = _Builtin.Block }) {
 
   return (
     <_Component className="page-wrapper" tag="div">
-      <MenuComponent />
+      <MenuComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
       
       <_Builtin.Block className="main-wrapper" tag="div">
         <_Builtin.Block className="section-header" tag="div">

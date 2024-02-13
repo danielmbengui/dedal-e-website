@@ -1,5 +1,5 @@
 import * as React from "react";
 
-declare function LoginPage(props: {
+declare function MediaPage(props: {
   as?: React.ElementType;
 }): React.JSX.Element;

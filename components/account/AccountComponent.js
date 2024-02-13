@@ -5,13 +5,14 @@ import { HeroBanner } from "@/devlink/HeroBanner";
 import { Footer } from "@/devlink/Footer";
 import MenuComponent from "../menu/MenuComponent";
 import { FooterComponent } from "../footer/FooterComponent";
-import { Stack } from "@mui/material";
+import { Grid, Stack } from "@mui/material";
 import { GoogleIcon } from "../icons/GoogleIcon";
 import { getAuth, onAuthStateChanged, linkWithCredential, linkWithPopup, fetchSignInMethodsForEmail, signOut, signInWithPopup, TwitterAuthProvider, GoogleAuthProvider , unlink, linkWithRedirect, reauthenticateWithRedirect, reauthenticateWithPopup, getRedirectResult, signInWithRedirect } from "firebase/auth";
 
-import {Button, ButtonGroup, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem} from "@nextui-org/react";
+import {Button, ButtonGroup, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Card} from "@nextui-org/react";
 import {ChevronDownIcon} from '@/components/icons/ChevronDownIcon';
 import { useRouter } from 'next/router';
+import { FacebookIcon } from "../icons/FacebookIcon";
 
 
 export function AccountComponent({ as: _Component = _Builtin.Block, connectedUser, setConnectedUser }) {
@@ -128,12 +129,31 @@ export function AccountComponent({ as: _Component = _Builtin.Block, connectedUse
           <_Builtin.Block className="container-large" tag="div">
             <_Builtin.Block className="padding-section-large" tag="div" />
             {
-                !connectedUser && <Stack>
-                <Button color="danger" startContent={<GoogleIcon />} onPress={signInGoogle}>
+                !connectedUser && 
+                <Grid container justifyContent={'center'} alignItems={'center'} sx={{width:'100%', marginBottom:'50px'}}>
+                    <Grid item xs={12} md={6} >
+                    <Card style={{paddingTop:'20px', paddingBottom:'20px'}} radius="sm" shadow="sm">
+                    <Stack spacing={2} sx={{width: '100%',}} justifyContent={'center'} alignItems={'center'}>
+                <Button style={{width: '50%'}} size="lg" color="default" startContent={<GoogleIcon />} onPress={signInGoogle}>
                     Sign In with google
+                </Button>
+                <Button style={{width: '50%'}}  size="lg" color="primary" startContent={<FacebookIcon />} >
+                    Sign In with Facebook
+                </Button>
+                <Button style={{width: '50%'}}  color="default" >
+                    Sign In with Twitter
+                </Button>
+                <Button style={{width: '50%'}}  color="default" >
+                    Sign In with email
+                </Button>
+                <Button style={{width: '50%'}}  color="default" >
+                    Sign In with phone
                 </Button>
                 {section}
                 </Stack>
+                    </Card>
+                    </Grid>
+                </Grid>
             }
 
             {

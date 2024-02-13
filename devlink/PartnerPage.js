@@ -4,11 +4,9 @@ import * as _interactions from "./interactions";
 import { Navbar } from "./Navbar";
 import { HeroBanner } from "./HeroBanner";
 import { Footer } from "./Footer";
-import MenuComponent from "@/components/menu/MenuComponent";
-import { FooterComponent } from "@/components/footer/FooterComponent";
 
 const _interactionsData = JSON.parse(
-  '{"events":{"e-257":{"id":"e-257","name":"","animationType":"preset","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"FADE_EFFECT","config":{"actionListId":"fadeIn","autoStopEventId":"e-258"},"instant":false},"mediaQueries":["main","medium","small","tiny"],"target":{"selector":".fn-logos-masonary-logo-2.smartchain","originalId":"a287eb3f-a0f7-bc6c-1862-e7853efec272","appliesTo":"CLASS"},"targets":[],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":20,"scrollOffsetUnit":"%","delay":300,"direction":null,"effectIn":true},"createdOn":1707104205067},"e-259":{"id":"e-259","name":"","animationType":"preset","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"FADE_EFFECT","config":{"actionListId":"fadeIn","autoStopEventId":"e-260"},"instant":false},"mediaQueries":["main","medium","small","tiny"],"target":{"selector":".fn-logos-masonary-logo-2","originalId":"a287eb3f-a0f7-bc6c-1862-e7853efec272","appliesTo":"CLASS"},"targets":[],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":20,"scrollOffsetUnit":"%","delay":300,"direction":null,"effectIn":true},"createdOn":1707104400284}},"actionLists":{"fadeIn":{"id":"fadeIn","useFirstGroupAsInitialState":true,"actionItemGroups":[{"actionItems":[{"actionTypeId":"STYLE_OPACITY","config":{"delay":0,"duration":0,"target":{"id":"N/A","appliesTo":"TRIGGER_ELEMENT","useEventTarget":true},"value":0}}]},{"actionItems":[{"actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"outQuart","duration":1000,"target":{"id":"N/A","appliesTo":"TRIGGER_ELEMENT","useEventTarget":true},"value":1}}]}]}},"site":{"mediaQueries":[{"key":"main","min":992,"max":10000},{"key":"medium","min":768,"max":991},{"key":"small","min":480,"max":767},{"key":"tiny","min":0,"max":479}]}}'
+  '{"events":{"e-257":{"id":"e-257","name":"","animationType":"preset","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"FADE_EFFECT","instant":false,"config":{"actionListId":"fadeIn","autoStopEventId":"e-258"}},"mediaQueries":["main","medium","small","tiny"],"target":{"selector":".fn-logos-masonary-logo-2.smartchain","originalId":"a287eb3f-a0f7-bc6c-1862-e7853efec272","appliesTo":"CLASS"},"targets":[{"selector":".fn-logos-masonary-logo-2.smartchain","originalId":"a287eb3f-a0f7-bc6c-1862-e7853efec272","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":20,"scrollOffsetUnit":"%","delay":300,"direction":null,"effectIn":true},"createdOn":1707104205067},"e-259":{"id":"e-259","name":"","animationType":"preset","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"FADE_EFFECT","instant":false,"config":{"actionListId":"fadeIn","autoStopEventId":"e-260"}},"mediaQueries":["main","medium","small","tiny"],"target":{"selector":".fn-logos-masonary-logo-2","originalId":"a287eb3f-a0f7-bc6c-1862-e7853efec272","appliesTo":"CLASS"},"targets":[{"selector":".fn-logos-masonary-logo-2","originalId":"a287eb3f-a0f7-bc6c-1862-e7853efec272","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":20,"scrollOffsetUnit":"%","delay":300,"direction":null,"effectIn":true},"createdOn":1707104400284}},"actionLists":{"fadeIn":{"id":"fadeIn","useFirstGroupAsInitialState":true,"actionItemGroups":[{"actionItems":[{"actionTypeId":"STYLE_OPACITY","config":{"delay":0,"duration":0,"target":{"id":"N/A","appliesTo":"TRIGGER_ELEMENT","useEventTarget":true},"value":0}}]},{"actionItems":[{"actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"outQuart","duration":1000,"target":{"id":"N/A","appliesTo":"TRIGGER_ELEMENT","useEventTarget":true},"value":1}}]}]}},"site":{"mediaQueries":[{"key":"main","min":992,"max":10000},{"key":"medium","min":768,"max":991},{"key":"small","min":480,"max":767},{"key":"tiny","min":0,"max":479}]}}'
 );
 
 export function PartnerPage({ as: _Component = _Builtin.Block }) {
@@ -16,7 +14,7 @@ export function PartnerPage({ as: _Component = _Builtin.Block }) {
 
   return (
     <_Component className="page-wrapper" tag="div">
-      <MenuComponent />
+      <Navbar />
       <_Builtin.Block className="main-wrapper" tag="div">
         <HeroBanner heading2Text="Partners" textSizeRegluarText="Creation" />
         <_Builtin.Block className="section-change-log partner" tag="div">
@@ -107,7 +105,7 @@ export function PartnerPage({ as: _Component = _Builtin.Block }) {
           </_Builtin.Block>
         </_Builtin.Block>
       </_Builtin.Block>
-      <FooterComponent />
+      <Footer />
     </_Component>
   );
 }

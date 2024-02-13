@@ -14,7 +14,7 @@ import { HomeComponent } from "@/components/home/HomeComponent";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({connectedUser, setConnectedUser}) {
   const { t } = useTranslation();
 
   return (
@@ -24,7 +24,7 @@ export default function Home() {
       <title>{`Dedal-E | ${t('home', { ns: 'navbar' })}`}</title>
     </Head>
     
-    <HomeComponent />
+    <HomeComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
     </>
   );
 }

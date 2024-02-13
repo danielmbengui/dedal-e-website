@@ -17,7 +17,7 @@ export * from "./Footer";
 export * from "./GalleryPage";
 export * from "./HeroBanner";
 export * from "./HomePage";
-export * from "./LoginPage";
+export * from "./MediaPage";
 export * from "./Navbar";
 export * from "./PaddingGlobal";
 export * from "./PaddingGlobalSectionLarge";
