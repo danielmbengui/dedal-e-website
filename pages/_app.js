@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "@/devlink/global.css";
 import "@/styles/globals.css";
-import { SessionProvider } from "next-auth/react"
+//import { SessionProvider } from "next-auth/react"
 
 
 
@@ -50,15 +50,13 @@ const App = ({ Component, pageProps: { session, ...pageProps } }) => {
     }
   });
   return (
-    <SessionProvider session={session}>
-      <DevLinkProvider>
+    <DevLinkProvider>
         <NextUIProvider>
           <main className="dark text-foreground bg-background">
             <Component {...pageProps} connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
           </main>
         </NextUIProvider>
       </DevLinkProvider>
-    </SessionProvider>
   )
 }
 
