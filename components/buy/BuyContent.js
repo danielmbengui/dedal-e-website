@@ -3,6 +3,7 @@ import * as _Builtin from "@/devlink/_Builtin";
 import { HeroBanner } from "@/devlink/HeroBanner";
 import { TAB_IMAGES_EXAMPLES } from "@/constants/images";
 
+/*
 const TAB_IMAGES_EXAMPLES = [
     IMAGE_TEST_1,
     IMAGE_TEST_2,
@@ -17,6 +18,7 @@ const TAB_IMAGES_EXAMPLES = [
     IMAGE_TEST_11,
     IMAGE_TEST_12,
 ];
+*/
 
 
 export function BuyContent({ as: _Component = _Builtin.Block }) {
