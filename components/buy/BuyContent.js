@@ -3,6 +3,21 @@ import * as _Builtin from "@/devlink/_Builtin";
 import { HeroBanner } from "@/devlink/HeroBanner";
 import { TAB_IMAGES_EXAMPLES } from "@/constants/images";
 
+const TAB_IMAGES_EXAMPLES = [
+    IMAGE_TEST_1,
+    IMAGE_TEST_2,
+    IMAGE_TEST_3,
+    IMAGE_TEST_4,
+    IMAGE_TEST_5,
+    IMAGE_TEST_6,
+    IMAGE_TEST_7,
+    IMAGE_TEST_8,
+    IMAGE_TEST_9,
+    IMAGE_TEST_10,
+    IMAGE_TEST_11,
+    IMAGE_TEST_12,
+];
+
 
 export function BuyContent({ as: _Component = _Builtin.Block }) {
     return (
