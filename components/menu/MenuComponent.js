@@ -54,6 +54,7 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper,
       className="navbar"
       tag="div"
       id="menu"
+      style={{zIndex: zIndex, backgroundColor: isGallery ? 'black' : ''}}
       config={{
         animation: "default",
         collapse: "small",
@@ -482,7 +483,7 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper,
                 isIconOnly
                 onPress={() => router.push(`/${lang}/${LINK_ACCOUNT_PAGE}`)}
                 >
-                  <Avatar src={IMAGE_DANIEL} isBordered color="success" size="sm" />
+                  <Avatar src={IMAGE_DANIEL} isBordered color="warning" size="sm" />
                   {
                   //labelsMap[selectedOptionValue]
                   }
