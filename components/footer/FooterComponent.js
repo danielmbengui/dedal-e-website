@@ -3,7 +3,7 @@ import * as _Builtin from "@/devlink/_Builtin";
 import { PaddingSmall } from "@/devlink/PaddingSmall";
 import { useRouter } from "next/router";
 import { useTranslation } from 'next-i18next';
-import { LINK_ABOUT_PAGE, LINK_BUY_PAGE, LINK_CONTACT_PAGE, LINK_DEDALAB_PAGE, LINK_GALLERY_PAGE, LINK_HOME_PAGE, LINK_PARTNERS_PAGE, LINK_SUPPORT_PAGE, LINK_VR_PAGE } from "@/constants/pages";
+import { LINK_ABOUT_PAGE, LINK_BUY_PAGE, LINK_CONTACT_PAGE, LINK_DEDALAB_PAGE, LINK_GALLERY_PAGE, LINK_HOME_PAGE, LINK_MEDIA_LIBRARY_PAGE, LINK_PARTNERS_PAGE, LINK_SUPPORT_PAGE, LINK_VR_PAGE } from "@/constants/pages";
 import { LINK_FACEBOOK, LINK_INSTAGRAM, LINK_LINKEDIN, LINK_TIKTOK, LINK_TWITTER, LINK_YOUTUBE } from "@/constants/links";
 
 export function FooterComponent({ as: _Component = _Builtin.Block, isGallery=false }) {
@@ -248,6 +248,18 @@ export function FooterComponent({ as: _Component = _Builtin.Block, isGallery=fal
                       >
                         <_Builtin.Block tag="div">
                         {t('products.dedalab', {ns: 'footer'})}
+                          </_Builtin.Block>
+                      </_Builtin.Link>
+                      <_Builtin.Link
+                        className={`uui-footer01_link ${LINK_MEDIA_LIBRARY_PAGE === url ? 'w--current' : ''}`}
+                        button={false}
+                        block="inline"
+                        options={{
+                          href: `/${lang}/${LINK_MEDIA_LIBRARY_PAGE}`,
+                        }}
+                      >
+                        <_Builtin.Block tag="div">
+                        {t('products.media-library', {ns: 'footer'})}
                           </_Builtin.Block>
                       </_Builtin.Link>
                     </_Builtin.Block>

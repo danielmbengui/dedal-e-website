@@ -12,7 +12,7 @@ import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function About() {
+export default function About({connectedUser, setConnectedUser}) {
   const { t } = useTranslation();
 
   return (
@@ -21,7 +21,7 @@ export default function About() {
       <meta name="description" content={`${t('slogan_website', { ns: 'common' })}`} />
       <title>{`Dedal-E | ${t('about', { ns: 'navbar' })}`}</title>
     </Head>
-    <AboutPage />
+    <AboutPage connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
     </>
   );
 }

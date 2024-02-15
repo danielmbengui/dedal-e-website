@@ -17,7 +17,7 @@ export default function Account({connectedUser, setConnectedUser}) {
       <>
       <Head>
         <meta name="description" content={`${t('slogan_website', { ns: 'common' })}`} />
-        <title>{`Dedal-E | ${t('buy', { ns: 'navbar' })}`}</title>
+        <title>{`Dedal-E | ${t('login', { ns: 'navbar' })}`}</title>
       </Head>
       <AccountComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
       </>

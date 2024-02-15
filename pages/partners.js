@@ -6,11 +6,12 @@ import { useTranslation } from 'next-i18next';
 //import { useTranslation } from 'react-i18next';
 import { TAB_LANGUAGES, TAB_NAMESPACES } from "@/constants/languages";
 import Head from "next/head";
+import { PartnersComponent } from "@/components/partners/PartnersComponent";
 
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Cart() {
+export default function Partners({connectedUser, setConnectedUser}) {
   const { t } = useTranslation();
 
   return (
@@ -19,7 +20,7 @@ export default function Cart() {
       <meta name="description" content={`${t('slogan_website', { ns: 'common' })}`} />
       <title>{`Dedal-E | ${t('resources.partners', { ns: 'footer' })}`}</title>
     </Head>
-    <PartnerPage />
+    <PartnersComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
     </>
   );
 }

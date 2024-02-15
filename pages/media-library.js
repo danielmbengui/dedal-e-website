@@ -13,16 +13,16 @@ import { BuyComponent } from "@/components/buy/BuyComponent";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function MediaLibrary() {
+export default function MediaLibrary({connectedUser, setConnectedUser}) {
   const { t } = useTranslation();
 
   return (
     <>
     <Head>
       <meta name="description" content={`${t('slogan_website', { ns: 'common' })}`} />
-      <title>{`Dedal-E | ${t('buy', { ns: 'navbar' })}`}</title>
+      <title>{`Dedal-E | ${t('media-library', { ns: 'navbar' })}`}</title>
     </Head>
-    <MediaPage />
+    <MediaPage connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
     </>
   );
 }

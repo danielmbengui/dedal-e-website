@@ -13,7 +13,7 @@ import { BuyComponent } from "@/components/buy/BuyComponent";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Buy() {
+export default function Buy({connectedUser, setConnectedUser}) {
   const { t } = useTranslation();
 
   return (
@@ -22,7 +22,7 @@ export default function Buy() {
       <meta name="description" content={`${t('slogan_website', { ns: 'common' })}`} />
       <title>{`Dedal-E | ${t('buy', { ns: 'navbar' })}`}</title>
     </Head>
-    <BuyComponent />
+    <BuyComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
     </>
   );
 }

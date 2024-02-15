@@ -112,7 +112,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function BuyDrawer() {
+export default function BuyDrawer({connectedUser, setConnectedUser}) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
   const [selectedValue, setSelectedValue] = React.useState('');
@@ -137,7 +137,7 @@ export default function BuyDrawer() {
     }}>
       {/* <CssBaseline /> */}
 
-      <MenuComponent zIndex={theme.zIndex.drawer + 1} isGallery={true} />
+      <MenuComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} zIndex={theme.zIndex.drawer + 1} isGallery={true} />
 
 
       <div style={{ marginLeft: open ? drawerWidth : drawerWidthClosed, display: 'none' }}>

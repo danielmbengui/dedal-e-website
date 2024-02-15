@@ -5,12 +5,13 @@ import MiniDrawer from "@/components/drawer/MiniDrawer";
 import BuyDrawer from "@/components/buy/BuyDrawer";
 
 
-export function BuyComponent({ as: _Component = _Builtin.Block }) {
+export function BuyComponent({ as: _Component = _Builtin.Block, connectedUser, setConnectedUser }) {
   return (
     <_Component className="page-wrapper" tag="div" style={{backgroundColor:'var(--grey-dark-dedal)'}}>
-      <MenuComponent />
-      <BuyDrawer />
+     
+      <BuyDrawer connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
       {/*
+       <MenuComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
       <ResponsiveDrawer 
       menu={<MenuComponent isGallery={true} />}
       footer={<FooterComponent isGallery={true} />}

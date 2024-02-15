@@ -12,7 +12,7 @@ import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Dedalab() {
+export default function Dedalab({connectedUser, setConnectedUser}) {
   const { t } = useTranslation();
 
   return (
@@ -21,7 +21,7 @@ export default function Dedalab() {
       <meta name="description" content={`${t('slogan_website', { ns: 'common' })}`} />
       <title>{`Dedal-E | ${t('dedalab', { ns: 'navbar' })}`}</title>
     </Head>
-    <DedalabPage />
+    <DedalabPage connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
     </>
   );
 }
