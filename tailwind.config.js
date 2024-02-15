@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 // tailwind.config.js
-import {nextui} from "@nextui-org/react";
+//import {nextui} from "@nextui-org/react";
+const { nextui } = require("@nextui-org/react");
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -18,7 +19,34 @@ module.exports = {
     },
   },
   darkMode: "class",
-  plugins: [nextui()]
+  plugins: [
+    nextui({
+      prefix: "nextui", // prefix for themes variables
+      addCommonColors: false, // override common colors (e.g. "blue", "green", "pink").
+      defaultTheme: "light", // default theme from the themes object
+      defaultExtendTheme: "light", // default theme to extend on custom themes
+      layout: {}, // common layout tokens (applied to all themes)
+      colors: {
+        white: "#FFFFFF",
+        black: "#000000",
+        primary: {
+          DEFAULT: "#ddac17",
+          foreground: "#000000",
+        },
+      },
+      themes: {
+        light: {
+          layout: {}, // light theme layout tokens
+          colors: {}, // light theme colors
+        },
+        dark: {
+          layout: {}, // dark theme layout tokens
+          colors: {}, // dark theme colors
+        },
+        // ... custom themes
+      },
+    }),
+  ]
 };
 
 

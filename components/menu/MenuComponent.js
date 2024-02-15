@@ -17,6 +17,7 @@ const _interactionsData = JSON.parse(
 
 export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper, zIndex = 1000, isGallery = false, connectedUser, setConnectedUser }) {
   _interactions.useInteractions(_interactionsData);
+  const [langVisible, setLangVisible] = useState(true);
   const auth = getAuth();
   //const currentUserPhoto = auth.currentUser.photoURL;
   console.log("AUUUUTH", auth, auth.currentUser);
@@ -467,376 +468,6 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper,
                   </_Builtin.Link>
                 </_Builtin.DropdownList>
               </_Builtin.DropdownWrapper>
-              <_Builtin.DropdownWrapper
-                className="uui-navbar07_menu-dropdown"
-                data-w-id="087b38d3-bb16-de61-e483-c97c79ade6ae"
-                tag="div"
-                delay={300}
-                hover={true}
-              >
-                <_Builtin.DropdownToggle
-                  className="uui-navbar07_dropdown-toggle"
-                  tag="div"
-                >
-                  <_Builtin.HtmlEmbed
-                    className="uui-dropdown-icon"
-                    value="%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewbox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M5%207.5L10%2012.5L15%207.5%22%20stroke%3D%22currentColor%22%20stroke-width%3D%221.67%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E"
-                  />
-                  <_Builtin.Block className="text-block-4" tag="div">
-                    {"Langues"}
-                  </_Builtin.Block>
-                </_Builtin.DropdownToggle>
-                <_Builtin.DropdownList
-                  className="uui-navbar07_dropdown-list"
-                  tag="nav"
-                >
-                  <_Builtin.Block
-                    className="uui-navbar07_dropdown-link-list"
-                    tag="div"
-                  >
-                    <_Builtin.Link
-                      className="uui-navbar07_dropdown-link"
-                      id="w-node-_087b38d3-bb16-de61-e483-c97c79ade6b5-e0eeec7b"
-                      button={false}
-                      block="inline"
-                      options={{
-                        href: "#",
-                      }}
-                    >
-                      <_Builtin.Block
-                        className="uui-navbar07_icon-wrapper"
-                        tag="div"
-                      >
-                        <_Builtin.Image
-                          className="image-4"
-                          width="Auto"
-                          height="Auto"
-                          loading="lazy"
-                          alt=""
-                          src="https://uploads-ssl.webflow.com/65ae6f1a145b7954f56170cc/65b4144a93f6ecac66d67f34_france.png"
-                        />
-                      </_Builtin.Block>
-                      <_Builtin.Block
-                        className="uui-navbar07_item-right"
-                        tag="div"
-                      >
-                        <_Builtin.Block
-                          className="uui-navbar07_item-heading"
-                          tag="div"
-                        >
-                          {"Français"}
-                        </_Builtin.Block>
-                      </_Builtin.Block>
-                    </_Builtin.Link>
-                    <_Builtin.Link
-                      className="uui-navbar07_dropdown-link"
-                      id="w-node-_087b38d3-bb16-de61-e483-c97c79ade6bd-e0eeec7b"
-                      button={false}
-                      block="inline"
-                      options={{
-                        href: "#",
-                      }}
-                    >
-                      <_Builtin.Block
-                        className="uui-navbar07_icon-wrapper"
-                        tag="div"
-                      >
-                        <_Builtin.Image
-                          className="image-4"
-                          width="auto"
-                          height="auto"
-                          loading="lazy"
-                          alt=""
-                          src="https://uploads-ssl.webflow.com/65ae6f1a145b7954f56170cc/65b4144abcf4bc439934e122_united_kingdom.jpeg"
-                        />
-                      </_Builtin.Block>
-                      <_Builtin.Block
-                        className="uui-navbar07_item-right"
-                        tag="div"
-                      >
-                        <_Builtin.Block
-                          className="uui-navbar07_item-heading"
-                          tag="div"
-                        >
-                          {"Anglais"}
-                        </_Builtin.Block>
-                      </_Builtin.Block>
-                    </_Builtin.Link>
-                    <_Builtin.Link
-                      className="uui-navbar07_dropdown-link"
-                      id="w-node-abbb1c25-98c6-6dfa-be8e-cf21e6cd62cf-e0eeec7b"
-                      button={false}
-                      block="inline"
-                      options={{
-                        href: "#",
-                      }}
-                    >
-                      <_Builtin.Block
-                        className="uui-navbar07_icon-wrapper"
-                        tag="div"
-                      >
-                        <_Builtin.Image
-                          className="image-4"
-                          width="auto"
-                          height="auto"
-                          loading="lazy"
-                          alt=""
-                          src="https://uploads-ssl.webflow.com/65ae6f1a145b7954f56170cc/65b4144a51797514d68b8077_italy.jpeg"
-                        />
-                      </_Builtin.Block>
-                      <_Builtin.Block
-                        className="uui-navbar07_item-right"
-                        tag="div"
-                      >
-                        <_Builtin.Block
-                          className="uui-navbar07_item-heading"
-                          tag="div"
-                        >
-                          {"Italien"}
-                        </_Builtin.Block>
-                      </_Builtin.Block>
-                    </_Builtin.Link>
-                    <_Builtin.Link
-                      className="uui-navbar07_dropdown-link"
-                      id="w-node-d427e37c-a5fb-6be1-8ef3-12a8b5b15043-e0eeec7b"
-                      button={false}
-                      block="inline"
-                      options={{
-                        href: "#",
-                      }}
-                    >
-                      <_Builtin.Block
-                        className="uui-navbar07_icon-wrapper"
-                        tag="div"
-                      >
-                        <_Builtin.Image
-                          className="image-4"
-                          width="auto"
-                          height="auto"
-                          loading="lazy"
-                          alt=""
-                          src="https://uploads-ssl.webflow.com/65ae6f1a145b7954f56170cc/65b4144aa46af18ccbce76e2_spain.jpeg"
-                        />
-                      </_Builtin.Block>
-                      <_Builtin.Block
-                        className="uui-navbar07_item-right"
-                        tag="div"
-                      >
-                        <_Builtin.Block
-                          className="uui-navbar07_item-heading"
-                          tag="div"
-                        >
-                          {"Espagnol"}
-                        </_Builtin.Block>
-                      </_Builtin.Block>
-                    </_Builtin.Link>
-                    <_Builtin.Link
-                      className="uui-navbar07_dropdown-link"
-                      id="w-node-e1800e03-b07b-8f18-d481-dd264916953f-e0eeec7b"
-                      button={false}
-                      block="inline"
-                      options={{
-                        href: "#",
-                      }}
-                    >
-                      <_Builtin.Block
-                        className="uui-navbar07_icon-wrapper"
-                        tag="div"
-                      >
-                        <_Builtin.Image
-                          className="image-4"
-                          width="auto"
-                          height="auto"
-                          loading="lazy"
-                          alt=""
-                          src="https://uploads-ssl.webflow.com/65ae6f1a145b7954f56170cc/65b4144abfcd4304a378db29_portugal.jpeg"
-                        />
-                      </_Builtin.Block>
-                      <_Builtin.Block
-                        className="uui-navbar07_item-right"
-                        tag="div"
-                      >
-                        <_Builtin.Block
-                          className="uui-navbar07_item-heading"
-                          tag="div"
-                        >
-                          {"Portugais"}
-                        </_Builtin.Block>
-                      </_Builtin.Block>
-                    </_Builtin.Link>
-                    <_Builtin.Link
-                      className="uui-navbar07_dropdown-link"
-                      id="w-node-a3b7329e-e12a-e313-0227-4cdc0d51c21b-e0eeec7b"
-                      button={false}
-                      block="inline"
-                      options={{
-                        href: "#",
-                      }}
-                    >
-                      <_Builtin.Block
-                        className="uui-navbar07_icon-wrapper"
-                        tag="div"
-                      >
-                        <_Builtin.Image
-                          className="image-4"
-                          width="auto"
-                          height="auto"
-                          loading="lazy"
-                          alt=""
-                          src="https://uploads-ssl.webflow.com/65ae6f1a145b7954f56170cc/65b4144afe4f70889087ef0d_china.jpeg"
-                        />
-                      </_Builtin.Block>
-                      <_Builtin.Block
-                        className="uui-navbar07_item-right"
-                        tag="div"
-                      >
-                        <_Builtin.Block
-                          className="uui-navbar07_item-heading"
-                          tag="div"
-                        >
-                          {"Chinois"}
-                        </_Builtin.Block>
-                      </_Builtin.Block>
-                    </_Builtin.Link>
-                    <_Builtin.Link
-                      className="uui-navbar07_dropdown-link"
-                      id="w-node-_339b36f4-92e2-d6dc-0daa-a0b2e3c5ca3a-e0eeec7b"
-                      button={false}
-                      block="inline"
-                      options={{
-                        href: "#",
-                      }}
-                    >
-                      <_Builtin.Block
-                        className="uui-navbar07_icon-wrapper"
-                        tag="div"
-                      >
-                        <_Builtin.Image
-                          className="image-4"
-                          width="auto"
-                          height="auto"
-                          loading="lazy"
-                          alt=""
-                          src="https://uploads-ssl.webflow.com/65ae6f1a145b7954f56170cc/65b4144a04bb30bf3a41b26f_russia.jpeg"
-                        />
-                      </_Builtin.Block>
-                      <_Builtin.Block
-                        className="uui-navbar07_item-right"
-                        tag="div"
-                      >
-                        <_Builtin.Block
-                          className="uui-navbar07_item-heading"
-                          tag="div"
-                        >
-                          {"Russe"}
-                        </_Builtin.Block>
-                      </_Builtin.Block>
-                    </_Builtin.Link>
-                    <_Builtin.Link
-                      className="uui-navbar07_dropdown-link"
-                      id="w-node-f8376cda-4124-f347-4d3d-b4d43a31446c-e0eeec7b"
-                      button={false}
-                      block="inline"
-                      options={{
-                        href: "#",
-                      }}
-                    >
-                      <_Builtin.Block
-                        className="uui-navbar07_icon-wrapper"
-                        tag="div"
-                      >
-                        <_Builtin.Image
-                          className="image-4"
-                          width="auto"
-                          height="auto"
-                          loading="lazy"
-                          alt=""
-                          src="https://uploads-ssl.webflow.com/65ae6f1a145b7954f56170cc/65b4144a5e51907e32e9ef81_india.jpeg"
-                        />
-                      </_Builtin.Block>
-                      <_Builtin.Block
-                        className="uui-navbar07_item-right"
-                        tag="div"
-                      >
-                        <_Builtin.Block
-                          className="uui-navbar07_item-heading"
-                          tag="div"
-                        >
-                          {"Indien"}
-                        </_Builtin.Block>
-                      </_Builtin.Block>
-                    </_Builtin.Link>
-                    <_Builtin.Link
-                      className="uui-navbar07_dropdown-link"
-                      id="w-node-b70deb88-6ddd-a13e-c74f-740f716618a5-e0eeec7b"
-                      button={false}
-                      block="inline"
-                      options={{
-                        href: "#",
-                      }}
-                    >
-                      <_Builtin.Block
-                        className="uui-navbar07_icon-wrapper"
-                        tag="div"
-                      >
-                        <_Builtin.Image
-                          className="image-4"
-                          width="auto"
-                          height="auto"
-                          loading="lazy"
-                          alt=""
-                          src="https://uploads-ssl.webflow.com/65ae6f1a145b7954f56170cc/65b4144a3a20da597ff179f3_japanese.jpeg"
-                        />
-                      </_Builtin.Block>
-                      <_Builtin.Block
-                        className="uui-navbar07_item-right"
-                        tag="div"
-                      >
-                        <_Builtin.Block
-                          className="uui-navbar07_item-heading"
-                          tag="div"
-                        >
-                          {"Japonais"}
-                        </_Builtin.Block>
-                      </_Builtin.Block>
-                    </_Builtin.Link>
-                    <_Builtin.Link
-                      className="uui-navbar07_dropdown-link"
-                      id="w-node-_065c7fe8-b6d3-d452-20a4-8de6509bc3a3-e0eeec7b"
-                      button={false}
-                      block="inline"
-                      options={{
-                        href: "#",
-                      }}
-                    >
-                      <_Builtin.Block
-                        className="uui-navbar07_icon-wrapper"
-                        tag="div"
-                      >
-                        <_Builtin.Image
-                          className="image-4"
-                          width="auto"
-                          height="auto"
-                          loading="lazy"
-                          alt=""
-                          src="https://uploads-ssl.webflow.com/65ae6f1a145b7954f56170cc/65b4144a22d6ae9e9ca814c4_arabic_league.svg"
-                        />
-                      </_Builtin.Block>
-                      <_Builtin.Block
-                        className="uui-navbar07_item-right"
-                        tag="div"
-                      >
-                        <_Builtin.Block
-                          className="uui-navbar07_item-heading"
-                          tag="div"
-                        >
-                          {"Arabe"}
-                        </_Builtin.Block>
-                      </_Builtin.Block>
-                    </_Builtin.Link>
-                  </_Builtin.Block>
-                </_Builtin.DropdownList>
-              </_Builtin.DropdownWrapper>
               <_Builtin.Link
                   className="quick-phone-call cart"
                   button={false}
@@ -853,7 +484,12 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper,
               
 
               {connectedUser && <ButtonGroup variant="flat" color="warning">
-                <Button startContent={<Avatar src={IMAGE_DANIEL} isBordered color="success" size="sm" />}>{labelsMap[selectedOptionValue]}</Button>
+                <Button 
+                startContent={<Avatar src={IMAGE_DANIEL} isBordered color="success" size="sm" />}
+                onPress={() => router.push(`/${lang}/${LINK_ACCOUNT_PAGE}`)}
+                >
+                  {labelsMap[selectedOptionValue]}
+                </Button>
                 <Dropdown placement="bottom-end">
                   <DropdownTrigger>
                     <Button isIconOnly>
@@ -887,7 +523,7 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper,
                 className="fn-button login"
                 button={true}
                 block=""
-                onClick={() => router.push(`/${lang}/${LINK_ACCOUNT_PAGE}`)}
+                //onClick={() => router.push(`/${lang}/${LINK_ACCOUNT_PAGE}`)}
                 options={{
                   href: `/${lang}/${LINK_ACCOUNT_PAGE}`,
                 }}
@@ -896,17 +532,6 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper,
               </_Builtin.Link>
               }
             </_Builtin.Block>
-            <_Builtin.NavbarButton
-              className="menu-button"
-              data-w-id="665f320f-61ce-b358-051b-3023e0eeec97"
-              tag="div"
-            >
-              <_Builtin.Block className="menu-line-wrapper" tag="div">
-                <_Builtin.Block className="menu-line top" tag="div" />
-                <_Builtin.Block className="menu-line middle" tag="div" />
-                <_Builtin.Block className="menu-line last" tag="div" />
-              </_Builtin.Block>
-            </_Builtin.NavbarButton>
           </_Builtin.Block>
         </_Builtin.Block>
         <_Builtin.HtmlEmbed

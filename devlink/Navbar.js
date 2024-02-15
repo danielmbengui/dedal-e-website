@@ -16,7 +16,7 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
       id="menu"
       config={{
         animation: "default",
-        collapse: "medium",
+        collapse: "small",
         docHeight: false,
         duration: 400,
         easing: "ease",
@@ -127,29 +127,33 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                     {"Media library"}
                   </_Builtin.NavbarLink>
                 </_Builtin.ListItem>
+                <_Builtin.ListItem className="nav-link-list-item last">
+                  <_Builtin.Link
+                    className="fn-button login menu"
+                    button={true}
+                    block=""
+                    options={{
+                      href: "#",
+                    }}
+                  >
+                    {"Login"}
+                  </_Builtin.Link>
+                </_Builtin.ListItem>
               </_Builtin.List>
-              <_Builtin.Link
-                className="fn-button show-menu"
-                button={true}
-                block=""
-                options={{
-                  href: "#",
-                }}
-              >
-                {"Login"}
-              </_Builtin.Link>
             </_Builtin.NavbarMenu>
             <_Builtin.Block className="div-block-4" tag="div">
               <_Builtin.Block className="div-block-29" tag="div">
                 <_Builtin.DropdownWrapper
                   className="dropdown"
                   tag="div"
+                  id="dropdown-lang"
                   delay={0}
                   hover={false}
                 >
                   <_Builtin.DropdownToggle
                     className="dropdown-lang-toogle"
                     tag="div"
+                    id="dropdown-lang-toogle"
                   >
                     <_Builtin.HtmlEmbed
                       className="html-embed-2"
@@ -159,6 +163,7 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                   <_Builtin.DropdownList
                     className="dropdown-lang-list"
                     tag="nav"
+                    id="dropdown-lang-list"
                   >
                     <_Builtin.Link
                       className="link-block-lang first"
