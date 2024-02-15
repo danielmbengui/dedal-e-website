@@ -73,7 +73,7 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper,
                 className="nav-logo-wrapper"
                 id="id-nav-logo"
                 options={{
-                  href: "#",
+                  href: `/${lang}/${LINK_HOME_PAGE}`,
                 }}
               >
                 <_Builtin.Block className="div-block-2" tag="div">
