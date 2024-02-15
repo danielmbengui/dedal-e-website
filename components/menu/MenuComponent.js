@@ -603,7 +603,7 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper,
 
 <audio id="monAudio" /*autoPlay={true}*/>
   <source src={TEST_MUSIC} type="audio/mpeg" />
-  Votre navigateur ne supporte pas l'élément audio.
+  {"Votre navigateur ne supporte pas l'élément audio."}
 </audio>
 
 
