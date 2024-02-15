@@ -2,7 +2,7 @@ import * as React from "react";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import {Button} from "@nextui-org/button";
-import { AboutPage, GalleryPage, HomePage } from "@/devlink";
+import { AboutPage, BuyPage, GalleryPage, HomePage } from "@/devlink";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next';
 //import { useTranslation } from 'react-i18next';

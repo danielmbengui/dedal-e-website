@@ -3,13 +3,11 @@ import * as _Builtin from "./_Builtin";
 import { Navbar } from "./Navbar";
 import { HeroBanner } from "./HeroBanner";
 import { Footer } from "./Footer";
-import MenuComponent from "@/components/menu/MenuComponent";
-import { FooterComponent } from "@/components/footer/FooterComponent";
 
-export function MediaPage({ as: _Component = _Builtin.Block, connectedUser, setConnectedUser }) {
+export function MediaPage({ as: _Component = _Builtin.Block }) {
   return (
     <_Component className="page-wrapper" tag="div">
-      <MenuComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
+      <Navbar />
       <_Builtin.Block className="main-wrapper" tag="div">
         <HeroBanner
           heading2Text="Media Library"
@@ -29,7 +27,7 @@ export function MediaPage({ as: _Component = _Builtin.Block, connectedUser, setC
           </_Builtin.Block>
         </_Builtin.Block>
       </_Builtin.Block>
-      <FooterComponent />
+      <Footer />
     </_Component>
   );
 }

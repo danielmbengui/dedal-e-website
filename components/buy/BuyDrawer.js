@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
@@ -36,6 +36,9 @@ import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 
 import Masonry from '@mui/lab/Masonry';
 import BuyMasonry from './BuyMasonry';
+import { BuyContent } from './BuyContent';
+
+import { useTranslation } from 'next-i18next';
 
 
 //import AppBar from '@mui/material/AppBar';
@@ -112,10 +115,11 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function BuyDrawer({connectedUser, setConnectedUser}) {
+export default function BuyDrawer({ connectedUser, setConnectedUser }) {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(true);
-  const [selectedValue, setSelectedValue] = React.useState('');
+  const [open, setOpen] = useState(true);
+  const [selectedValue, setSelectedValue] = useState('');
+  const { t } = useTranslation();
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -125,6 +129,43 @@ export default function BuyDrawer({connectedUser, setConnectedUser}) {
     setOpen(false);
   };
 
+  const MENU_DRAWER = [
+    {
+      title: "Arts graphiques",
+      menu: [
+        "Images",
+        "Photos",
+        "Dessins",
+        "Sculpture",
+        "Peintures",
+      ]
+    },
+    {
+      title: "Animations",
+      menu: [
+        
+      ]
+    },
+    {
+      title: "Musiques",
+      menu: [
+        "Classique",
+        "Rock",
+        "Pop",
+        "Hip Hop & Rap",
+        "Country",
+        "Jazz",
+        "Blues",
+        "Electronic",
+        "R&B",
+        "Reggae",
+        "Metal",
+        "Folk",
+        "Musiques du monde",
+      ]
+    }
+  ];
+
   return (
     <Box sx={{
       margin: 0,
@@ -133,6 +174,8 @@ export default function BuyDrawer({connectedUser, setConnectedUser}) {
       display: 'flex',
       flexDirection: 'column',
       position: 'absolute',
+      right: 0,
+      left: 0
       //top:25
     }}>
       {/* <CssBaseline /> */}
@@ -160,13 +203,18 @@ export default function BuyDrawer({connectedUser, setConnectedUser}) {
               variant="bordered"
               size='lg'
               startContent={<TuneIcon fontSize='small' />}
-            >Filtrer</Chip>
+            >Filtrer
+            </Chip>
           </Stack>
 
         </DrawerHeader>
         <Divider />
         <List>
-          <Accordion sx={{ color: 'var(--white)', width: '100%', backgroundColor: 'var(--grey-dedal)' }}>
+          {
+            MENU_DRAWER.map((element, index) => {
+              return(
+                <div key={element.title + index} >
+                  <Accordion sx={{ color: 'var(--white)', width: '100%', backgroundColor: 'var(--grey-dedal)' }}>
             <AccordionSummary
               sx={{ color: 'var(--white)', width: '100%', backgroundColor: 'var(--black)' }}
               expandIcon={<ExpandMoreIcon sx={{ color: 'var(--white)' }} />}
@@ -181,192 +229,55 @@ export default function BuyDrawer({connectedUser, setConnectedUser}) {
                 spacing={2}
               >
                 {<InboxIcon sx={{ color: 'var(--white)' }} />}
-                <Typography sx={{ color: 'var(--white)' }}>Arts graphiques</Typography>
+                <Typography sx={{ color: 'var(--white)' }}>{element.title}</Typography>
               </Stack>
             </AccordionSummary>
-            <AccordionDetails sx={{
-              color: 'var(--black)', width: '100%', overflow: "clip", verticalAlign: 'middle', cursor: 'pointer', ":hover": {
-                backgroundColor: 'var(--yellow-dark)'
-              }
-            }}>
-              <Typography sx={{ width: '100%', color: 'var(--black)' }}>Images</Typography>
-            </AccordionDetails>
-            <AccordionDetails sx={{
-              color: 'var(--black)', width: '100%', overflow: "clip", cursor: 'pointer', ":hover": {
-                backgroundColor: 'var(--yellow-dark)'
-              }
-            }}>
-              <Typography sx={{ width: '100%', color: 'var(--black)' }}>Photos</Typography>
-            </AccordionDetails>
-            <AccordionDetails sx={{
-              color: 'var(--black)', width: '100%', overflow: "clip", cursor: 'pointer', ":hover": {
-                backgroundColor: 'var(--yellow-dark)'
-              }
-            }}>
-              <Typography sx={{ width: '100%', color: 'var(--black)' }}>Dessins</Typography>
-            </AccordionDetails>
-            <AccordionDetails sx={{
-              color: 'var(--black)', width: '100%', overflow: "clip", cursor: 'pointer', ":hover": {
-                backgroundColor: 'var(--yellow-dark)'
-              },
-            }}>
-              <Typography sx={{ width: '100%', color: 'var(--black)' }}>Sculpture</Typography>
-            </AccordionDetails>
-            <AccordionDetails sx={{
-              color: 'var(--black)', width: '100%', overflow: "clip", cursor: 'pointer', ":hover": {
-                backgroundColor: 'var(--yellow-dark)'
-              }
-            }}>
-              <Typography sx={{ width: '100%', color: 'var(--black)' }}>Peintures</Typography>
-            </AccordionDetails>
+            {
+              element.menu.map((subtitle, index) => {
+                return(
+                  <AccordionDetails key={subtitle + index} sx={{
+                    color: 'var(--black)', width: '100%', overflow: "clip", verticalAlign: 'middle', cursor: 'pointer', ":hover": {
+                      backgroundColor: 'var(--yellow-dark)'
+                    }
+                  }}>
+                    <Typography sx={{ width: '100%', color: 'var(--black)' }}>{subtitle}</Typography>
+                  </AccordionDetails>
+                )
+              })
+            }
           </Accordion>
-          <ListItem key={'graphics'} disablePadding sx={{ display: 'block' }}>
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
-                px: 2.5,
-              }}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : 'auto',
-                  justifyContent: 'center',
-                }}
-              >
-                {<InboxIcon sx={{ color: 'var(--white)' }} />}
-              </ListItemIcon>
-              <ListItemText primary={"Arts graphiques"} sx={{ opacity: open ? 1 : 0, color: 'var(--white)' }} />
-            </ListItemButton>
-          </ListItem>
-          <ListItem key={'musics'} disablePadding sx={{ display: 'block' }}>
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
-                px: 2.5,
-              }}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : 'auto',
-                  justifyContent: 'center',
-                }}
-              >
-                {<InboxIcon sx={{ color: 'var(--white)' }} />}
-              </ListItemIcon>
-              <ListItemText primary={"Musiques"} sx={{ opacity: open ? 1 : 0, color: 'var(--white)' }} />
-            </ListItemButton>
-          </ListItem>
-          <ListItem key={'animations'} disablePadding sx={{ display: 'block' }}>
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
-                px: 2.5,
-              }}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : 'auto',
-                  justifyContent: 'center',
-                }}
-              >
-                {<InboxIcon sx={{ color: 'var(--white)' }} />}
-              </ListItemIcon>
-              <ListItemText primary={"Animations"} sx={{ opacity: open ? 1 : 0, color: 'var(--white)' }} />
-            </ListItemButton>
-          </ListItem>
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1-content"
-              id="panel1-header"
-            >
-              Accordion 1
-            </AccordionSummary>
-            <AccordionDetails>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-              malesuada lacus ex, sit amet blandit leo lobortis eget.
-            </AccordionDetails>
-          </Accordion>
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2-content"
-              id="panel2-header"
-            >
-              Accordion 2
-            </AccordionSummary>
-            <AccordionDetails>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-              malesuada lacus ex, sit amet blandit leo lobortis eget.
-            </AccordionDetails>
-          </Accordion>
-          <Accordion defaultExpanded>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel3-content"
-              id="panel3-header"
-            >
-              Accordion Actions
-            </AccordionSummary>
-            <AccordionDetails>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-              malesuada lacus ex, sit amet blandit leo lobortis eget.
-            </AccordionDetails>
-            <AccordionActions>
-              <Button>Cancel</Button>
-              <Button>Agree</Button>
-            </AccordionActions>
-          </Accordion>
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  {index % 2 === 0 ? <InboxIcon sx={{ color: 'var(--white)' }} /> : <MailIcon sx={{ color: 'var(--white)' }} />}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0, color: 'var(--white)' }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
+          <Divider color='white' variant="middle" />
+                </div>
+              )
+            })
+          }
         </List>
       </Drawer>
-      <div style={{ 
-        marginTop: '4rem', 
-        marginLeft: open ? drawerWidth : drawerWidthClosed, 
-        paddingLeft: 30, paddingRight: 30, flex: 1, position: 'relative', 
-        border: '5px solid red',
-        backgroundColor:'var(--grey-dark-dedal)'
-        }}>
+      <div style={{
+        marginTop: '4rem',
+        marginLeft: open ? drawerWidth : drawerWidthClosed,
+        paddingLeft: 30, paddingRight: 30, flex: 1, position: 'relative',
+        //right:0,
+        //border: '5px solid red',
+        //width:'100%',
+        //backgroundColor:'var(--grey-dark-dedal)',
+        //backgroundColor:'green',
+      }}>
 
         <Stack
-        sx={{py:3}}
-        alignItems={'center'}
-        justifyContent={'center'}
+          sx={{
+            pt: 3,
+            width: '100%',
+            //background:'cyan'
+          }}
+          alignItems={'center'}
+          justifyContent={'center'}
         >
-<BuyMasonry />
+          <BuyContent />
+          {/**<BuyMasonry /> */}
         </Stack>
-        
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+
+        <Box component="main" sx={{ flexGrow: 1, p: 3, display: 'none' }}>
           <Typography paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
