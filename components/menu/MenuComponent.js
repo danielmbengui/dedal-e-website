@@ -186,6 +186,18 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper,
                     {t('media-library', { ns: 'navbar' })}
                   </_Builtin.NavbarLink>
                 </_Builtin.ListItem>
+                <_Builtin.ListItem className="nav-link-list-item last">
+                  <_Builtin.Link
+                    className="fn-button login menu"
+                    button={true}
+                    block=""
+                    options={{
+                      href: `/${lang}/${LINK_ACCOUNT_PAGE}`,
+                    }}
+                  >
+                    {t('login', { ns: 'navbar' })}
+                  </_Builtin.Link>
+                </_Builtin.ListItem>
               </_Builtin.List>
             </_Builtin.NavbarMenu>
             <_Builtin.Block className="div-block-4" tag="div">

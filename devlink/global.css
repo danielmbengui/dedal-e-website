@@ -2770,6 +2770,19 @@ ul {
   background-color: var(--transparent);
 }
 
+@media screen and (max-width: 767px) {
+  .padding-global.menu {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .padding-global.menu {
+    padding-right: 1rem;
+  }
+}
+
 .padding-global.creation {
   padding: 3rem 4rem;
   background-color: var(--transparent);
@@ -5709,7 +5722,7 @@ ul {
 
 @media screen and (max-width: 479px) {
   .nav-logo {
-    max-width: 80%;
+    max-width: 100%;
   }
 }
 
