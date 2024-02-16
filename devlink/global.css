@@ -3240,6 +3240,8 @@ ul {
 
 .heading-style-h1 {
   display: block;
+  padding-top: 10px;
+  padding-bottom: 30px;
   align-items: center;
   flex: 0 auto;
 
@@ -3440,7 +3442,7 @@ ul {
 
 .header-scroll-down-arrow.home {
   display: flex;
-  margin-top: 30px;
+  margin-top: 0px;
   grid-column-gap: 10px;
   text-decoration: none;
 }
@@ -7182,7 +7184,7 @@ ul {
 }
 
 .fn-button {
-  display: none;
+  display: block;
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 12px 24px;
@@ -7316,6 +7318,10 @@ ul {
   border-radius: 80px;
   font-family: Inter;
   font-weight: 300;
+}
+
+.fn-button.customize-bot {
+  border-radius: 50px;
 }
 
 .fn-button-wrapper {
@@ -12784,6 +12790,12 @@ ul {
   color: var(--yellow-dark);
   font-size: 25px;
   font-weight: 300;
+  text-decoration: none;
+}
+
+.link-block-6 {
+  display: flex;
+  grid-column-gap: 10px;
   text-decoration: none;
 }
 
