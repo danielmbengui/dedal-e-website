@@ -187,6 +187,17 @@ export default function MenuComponent({ as: _Component = _Builtin.NavbarWrapper,
                     {t('media-library', { ns: 'navbar' })}
                   </_Builtin.NavbarLink>
                 </_Builtin.ListItem>
+                <_Builtin.ListItem className="nav-link-list-item">
+                  <_Builtin.NavbarLink
+                    className={`nav-link ${LINK_MEDIA_LIBRARY_PAGE === router.asPath ? 'w--current' : ''}`}
+                    id="id-nav-media-library-page"
+                    options={{
+                      href: `/${lang}/${LINK_MEDIA_LIBRARY_PAGE}`,
+                    }}
+                  >
+                    {"Communauté"}
+                  </_Builtin.NavbarLink>
+                </_Builtin.ListItem>
                 <_Builtin.ListItem className="nav-link-list-item last">
                   <_Builtin.Link
                     className="fn-button login menu"
