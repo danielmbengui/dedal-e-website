@@ -106,7 +106,7 @@ const TAB_CONTENT_MEDIA = [
 
 
 
-export function BuyContent({ as: _Component = _Builtin.Block }) {
+export function BuyContent({ as: _Component = _Builtin.Block, mediaType }) {
     const {isOpen, onOpen, onClose} = useDisclosure();
     const [selectedContent, setSelectedContent] = useState(TAB_CONTENT_MEDIA[0]);
     const handleOpen = (content) => {
@@ -197,6 +197,7 @@ export function BuyContent({ as: _Component = _Builtin.Block }) {
                         id="w-node-_288531a2-5f80-264b-2537-d07ba7507e5a-0fe3a9b9"
                         tag="div"
                         onClick={() => handleOpen(content)}
+                        key={content.title + index}
                   >
                     <_Builtin.Block
                       className="div-block-title-creation"
