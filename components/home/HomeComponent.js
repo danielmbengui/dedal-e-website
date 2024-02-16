@@ -146,33 +146,27 @@ export function HomeComponent({ as: _Component = _Builtin.Block, connectedUser, 
               <CustomizedDialogs openDialog={openDialog} setOpenDialog={setOpenDialog}  />
             </_Builtin.Block>
           </_Builtin.Block>
-          <_Builtin.Block
+          <_Builtin.Link
             className="header-scroll-down-arrow home"
             data-w-id="08490f9c-290d-493f-1ef3-68f271812e45"
-            tag="div"
+            button={false}
+            block="inline"
+            options={{
+              href: `/${lang}/${LINK_BUY_PAGE}`,
+            }}
           >
-            <_Builtin.Block className="div-block-23" tag="div">
-              <_Builtin.Image
-                className="image-logo-header-home"
-                loading="lazy"
-                width="70"
-                height="auto"
-                alt=""
-                src="https://uploads-ssl.webflow.com/65ae6f1a145b7954f56170cc/65ae74decc83dc40a2b4b792_Dedalart1%20(1).png"
-              />
+            <_Builtin.Block className="text-block-20" tag="div">
+              {"Next"}
             </_Builtin.Block>
-            <_Builtin.Link
-              className="fn-button"
-              data-w-id="e873cba8-4419-69d2-01d1-264f6007f5b4"
-              button={true}
-              block=""
-              options={{
-                href: `/${lang}/${LINK_BUY_PAGE}`,
-              }}
-            >
-              {t('next', { ns: 'home' })}
-            </_Builtin.Link>
-          </_Builtin.Block>
+            <_Builtin.Image
+              className="image-next"
+              loading="lazy"
+              width="auto"
+              height="auto"
+              alt=""
+              src="https://uploads-ssl.webflow.com/65ae6f1a145b7954f56170cc/65cf480fe682bb1b2709815a_send_yellow.svg"
+            />
+          </_Builtin.Link>
         </_Builtin.Block>
         <_Builtin.Section
           className="section-partners"
