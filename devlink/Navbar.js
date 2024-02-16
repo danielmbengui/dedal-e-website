@@ -46,6 +46,9 @@ export function Navbar({ as: _Component = _Builtin.NavbarWrapper }) {
                       alt=""
                       src="https://uploads-ssl.webflow.com/65ae6f1a145b7954f56170cc/65ae74decc83dc40a2b4b792_Dedalart1%20(1).png"
                     />
+                    <_Builtin.Block className="slogan-logo" tag="div">
+                      {"Art for all"}
+                    </_Builtin.Block>
                   </_Builtin.Block>
                 </_Builtin.Block>
               </_Builtin.NavbarBrand>

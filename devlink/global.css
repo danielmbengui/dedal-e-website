@@ -2627,6 +2627,11 @@ ul {
   grid-row-gap: 16px;
   grid-column-gap: 16px;
 }
+.w-layout-hflex {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+}
 .w-checkbox {
   display: block;
   margin-bottom: 5px;
@@ -7184,7 +7189,7 @@ ul {
   align-items: center;
 
   border: 1px solid var(--yellow-dark);
-  border-radius: 50px;
+  border-radius: 8px;
 
   background-color: var(--yellow-dark);
 
@@ -7252,6 +7257,7 @@ ul {
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 8px 15px;
+  border-radius: 50px;
 }
 
 @media screen and (max-width: 991px) {
@@ -7305,6 +7311,7 @@ ul {
 .fn-button.subscribe {
   margin-top: 0px;
   margin-bottom: 0px;
+  border-radius: 80px;
   font-family: Inter;
   font-weight: 300;
 }
@@ -8226,7 +8233,9 @@ ul {
 
 .div-block-20 {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .div-block-21 {
@@ -12748,6 +12757,18 @@ ul {
 .container-creation {
   display: flex;
   align-items: center;
+}
+
+.slogan-logo {
+  font-family: Giveny;
+  color: var(--white);
+  font-weight: 300;
+}
+
+@media screen and (max-width: 479px) {
+  .slogan-logo {
+    font-size: 10px;
+  }
 }
 
 
