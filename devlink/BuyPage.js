@@ -69,51 +69,6 @@ export function BuyPage({ as: _Component = _Builtin.Block }) {
                       >
                         {"5'000$"}
                       </_Builtin.Block>
-                      <_Builtin.Block
-                        className="div-block-description"
-                        tag="div"
-                      >
-                        <_Builtin.HtmlEmbed
-                          className="html-embed-6 image"
-                          value="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228%22%20height%3D%228%22%20viewBox%3D%220%200%208%208%22%20fill%3D%22none%22%3E%0A%3Ccircle%20cx%3D%224%22%20cy%3D%224%22%20r%3D%224%22%20fill%3D%22currentColor%22%2F%3E%0A%3C%2Fsvg%3E"
-                        />
-                        <_Builtin.Block
-                          className="text-block-description"
-                          tag="div"
-                        >
-                          {"Description image"}
-                        </_Builtin.Block>
-                      </_Builtin.Block>
-                      <_Builtin.Block
-                        className="div-block-description"
-                        tag="div"
-                      >
-                        <_Builtin.HtmlEmbed
-                          className="html-embed-6 animation"
-                          value="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228%22%20height%3D%228%22%20viewBox%3D%220%200%208%208%22%20fill%3D%22none%22%3E%0A%3Ccircle%20cx%3D%224%22%20cy%3D%224%22%20r%3D%224%22%20fill%3D%22currentColor%22%2F%3E%0A%3C%2Fsvg%3E"
-                        />
-                        <_Builtin.Block
-                          className="text-block-description"
-                          tag="div"
-                        >
-                          {"Description animation"}
-                        </_Builtin.Block>
-                      </_Builtin.Block>
-                      <_Builtin.Block
-                        className="div-block-description"
-                        tag="div"
-                      >
-                        <_Builtin.HtmlEmbed
-                          className="html-embed-6 music"
-                          value="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228%22%20height%3D%228%22%20viewBox%3D%220%200%208%208%22%20fill%3D%22none%22%3E%0A%3Ccircle%20cx%3D%224%22%20cy%3D%224%22%20r%3D%224%22%20fill%3D%22currentColor%22%2F%3E%0A%3C%2Fsvg%3E"
-                        />
-                        <_Builtin.Block
-                          className="text-block-description"
-                          tag="div"
-                        >
-                          {"Description musique"}
-                        </_Builtin.Block>
-                      </_Builtin.Block>
                     </_Builtin.Block>
                   </_Builtin.Block>
                   <_Builtin.Block

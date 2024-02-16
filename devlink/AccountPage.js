@@ -1,6 +1,7 @@
 import React from "react";
 import * as _Builtin from "./_Builtin";
 import { Navbar } from "./Navbar";
+import { HeroBanner } from "./HeroBanner";
 import { Footer } from "./Footer";
 
 export function AccountPage({ as: _Component = _Builtin.Block }) {
@@ -8,6 +9,7 @@ export function AccountPage({ as: _Component = _Builtin.Block }) {
     <_Component className="page-wrapper" tag="div">
       <Navbar />
       <_Builtin.Block className="main-wrapper" tag="div">
+        <HeroBanner heading2Text="Account" textSizeRegluarText="Creation" />
         <_Builtin.Block className="section-change-log account" tag="div">
           <_Builtin.Block className="padding-global" tag="div">
             <_Builtin.Block className="container-large" tag="div">

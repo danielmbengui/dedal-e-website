@@ -1,15 +1,21 @@
 import React from "react";
-import * as _Builtin from "./_Builtin";
-import { Navbar } from "./Navbar";
-import { HeroBanner } from "./HeroBanner";
-import { Footer } from "./Footer";
+import * as _Builtin from "@/devlink/_Builtin";
+import { HeroBanner } from "@/devlink/HeroBanner";
+import MenuComponent from "@/components/menu/MenuComponent";
+import { FooterComponent } from "@/components/footer/FooterComponent";
+import { useTranslation } from 'next-i18next';
 
-export function DedalabPage({ as: _Component = _Builtin.Block }) {
+export function MediaComponent({ as: _Component = _Builtin.Block, connectedUser, setConnectedUser }) {
+    const { t, i18n } = useTranslation();
+
   return (
     <_Component className="page-wrapper" tag="div">
-      <Navbar />
+      <MenuComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
       <_Builtin.Block className="main-wrapper" tag="div">
-        <HeroBanner heading2Text="Dedalab" textSizeRegluarText="Creation" />
+        <HeroBanner
+          heading2Text={t('media-library', { ns: 'navbar' })}
+          textSizeRegluarText="Creation"
+        />
         <_Builtin.Block className="section-change-log" tag="div">
           <_Builtin.Block className="padding-global" tag="div">
             <_Builtin.Block className="container-large" tag="div">
@@ -24,7 +30,7 @@ export function DedalabPage({ as: _Component = _Builtin.Block }) {
           </_Builtin.Block>
         </_Builtin.Block>
       </_Builtin.Block>
-      <Footer />
+      <FooterComponent />
     </_Component>
   );
 }

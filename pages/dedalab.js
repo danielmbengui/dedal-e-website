@@ -8,6 +8,7 @@ import { useTranslation } from 'next-i18next';
 //import { useTranslation } from 'react-i18next';
 import { TAB_LANGUAGES, TAB_NAMESPACES } from "@/constants/languages";
 import Head from "next/head";
+import { DedalabComponent } from "@/components/dedalab/DedalabComponent";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,7 +22,7 @@ export default function Dedalab({connectedUser, setConnectedUser}) {
       <meta name="description" content={`${t('slogan_website', { ns: 'common' })}`} />
       <title>{`Dedal-E | ${t('dedalab', { ns: 'navbar' })}`}</title>
     </Head>
-    <DedalabPage connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
+    <DedalabComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
     </>
   );
 }

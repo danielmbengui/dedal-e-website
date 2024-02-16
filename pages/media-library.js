@@ -9,6 +9,7 @@ import { useTranslation } from 'next-i18next';
 import { TAB_LANGUAGES, TAB_NAMESPACES } from "@/constants/languages";
 import Head from "next/head";
 import { BuyComponent } from "@/components/buy/BuyComponent";
+import { MediaComponent } from "@/components/media/MediaComponent";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,7 +23,7 @@ export default function MediaLibrary({connectedUser, setConnectedUser}) {
       <meta name="description" content={`${t('slogan_website', { ns: 'common' })}`} />
       <title>{`Dedal-E | ${t('media-library', { ns: 'navbar' })}`}</title>
     </Head>
-    <MediaPage connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
+    <MediaComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
     </>
   );
 }

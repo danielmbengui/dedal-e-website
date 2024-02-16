@@ -1,4 +1,5 @@
 import React from "react";
+import { styled, useTheme } from '@mui/material/styles';
 import * as _Builtin from "@/devlink/_Builtin";
 import MenuComponent from "@/components/menu/MenuComponent";
 import MiniDrawer from "@/components/drawer/MiniDrawer";
@@ -6,9 +7,10 @@ import BuyDrawer from "@/components/buy/BuyDrawer";
 
 
 export function BuyComponent({ as: _Component = _Builtin.Block, connectedUser, setConnectedUser }) {
+  const theme = useTheme();
   return (
     <_Component className="page-wrapper" tag="div" style={{backgroundColor:'var(--grey-dark-dedal)'}}>
-     
+      <MenuComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} zIndex={theme.zIndex.drawer + 1} isGallery={true} />
       <BuyDrawer connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
       {/*
        <MenuComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} />

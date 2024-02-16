@@ -136,16 +136,18 @@ export function AccountComponent({ as: _Component = _Builtin.Block, connectedUse
     <_Component className="page-wrapper" tag="div">
       <MenuComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
       <_Builtin.Block className="main-wrapper" tag="div">
+      <HeroBanner heading2Text="Account" textSizeRegluarText="Creation" />
         <_Builtin.Block className="section-change-log account" tag="div">
           <_Builtin.Block className="padding-global" tag="div">
             <_Builtin.Block className="container-large" tag="div">
+            {
+                    !connectedUser && 
               <_Builtin.Block
                 className="padding-section-large account"
                 tag="div"
               >
-                {
-                    !connectedUser && <>
-                    <_Builtin.Block
+                
+<_Builtin.Block
                   className="div-button-connexion google"
                   tag="div"
                   id="button-connexion-google"
@@ -166,7 +168,6 @@ export function AccountComponent({ as: _Component = _Builtin.Block, connectedUse
                   className="div-button-connexion apple"
                   tag="div"
                   id="button-connexion-apple"
-                  //style={{display:'none'}}
                 >
                   <_Builtin.HtmlEmbed
                     className="icon-button-connexion apple"
@@ -275,22 +276,28 @@ export function AccountComponent({ as: _Component = _Builtin.Block, connectedUse
                     {"Sign in with phone"}
                   </_Builtin.Block>
                 </_Builtin.Block>
-                    </>
-                }
-                {
-                    connectedUser && <_Builtin.Block
-                    className="div-button-connexion email"
-                    tag="div"
-                    id="button-connexion-signout"
-                    style={{textAlign:'center'}}
-                    onClick={signOutAccount}
-                  >
-                    <_Builtin.Block className="text-button-connexion" tag="div">
-                      {"Sign out"}
-                    </_Builtin.Block>
-                  </_Builtin.Block>
-                }
+                
+                
+
+                
               </_Builtin.Block>
+              }
+
+              {
+                connectedUser && <Stack sx={{py:10}} justifyContent={'center'} alignItems={'center'}>
+                    <_Builtin.Block
+                    style={{width:'50%'}}
+                className="div-button-connexion email"
+                tag="div"
+                id="button-connexion-mail"
+                onClick={signOutAccount}
+              >
+                <_Builtin.Block className="text-button-connexion" tag="div">
+                  {"Logout"}
+                </_Builtin.Block>
+              </_Builtin.Block>
+                </Stack>
+              }
             </_Builtin.Block>
           </_Builtin.Block>
         </_Builtin.Block>

@@ -9,7 +9,7 @@ export function ContactPage({ as: _Component = _Builtin.Block }) {
     <_Component className="page-wrapper" tag="div">
       <Navbar />
       <_Builtin.Block className="main-wrapper" tag="div">
-        <HeroBanner heading2Text="Support" textSizeRegluarText="Creation" />
+        <HeroBanner heading2Text="Contact" textSizeRegluarText="Creation" />
         <_Builtin.Block className="section-change-log contact" tag="div">
           <_Builtin.Block className="padding-global" tag="div">
             <_Builtin.Block className="container-large" tag="div">

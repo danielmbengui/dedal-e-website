@@ -8,6 +8,7 @@ import { useTranslation } from 'next-i18next';
 //import { useTranslation } from 'react-i18next';
 import { TAB_LANGUAGES, TAB_NAMESPACES } from "@/constants/languages";
 import Head from "next/head";
+import { AboutComponent } from "@/components/about/AboutComponent";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,7 +22,7 @@ export default function About({connectedUser, setConnectedUser}) {
       <meta name="description" content={`${t('slogan_website', { ns: 'common' })}`} />
       <title>{`Dedal-E | ${t('about', { ns: 'navbar' })}`}</title>
     </Head>
-    <AboutPage connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
+    <AboutComponent connectedUser={connectedUser} setConnectedUser={setConnectedUser} />
     </>
   );
 }
