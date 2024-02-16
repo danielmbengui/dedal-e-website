@@ -12780,7 +12780,7 @@ ul {
 }
 
 .image-next {
-  width: 50px;
+  width: 40px;
 }
 
 .text-block-20 {
@@ -12788,7 +12788,7 @@ ul {
 
   font-family: Inter;
   color: var(--yellow-dark);
-  font-size: 25px;
+  font-size: 1.125rem;
   font-weight: 300;
   text-decoration: none;
 }
